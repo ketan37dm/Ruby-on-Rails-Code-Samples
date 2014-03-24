@@ -1,0 +1,22 @@
+<div class="tab-pane active" id="events">
+  <div class="media">
+    <div class="media-body">
+      <h3 class="media-heading">Today<i id="add-event-trigger" class="icon-settings pull-right"></i></h3>
+      <%= render :partial => 'courses/upcoming_events/upcoming_events_list', :collection => @todays_course_events, :as => :event %>
+    </div>
+  </div>
+
+  <div class="media">
+    <div class="media-body">
+      <h3 class="media-heading">Tomorrow<i class="icon-settings pull-right"></i></h3>                       
+      <%= render :partial => 'courses/upcoming_events/upcoming_events_list', :collection => @tomorrows_course_events, :as => :event %>
+    </div>
+  </div>
+
+  <div class="media">
+    <div class="media-body">
+      <h3 class="media-heading">Wednesday, December 12<i class="icon-settings pull-right"></i></h3>
+      <%= render :partial => 'courses/upcoming_events/upcoming_events_list', :collection => @overmorrows_course_events, :as => :event %>
+    </div>
+  </div>
+</div>

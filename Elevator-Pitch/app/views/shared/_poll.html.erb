@@ -1,0 +1,19 @@
+<% if @question.present?  %>
+  <div class="poll">
+    <%= form_for(:poll_result, :url => polls_path(:format => :json), :html => {:id => "poll_form"}) do |f| %>
+      <label>
+        <%= simple_format(@question.description) %>
+        <%= f.hidden_field :poll_question_id, :value => @question.id %>
+      </label>
+      <ul class="nav nav_links_color">
+        <% @question.poll_answers.each do |answer| %>
+          <li>
+            <%= link_to(simple_format(answer.description), "javascript:void(0)", :class => "btn", :'data-val' => answer.id) %>
+          </li>
+        <% end %>
+        <%= f.hidden_field :poll_answer_id %>
+      </ul>
+    <% end %>
+  </div>
+  <div class="shadow-image"><%= image_tag("/assets/shadow.png") %> </div>
+<% end %>

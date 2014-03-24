@@ -1,0 +1,50 @@
+<div class="main-pitch">
+  <div class="internal-left-pitch">
+    <h3 class="set-user-padding"><%= link_to(pitch.user.name, display_pitch_path(:identifier => pitch.identifier)) %></h3>
+    <h4 class="pitch-category"><%= pitch.category.title %> pitch</h4>
+  </div>
+  <div class="internal-right-pitch">
+    <div class="pitch-count">
+      <label class="pitch-sizing">
+        <%= pitch.likes_count %>
+      </label>
+      <span class="vote-color">Votes</span>
+    </div>
+
+    <div style="float:right;margin-top: 11px;">
+      <% if user_signed_in? %>
+        <% unless pitch.liked?(current_user) %>
+          <%= link_to image_tag("thumbs_up.png"), pitch_likes_path(:pitch_id => pitch.identifier), :class => "myp-like" %>
+        <% end %>
+      <% else %>
+
+        <% if defined?(@pitch)  %>
+          <%= hidden_field_tag "show_redirect", "true", :class => "show-redirect"  %>
+        <% end %>
+
+        <%= link_to image_tag("thumbs_up.png"),
+          remember_pitch_likes_path(:pitch_id => pitch.identifier),
+          :class => "vote-up-dummy-link" %>
+      <% end %>
+    </div>
+  </div>
+</div>
+<div class="desc-padding pitchDescription">
+  <% if pitch.video_exists? %>
+    <%= video_tag(pitch) %>
+  <% end %>
+  <%= simple_format(h(pitch.description)) %>
+  <% unless pitch.tags.blank? %>
+  <div class="tags">
+		<ul>
+		<% tags = pitch.tags.split(',') %>	
+		<% tags.each_with_index do |tag, index| %>
+			<li class = "<%= 'last' if index == tags.size - 1 %> ">
+        <%=link_to tag, tag_search_path(tag.strip.downcase.gsub(/\s/, "-")) %>
+      </li>
+		<% end %>
+		</ul>
+	</div>
+   <% end %>
+  <div class="clearBoth"></div>
+</div>

@@ -1,0 +1,14 @@
+<div class="billboard-container">
+  <h2>Your pitch statistics</h2>
+  <ul class="stats">
+    <li class="right"><label>Total Pitches</label><em><%= @total_pitches %></em></li>
+    <li class="right"><label>Your Rank</label> <em><%= @my_pitch_rank %></em></li>
+    <li class="right"><label>Total Likes</label><em><%= @my_pitch_likes %></em></li>
+  </ul>
+</div>
+<div class="shadow-image"><%= image_tag("/assets/shadow.png") %> </div>
+<div class="pitch-actions align-center">
+  <% pitch_link = "http://#{SiteConfig.app_base_url}#{display_pitch_path(:identifier => current_user.pitch.identifier)}" %>
+  Your public pitch url: <%= link_to(pitch_link, pitch_link) %>
+</div>
+<div class="shadow-image"><%= image_tag("/assets/shadow.png") %> </div>

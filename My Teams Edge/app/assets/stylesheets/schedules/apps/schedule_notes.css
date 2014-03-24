@@ -1,0 +1,93 @@
+#new-category-modal p {font: normal 0.85714285714286em/1em arial; margin-bottom: 13px; color: #333;}
+
+.schedules-notes-modal {width: 303px; border-radius: 0;}
+.schedules-notes-modal > .container {width: 100%;}
+.schedules-notes-modal .modal-head {height: 42px; background-color: #3f7eb0;}
+.schedules-notes-modal .modal-body form {margin: 0;}
+.schedules-notes-modal .modal-body p {color: #333; font: normal 0.90em/1em arial; margin-bottom: 1.14285714285714em;}
+.schedules-notes-modal .modal-head.hasSubHeading {box-sizing: border-box; padding: 23px 10px 5px 22px; height: 92px;}
+.schedules-notes-modal .modal-head.hasSubHeading h2 {line-height: 22px; text-indent: 0;}
+.schedules-notes-modal .modal-head.hasSubHeading h2 + span {display: block; line-height: 16px; font-size: 1em;}
+.schedules-notes-modal .modal-head > h2 {font: bold 1.14285714285714em/42px arial; text-indent: 22px; margin: 0;}
+.schedules-notes-modal .modal-head > h2 * {color: #666666; font-size: 11px; line-height: 15px; text-indent: 0;}
+.schedules-notes-modal .modal-head > h2 p {font-weight: normal;}
+.schedules-notes-modal .modal-head > h2 p:last-child {margin-bottom: 0;}
+.schedules-notes-modal .modalActions {clear: both; margin-top: 15px;}
+.schedules-notes-modal .modalActions.fRight > * {float: right; margin: 0; margin-left: 7px;}
+.schedules-notes-modal .modalActions.fRight a {line-height: 30px; font-size: 0.8571428571428571em; text-decoration: underline;}
+.schedules-notes-modal .modal-head > h2 i.settings {float: right; position: relative; top: 13px; right: 13px; background: url("/assets/icon-settings.png") no-repeat 0 0; cursor: pointer; height: 16px; width: 15px;}
+
+.posRelative {position: relative;}
+.content-left {width:28%;}
+.content-left h2 {color: #344563; font-family: 'arial'; font-size: 14px; line-height: 20px; margin-bottom: 0; margin-top: 0; padding-bottom: 0;}
+.content-left h2 .icon-settings {background: url("../../assets/images/icon-settings.png") no-repeat 0 0; cursor: pointer; display: block; height: 16px; width: 15px;}
+.content-right {width: 66%;}
+.scheduleNotes .media {position: relative; padding-bottom: 0; /* removing extra space */}
+.scheduleNotes .media .timeStamp {position: absolute; right: 32px; font: normal 1em/17px arial; color: #ccc;}
+
+.noteActions > a[href] {float: right; line-height: 12px; border-right: #a7a8a7 solid 1px; padding: 0 9px; color: #3f7eb0; text-decoration: underline;}
+.noteActions > a[href]:first-child {border-right: none; padding-right: 0;}
+
+/* Hiding them intially */
+.scheduleNotes .media .timeStamp,
+.noteActions,
+.scheduleNotes .media p a[href] {visibility: hidden;}
+
+/* making them appear on hover */
+.scheduleNotes .media:hover .timeStamp,
+.scheduleNotes .media:hover .noteActions,
+.scheduleNotes .media:hover p a[href] {visibility: visible;}
+
+/* @Group Schedule input fields & select dropdowns */
+.scheduleInput {margin: 0;}
+.scheduleInput input[type=text]:last-child {margin-bottom: 0}
+.scheduleInput input[type=text], .scheduleInput textarea {background-color: #F0F0ED; border: 1px solid #ccc; border-radius: 4px 4px 4px 4px; font:normal 12px/33px arial;color:#666;}
+.scheduleInput input[type=text]{box-shadow:none; height:33px;outline:medium none;width:258px;margin:0 auto 9px;}
+.scheduleInput textarea {box-sizing: border-box; width: 100%; padding-right: 5px;}
+.scheduleInput .coupleInputs *[type="text"] {float: right; width: 43%;}
+.scheduleInput .coupleInputs *[type="text"]:first-child {float: left;}
+.scheduleInput img{position:absolute;right:20px;top:20px;}
+.scheduleSelect select:last-child {margin-bottom: 0;}
+
+
+/* @Group Some Specific Styles */
+#multipleComponents {width: 473px;} /* For Multiple Componenets Modal */
+#upcomingOptions {margin-top: 10px;}
+#newComponentAdded .modal-head > h2 {font: normal 1em/3em arial;}
+#newTopic p {font: normal 0.85714285714286em/1em arial; margin-bottom: 13px; color: #333;}
+
+/* @Group Modal Action button Color Gradient Declaration */
+.modalActionBtn {
+  border: none; color: #fff; text-align: center; font-size: 1em; height: 30px; border-radius: 5px; margin: 1% 1%;
+  padding: 0 1.642857142857143em;
+  background: #23547c;
+  background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzIzNTQ3YyIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMyYzY1OTMiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#23547c', endColorstr='#2c6593',GradientType=0 );
+}
+
+/* @Group SettingsBox Styles */
+.settingsBox p {color: #a8a8a8;}
+.settingsBox .postsIndicator {display: block; color: #a8a8a8; line-height: 2.28571428571429em; box-sizing: border-box; padding: 0 7px 0 11px;}
+.settingsBox .postsIndicator.selected, .settingsBox .postsIndicator:hover {background-color: #f0f0ed;}
+.settingsBox .postsIndicator.selected {font-weight: bold; color: #333; opacity: 1;}
+.settingsBox .postsIndicator .icon-play {margin-top: 9px; opacity: 0.4;}
+
+/* @Group postList styes */
+.postList {margin: 0;}
+.postList li {margin-top: 10px;}
+.postList li:first-child {margin-top: 0;}
+.postList li .styledCheckbox {margin-right: 9px;}
+.postList li .styledCheckbox, .postList li .styledCheckbox + label {float: left;}
+.postList li .styledCheckbox + label {cursor: pointer; font: bold 0.85714285714286em/1.75em arial; margin-bottom: 0; color: #344563;}
+
+/* @Group Note Options */
+.shareWith {display: block; margin-bottom: 11px; padding: 4px 6px; text-decoration: none; background-color: #F0F0ED; border: 1px solid #ccc; border-radius: 4px 4px 4px 4px; font:normal 12px/33px arial; color:#666;}
+.leftArrow.shareWith {background: #F0F0ED url(../../assets/img/left-arrow.png) no-repeat 8px 15px; padding-left: 23px;}
+.shareWith:hover {text-decoration: none; color:#666;}
+.noteOptions {top: 46px; left: 0; color:#666; background-color: #fff; border: 1px solid #ccc; border-radius: 4px;}
+.noteOptions > strong {display: block; font: normal 12px/33px arial; text-indent: 7px; background-color: #F0F0ED; border-radius: 4px 4px 0 0;}
+.noteOptionsList {margin: 0; width: 271px; list-style: none;}
+.noteOptionsList li {height: 46px; border-top: #ddd solid 1px; padding: 9px 12px; box-sizing: border-box;}
+.noteOptionsList span {display: block; color: #d2d2d2;}
+.noteOptionsList label {float: left; font-size: 12px; margin-bottom: 0; line-height: 14px; width: 90%; cursor: pointer;}
+.noteOptionsList label + .styledCheckbox{ float: right; margin-top: 5px;}

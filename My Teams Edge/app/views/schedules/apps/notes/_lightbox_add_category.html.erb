@@ -1,0 +1,23 @@
+<div id="new-category-modal" class="modal hide fade schedules-notes-modal" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="container">
+    <div class="modal-body">
+      <%= form_for(@notes_category, :url => create_category_schedules_apps_notes_path, :html => { :remote => true, :method => "post" } ) do |f| -%>
+        
+        <p>Add additional topics or categories to help keep your coaching staff and players in sync.</p>
+
+        <%= f.hidden_field(:opponent_name, :value => @opponent.name) %>
+        
+        <%= render(:partial => 'schedules/apps/shared/form_common_hidden_fields', :locals => {:f => f}) %>
+
+        <div class="scheduleInput">
+          <div id="new-category-errors"></div>
+          <%= f.text_field(:name, :placeholder => "Category name") %>
+        </div><!--scheduleInput-->
+        <div class="modalActions fRight clearfix">
+          <%= f.submit("Add Category", :class => "btn btn-info pull-right modalActionBtn") %>
+          <a href="#" class="cancel">Cancel</a>
+        </div><!--modalActions-->
+      <% end -%>
+    </div>  
+  </div> <!-- /container -->
+</div><!--#newComponentAdded-->

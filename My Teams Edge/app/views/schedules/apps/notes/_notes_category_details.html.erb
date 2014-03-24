@@ -1,0 +1,14 @@
+<h2>
+    <%= notes_category.name %>
+    <%= link_to image_tag("icon-settings.png"), "#", :class => "pull-right display-icon-settings", :remote => true %>
+    <!-- <i class="icon-settings pull-right"></i> -->
+</h2>
+<hr>
+<div class="scroll">
+    <%= link_to(category_posts_schedules_apps_notes_path(:notes_category => notes_category.id), :class => "postsIndicator clearfix notes-category", :remote => true) do %>
+      <span class="pull-left">
+        <%= notes_category.notes_category_posts.count %> Posts
+      </span>
+      <i class="icon-play pull-right"></i>
+    <% end %>
+</div>

@@ -1,0 +1,44 @@
+<div id="add-opponent-event" class="modal hide fade schedule-modal" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="container">
+    <div class="modal-head">
+      <h2>Add Opponent / Event</h2>
+    </div>
+    <div class="modal-body">
+      <%= form_for(@new_opponent, :url => add_opponent_schedules_home_index_path, :html => {:remote => true, :class => "scheduleInput", :method => "post"} ) do |f| -%>
+        <div id="schedule-message-opponent" class="message"></div>
+        
+        <%= f.hidden_field(:sport_id, value: current_sport.id) %>
+        <%= f.hidden_field(:user_id, value: current_user.id) %>
+        <%= f.hidden_field(:organization_id, value: current_user.organization.id) %>
+        <%= f.hidden_field(:subvarsity_id, value: current_user_sport.subvarsity_id) if current_subvarsity? %>
+        <%= f.autocomplete_field :name, get_autocomplete_path(current_user.organization), class: "input-large", placeholder: "Opponent / Event name" %>
+        <%= f.text_field(:event_at, class: "input-large", :placeholder => "Select Date & Time") %>
+        <br>
+        <%= radio_button("opponent", "event_type", "Conference", :class => "mainBtn") %>
+        <span style="color: #666666;">Conference</span>
+        <%= radio_button("opponent", "event_type", "Non Conference", :class => "mainBtn") %>
+        <span style="color: #666666;">Non Conference</span>
+        <br>
+        <%= radio_button("opponent", "location", "Home", :class => "mainBtn") %>
+        <span style="color: #666666;">Home</span>
+        <%= radio_button("opponent", "location", "Away", :class => "mainBtn") %>
+        <span style="color: #666666;">Away</span>
+        <br>
+        <div class="modalActions fRight clearfix">
+            <%= f.submit("Sync", :class => "btn btn-info pull-right") %>
+            <!-- <input type="submit" class="btn btn-info pull-right modalActionBtn" value="Sync"> -->
+            <a href="#" class="cancel">Cancel</a>
+        </div><!--modalActions-->
+      <% end -%>
+    </div>  
+  </div> <!-- /container -->
+</div>
+
+<script>
+    $(function(){
+        $("#opponent_event_at").datetimepicker({
+            dateFormat: 'yy/mm/dd',
+            ampm: true 
+        });
+    });
+</script>

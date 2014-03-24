@@ -1,0 +1,8 @@
+<div class="user-details">
+  <% if pitch.company_present? %>
+    <span class="user-info-label">Web Address: </span>
+    <span class="user-info-text">
+      <%= link_to pitch.name, pitch.add_link %>
+    </span>
+  <% end %>
+</div>

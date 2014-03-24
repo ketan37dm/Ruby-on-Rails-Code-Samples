@@ -1,0 +1,26 @@
+<% if @course_event.present? %>
+  <%= form_for @course_event, :url => create_course_event_courses_path(:course_id => @course.id), :method => :post, :remote => true, :class => "post-update" do |f| %>
+    <fieldset>
+      <span id="course-event-modal-messages"></span>
+      <div>
+        <%= f.hidden_field :creator_id, :value => current_user.id %>
+        <%= f.hidden_field :user_id, :value => @user.id %>
+        <%= f.text_field :title, :class => "input-xlarge", :placeholder => "Event Title" %>
+        <%= f.text_field :date, :class => "datepicker input-small", :placeholder => "Date" %>
+      </div>
+      <div>
+        <%= f.text_area :info, :placeholder => "Topic / Subject ( optional ) or any other info" %>
+      </div>
+      <%= f.submit "Sync", :class => "btn btn-info pull-right" %>
+      <button id="cancel-add-course-event-trigger" class="btn-link pull-right cancel">Cancel</button>
+    </fieldset>
+  <% end %>
+<% end %>
+
+<script>
+  $(function(){
+    $("#course_event_date").datepicker({
+      dateFormat: 'dd/mm/yy',
+    });
+  });
+</script>

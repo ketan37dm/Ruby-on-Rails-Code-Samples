@@ -1,0 +1,13 @@
+<% my_pitch = !@pitch.blank? && @pitch.my_pitch?(current_user) %>	
+<% if my_pitch %>	
+	<h1 class="elevator-pitch">Spread the word.</h1>	
+	<h2 class="elevator-pitch-tagline multi">
+	  Ask your friends & family to <em>comment</em> & <em>like</em> your pitch.
+	</h2>
+	<h2  class="elevator-pitch-tagline multi">
+		The more you are liked, the higher you rank..
+	</h2>
+	<div class="social-information clearfix callout">
+	  <%= render :partial => "shared/share_buttons", :locals => {:pitch => @pitch} %>
+	</div>
+<% end %>

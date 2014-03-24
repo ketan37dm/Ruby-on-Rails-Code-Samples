@@ -1,0 +1,10 @@
+<fieldset>
+  <span id="add-contact-modal"></span>
+  <%= f.hidden_field :user_id, :value => @user.id %>
+  <%= f.hidden_field :creator_id, :value => current_user.id %>
+  <%= f.select :relationship, personal_contact_relationship, :class => "input-xxlarge" %>
+  <%= f.text_field :name, :placeholder => "Name", :class => "input-xxlarge" %>
+  <%= f.submit "Sync", :class => "btn btn-info pull-right" %>
+  <%= link_to "Cancel", "#", id: "cancel-add-personal-contact-trigger", class: "btn-link pull-right cancel" %>
+</fieldset>
+

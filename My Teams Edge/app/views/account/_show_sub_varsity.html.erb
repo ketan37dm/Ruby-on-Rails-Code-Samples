@@ -1,0 +1,31 @@
+<div class="content-right span8">
+  <h2>Sub Varsity</h2>
+  <hr>
+  <form class="add-new-sport">
+    <fieldset>
+      <ul>
+        <li>
+          <label class="pull-left">Account Manager</label><span class="colon">:</span>
+          <span class="pull-left"><%= @subvarsity_manager.full_name %></span>
+        </li>
+        <li>
+          <label class="pull-left">AM Email</label><span class="colon">:</span>
+          <span class="pull-left"><%= @subvarsity_manager.email %></span>
+        </li>
+        <li>
+          <label class="pull-left">Coaching Accounts</label><span class="colon">:</span>
+          <span class="pull-left"><%= @users_count["coach"] %></span>
+        </li>
+        <li>
+          <label class="pull-left">Player Accounts</label><span class="colon">:</span>
+          <span class="pull-left"><%= @users_count["player"] %></span>
+        </li>
+        <li>
+          <label class="pull-left">Auxiliary Accounts</label><span class="colon">:</span>
+          <span class="pull-left"><%= @users_count["aux_user"] %></span>
+        </li>
+      </ul>
+    </fieldset>
+    <%= link_to("Delete", remove_sub_varsity_account_path(:subvarsity_id => params[:subvarsity_id]), :confirm => "Are you sure?", :class => "btn-link pull-right", :method => :delete) %>
+  </form>
+</div>

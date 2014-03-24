@@ -1,0 +1,21 @@
+$("#post-message-container").html('<%= j(render(partial: "shared/post_update_lightbox")) %>');
+
+$("#user_event_event_at").datetimepicker({
+  dateFormat: 'yy/mm/dd'
+});
+
+$('#post-update').modal();
+
+$('#user_update_custom_sports_unit_id option:contains("<%= @unit %>")').prop('selected', true);
+$('#user_event_custom_sports_unit_id option:contains("<%= @unit %>")').prop('selected', true);
+
+$("#new_user_update").append('<input type="hidden" value="<%= @custom_sports_unit.id %>" name="user_update[custom_sports_unit_id]">');
+$("#new_user_event").append('<input type="hidden" value="<%= @custom_sports_unit.id %>" name="user_event[custom_sports_unit_id]">');
+$("#new_user_update").append('<input type="hidden" value="personnel" name="user_update[update_on]">');
+$("#new_user_event").append('<input type="hidden" value="personnel" name="user_update[update_on]">');
+
+$('#user_update_custom_sports_unit_id').attr("disabled", "true");
+$('#user_event_custom_sports_unit_id').attr("disabled", "true");
+
+
+

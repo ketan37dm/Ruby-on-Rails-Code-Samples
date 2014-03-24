@@ -1,0 +1,5 @@
+<% if @previous_opponents.blank? %>
+  $("#scedule-previous-oppnents").html('<h4>No previous events</h4>');
+<% else %>
+  $("#scedule-previous-oppnents").html('<%= j(render(:partial => "schedules/home/left_upcoming_opponents", :collection => @previous_opponents, :as => :opponent))%>')
+<% end %>

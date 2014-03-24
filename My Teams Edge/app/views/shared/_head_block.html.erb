@@ -1,0 +1,53 @@
+<div class="head-block">
+    <div id="head-psudo-name-list">
+        <%= render 'shared/head_block_psudeo_name_list' %> 
+    </div>
+    <hr>
+    <% get_quote_for_today %>
+    <p><%= @todays_quote.try(:content) %><br>- <%= @todays_quote.try(:author) %> -</p>
+    
+</div>
+
+
+<div id="add-coach" class="modal hide fade modal_update_post" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="container">
+        <div class="modal-head">
+            <h2>Title</h2>
+        </div>
+        <div class="modal-body">
+            <div id="add_psudeo_name_message"></div>
+            <%= form_tag(create_psudeo_name_coach_home_index_path, remote: true, class: "post-update", id: "psudeo_name_form") do %>
+                <fieldset>
+                    <input type="text" placeholder="Name" name="name" id="psudeo_name_txt">
+                    <input type="submit" value="Create new name" class="btn btn-info pull-right psudeo_from_button", onclick= "ajaxSpinner('#psudeo_name_form', '.psudeo_from_button')">
+                    <div class='spinner welcome-spinner shortright' style='display:none;margin: 0;'>
+                        <%= image_tag('spinner-green.gif') %>
+                    </div>
+                    <button class="btn-link pull-right cancel">Cancel</button>
+                </fieldset>
+            <% end %>
+        </div>  
+    </div> <!-- /container -->
+</div>
+
+
+
+<script type="text/javascript">
+    $(function(){
+        $(document).on("click", ".psudeo_name_list", function(){
+            params = {
+                name: $(this).html()
+            };
+
+            $.ajax({
+                url:  "/coach/home/update_psudeo_name",
+                data: params,
+                dataType: "script"
+            });
+        });
+
+        $(document).on("click", "#create_new_psudeo_name", function(){
+            $("#add-coach").modal();
+        })
+    });
+</script>

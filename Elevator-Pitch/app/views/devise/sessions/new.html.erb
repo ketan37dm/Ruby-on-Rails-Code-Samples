@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= content_for?(:title) ? yield(:title) : "MindYourPitch" %></title>
+    <%= csrf_meta_tags %>
+    <%= javascript_include_tag "application" %>
+    <%= stylesheet_link_tag "application", :media => "all" %>
+  </head>
+
+  <body class="body-login1">
+      <div id='notification'>
+        <%= bootstrap_flash %>
+      </div>
+    <div class="login-image"><%= link_to image_tag("logo_big_1.png"), root_path %></div>
+    <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+      <div class="hero-unit-login-wrap">
+        <div class="hero-unit-login-up hero-unit">
+          <span> Connect with <%= link_to image_tag("facebook_login.png"), '/auth/facebook' %> or <%= link_to image_tag("twitter_login.png"), '/auth/twitter' %></span>
+        </div>
+        <div class="login-box-separator">
+          <%= image_tag("or_login.png") %>
+        </div>
+        <div class="hero-unit-login-down hero-unit">
+          <div>
+            <label for="user_email">Email*</label>
+            <%= f.email_field :email, :class => "login-text-field" %>
+          </div>
+          <div>
+            <label for="user_password">Password*</label>
+            <%= f.password_field :password, :class => "login-text-field" %>
+          </div>
+          <% if devise_mapping.rememberable? -%>
+            <div>
+              <input type="hidden" name="user[remember_me]" value="0">
+              <label for="user_remember_me" style="line-height: 17px; margin-bottom:10px;">
+                <input id="user_remember_me" type="checkbox" value="1" name="user[remember_me]" style="margin-right: 5px; margin-top: 0px;">
+                Remember me
+              </label>
+            </div>
+          <% end -%>
+          <div class="hero-unit-forgot-password">
+            <%= f.submit "Login", :class => "btn login-button" %>
+            <span class="forgot-password-text">
+              <%= link_to "Forgot your password?", new_password_path(resource_name) %>
+            </span>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </body> 
+</html>

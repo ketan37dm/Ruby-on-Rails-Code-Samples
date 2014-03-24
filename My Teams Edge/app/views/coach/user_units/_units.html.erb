@@ -1,0 +1,14 @@
+<ul id='<%= user.id %>_user_units'>
+  <% unless user.units(current_sport.id, @organization.id).present? %>
+    <li class='overided'>
+      No unit assigned to this user.
+    </li>
+  <% end %>
+  <%= render(:partial => 'coach/user_units/unit', 
+             :collection => user.units(current_sport.id, @organization.id, current_user_sport.subvarsity_id),
+             :as => :unit, :locals => {:user => user, :user_unit_count => user_unit_count }) %>
+</ul>
+
+<a id='add-to-unit-trigger' class='btn btn-info pull-right blue-button' data-remote=true 
+  href='<%= new_user_unit_coach_user_units_path(:js, :user_id => user.id ) %>' 
+method='get' >Add To New Unit</a>

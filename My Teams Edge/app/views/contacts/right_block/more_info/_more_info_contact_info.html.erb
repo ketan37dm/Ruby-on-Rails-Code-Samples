@@ -1,0 +1,12 @@
+<h4 class="pull-left">Contact Info</h4>
+<div class="media academics-select pull-left">
+  <%= form_for @user, :url => update_personal_info_contacts_path(:id => @user.id), :remote => true do |f| %>
+    <div class="media-body">                                         
+      <%= f.hidden_field :update_on, :value => "update_phone_and_cell" %>
+      <%= f.text_field :phone, :placeholder => "Phone", class: "input-large pull-left" %>
+      <%= f.text_field :cell, :placeholder => "Cell", class: "input-large pull-left" %>
+      <%= f.text_field :email, :disabled => true, :placeholder => "Email", class: "input-large pull-left" %>
+      <%= f.submit :class => "btn-large btn-success pull-right more-info-submit-button" %>
+    </div>
+  <% end %>
+</div>

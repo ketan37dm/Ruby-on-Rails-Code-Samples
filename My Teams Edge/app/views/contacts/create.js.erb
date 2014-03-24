@@ -1,0 +1,7 @@
+<% if @contact.errors.full_messages.blank? %>
+  $('#form-notification').html("<%=j render :partial => 'shared/flash_message' %>");
+  $('#new-personal-contact').append("<%=j render :partial =>'contacts/right_block/personal_contacts/contact_info_details', :locals => { :contact => @contact } %>");
+  $('#add-contact').modal('hide');
+<% else %>
+  $('#add-contact-modal').html('<%=j error_messages_for @contact %>');
+<% end %>

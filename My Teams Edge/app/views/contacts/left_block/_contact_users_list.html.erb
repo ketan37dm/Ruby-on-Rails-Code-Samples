@@ -1,0 +1,14 @@
+<% if user.player?(current_sport, current_user_sport.subvarsity_id) %>
+  <div class="inner-block">
+    <span id="follow_link_<%= user.id %>">
+      <%= follow_unfollow_contacts(user) %>
+    </span>
+    <%= link_to contact_path(user.id), :remote => true do %>
+      <span class="pull-left"><%= user.full_name %></span>
+    <% end %>
+  </div>
+<% else %> 
+  <%= link_to contact_path(user.id), :remote => true do %>
+    <span class="pull-left"><%= user.full_name %></span>
+  <% end %>
+<% end %>

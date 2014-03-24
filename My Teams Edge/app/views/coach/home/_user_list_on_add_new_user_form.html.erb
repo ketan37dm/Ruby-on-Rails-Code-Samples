@@ -1,0 +1,6 @@
+<div id="user_<%= @new_user.id %>" >
+    <img class="media-object small-img pull-left" src="">                       
+    <h3 class="pull-left"><%= @new_user.first_name %></h3>
+    <span>(<%= @new_user.role_in_sport(current_sport, current_user_sport.subvarsity_id) %>)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= @new_user.email %></span>
+    <%= link_to("Remove", remove_user_coach_home_index_path(user_id: @new_user.id), class: "btn remove", metod: :delete, remote: true ) %>
+</div>

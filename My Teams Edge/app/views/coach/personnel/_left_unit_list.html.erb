@@ -1,0 +1,11 @@
+<div class="content-block" <% if defined?(@custom_sports_unit) %> id="new-unit-<%= @custom_sports_unit.id %>" <% end %>>
+  <h2><%= units_with_user_count[0] %><i class="icon-settings pull-right"></i></h2>
+  <hr>
+  <a href="#" class="list-users-unitwise <% if @count == 1 && params[:update_block] != "false" %>selected<% end %>" unit="<%= units_with_user_count[0] %>" >
+    <span class="pull-left users-count" id="personnel-coaches-count">
+        <%= units_with_user_count[1] %> Users
+    </span>
+    <i class="icon-play pull-right"></i>
+  </a>
+</div>
+<% @count = 0 %>

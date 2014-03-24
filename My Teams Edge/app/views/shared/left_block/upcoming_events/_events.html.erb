@@ -1,0 +1,30 @@
+<div class="content-block">
+  <h2>Upcoming Events</h2>
+  <div id="todays-events">
+    <% if @todays_events.present? %>
+      <%= render partial: 'shared/left_block/upcoming_events/todays_events', locals: {:todays_events => @todays_events} %>
+    <% end %>
+  </div>
+
+  <div id="tomorrows-events">
+    <% if @tomorrows_events.present? %>
+      <%= render partial: 'shared/left_block/upcoming_events/tomorrows_events', locals: {:tomorrows_events => @tomorrows_events} %>
+    <% end %>
+  </div>  
+
+  <div id="overmorrows-events">
+    <% if @overmorrows_events.present? %>
+      <%= render partial: 'shared/left_block/upcoming_events/overmorrows_events', locals: {:overmorrows_events => @overmorrows_events} %>
+    <% end %>
+  </div>
+
+  <div id="no-events-present">
+    <% if !@todays_events.present? && !@tomorrows_events.present? && !@overmorrows_events.present? %>
+      <hr/>
+      <%= link_to "#" do %>
+        <%= button_tag "No Upcoming Events.", :class => "btn btn-default" %>
+      <% end %>
+    <% end %>
+  </div>
+
+</div>

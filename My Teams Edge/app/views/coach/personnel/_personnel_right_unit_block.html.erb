@@ -1,0 +1,53 @@
+<div class="content-right span8" unit="<%= params[:unit] %>">
+  <h2><%= @unit %></h2>
+
+  <ul class="nav pull-right rhs-dropdown rhs2">                                         
+      <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <i class="icon-down pull-right"></i>
+          </a>
+          <ul class="dropdown-menu">
+              <li>
+                <%= link_to("Post Message", post_message_coach_personnel_index_path(unit: @unit), remote: true ) %>
+              </li>
+              <li>
+                <a href="#">View Calendar</a>
+              </li>
+              <li>
+                <%= link_to("Delete Unit", remove_unit_coach_personnel_index_path(@unit) ,class: "btn-link", method: :delete, remote: true, confirm: "Are you sure?") %>
+              </li>
+          </ul>
+      </li>
+  </ul>
+
+  <hr>
+
+  <% @users.each do |user| %>
+    <div class="media" id="unit-users-<%= user.id%>">
+        <a class="pull-left" href="#">
+          <%= image_tag(user.image.url(:thumb), class: "media-object") %>
+        </a>
+        <div class="media-body">
+            <h3 class="media-heading">
+              <i class="icon-status user-online pull-left"></i>
+              <%= user.full_name %>
+            </h3>
+            <%= link_to("Remove from Unit", reomve_user_unit_coach_personnel_index_path(@unit, user.id) , class: "remove", remote: true, method: :delete) %>
+        </div>                    
+        <% if user.registered? && user.sport_confirmed?(current_sport.id, current_user_sport.subvarsity_id) %>
+          <div id="<%= user.id %>_user_unit_info" class="fl user-unit-information">
+          <%= render :partial => 'coach/user_units/user_unit_info', locals: { user: user } %>
+        </div>
+        <% if user.player?(current_sport, current_user_sport.subvarsity_id) %>
+          <span id="follow_link_<%= user.id %>" class="<%= follow_unfollow_button_class(user) %>">
+          <%= follow_unfollow(user) %>
+        </span>
+      <% end %>
+      <% end %>
+
+    </div>
+    <hr>
+  <% end %>
+  
+  <%= render partial: 'lightbox_add_user_to_unit' %>
+</div>

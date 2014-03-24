@@ -1,0 +1,2 @@
+module PitchRequestHelper
+end

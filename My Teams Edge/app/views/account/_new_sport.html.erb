@@ -1,0 +1,43 @@
+<div class="content-right span8">
+    <h2>Add New Sport</h2>
+    <hr>
+    <div id="new-sport-manager-erros">
+        <% if @new_account_manager.errors %>
+            <%= error_messages_for(@new_account_manager) %>
+        <% end %>
+    </div>
+    <%= form_for(@new_account_manager, :url => create_sport_account_path, :html => {:class => "add-new-sport", :id => "new-sport-manager-form", :method => "post" }) do |f| %>
+        <fieldset>
+            <%= f.hidden_field(:update_on, value: "add_new_account_manager") %>
+            <%= f.hidden_field(:role, value: User::ROLES[:acc_owner]) %>
+            <%= hidden_field_tag("user[user_sports_attributes][][payer_id]", current_user.get_payer_for_current_sport(current_sport).id) %>
+            <%= hidden_field_tag("user[user_sports_attributes][][organization_id]", @organization.id) %>
+            <%= f.hidden_field((current_user.organization.class.to_s.underscore + "_id").to_sym, value: current_user.organization.id) %>
+            <%= hidden_field_tag("user[user_sports_attributes][][role]", User::ROLES[:acc_owner]) %>
+            <%= hidden_field_tag("user[user_sports_attributes][][sport_name]", "", :id => "add-sport-name") %>
+
+            <% if current_subvarsity? %>
+                <%= hidden_field_tag("user[user_sports_attributes][][subvarsity_id]", current_user_sport.subvarsity_id) %>
+                <%= hidden_field_tag("user[user_sports_attributes][][subvarsity_name]", current_user_sport.subvarsity_name) %>
+            <% end %>
+            
+            <select name="user[user_sports_attributes][][sport_id]" id="account-select-sport" >
+                <option value="0">Select Sport</option>
+                <%= render :partial => 'account/sport_options_for_select', :collection => Sport.select("id, name").all %>
+            </select>
+        </fieldset>
+        <fieldset>
+            <h2>Set up Varsity Account</h2>
+        </fieldset>
+        <fieldset>
+            <%= f.text_field(:first_name, :placeholder => "Account Manager Name") %>
+            <%= f.text_field(:email, :placeholder => "Account Manager Email") %>
+        </fieldset>
+        <%= f.submit("Create Account", :class => "btn btn-info pull-right") %>
+        <%= link_to("Cancel", new_sport_account_path, :class => "btn-link pull-right") %>
+    <% end %>
+</div>
+
+<script type="text/javascript">
+    
+</script>

@@ -1,0 +1,22 @@
+<div class="modal-head">
+  <h2>
+    <%= @user.full_name %> 
+    <input type="submit" value="X"  class="cancel pull-right cancel-trigger">
+  </h2>
+</div>
+<div class="modal-body">
+  <span id="emailSentSuccessfully"></span>
+  <form id="resend-invite-and-delete-user" class="post-update">
+    <fieldset>
+      <label>Account Created</label>
+      <input type="text" placeholder="<%= @user.created_at.strftime("%B %d,%Y") %>" disabled="true">
+      <label>Email</label>
+      <input type="text" placeholder="<%= @user.email %>" disabled="true"> 
+      <%= link_to "Delete", remove_user_sport_coach_personnel_index_path(:id => @user.id), :method => :delete, :remote => true, :id => "removeUserSport", :role => @user.role_in_sport(current_sport, current_user_sport.subvarsity_id), class: "btn btn-info pull-right", :confirm => "This user will be removed from the group. Confirm the removal ?" %>
+      <% if !@user.sport_confirmed?(current_sport.id, current_user_sport.subvarsity_id) %> 
+        <%= link_to "Resend Invite", resend_invitation_coach_personnel_index_path(:id => @user.id), :remote => true, id:"resend-invite-submit", class: "btn btn-success pull-right", onclick: "ajaxSpinner('#resend-invite-and-delete-user', '#resend-invite-submit')"  %> 
+        <div class="spinner modal-spinner" style=" display:none; float:right;"><%= image_tag('spinner-green.gif') %></div>
+      <% end %> 
+    </fieldset>
+  </form>
+</div>

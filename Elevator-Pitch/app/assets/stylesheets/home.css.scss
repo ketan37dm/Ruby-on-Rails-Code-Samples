@@ -1,0 +1,209 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.multi-column
+{
+  float: left;
+  text-align: left;
+  width: 25%;
+}
+
+.pad_left
+{
+  width:100%;
+  max-height: 235px;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.underline_link{ text-decoration:underline; color:#0088CC;}
+
+.new-pitch-unit .home-text-field
+{
+  color: #989898;
+  padding: 7px 13px;
+  width:200px !important;
+}
+
+.edit-profile-button {
+  background-color: #019AD2;
+  background-image: linear-gradient(#33BCEF, #019AD2);
+  background-repeat: repeat-x;
+  border-color: #057ED0;
+  border-radius: 8px;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1) inset;
+  color: #FFFFFF;
+  font-size: 14px;
+  padding: 5px 16px;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+}
+
+.edit-profile-button:hover {
+    background-color: #0271BF;
+    background-image: linear-gradient(#2DADDC, #0271BF);
+    background-repeat: repeat-x;
+    border-color: #096EB3;
+    color: #FFFFFF;
+}
+.edit-profile-button:active {
+    background-image: none;
+    border-color: #096EB3;
+}
+
+.hero-unit-successful-sign-up{
+  background-color: #FFFFFF;
+  border-radius: 10px 10px 10px 10px;
+  font-family: "ff-tisa-web-pro";
+  padding: 1%;
+  margin-top:10%;
+}
+
+.hero-unit-successful-sign-up h2{
+  text-transform:uppercase;
+  font-size: 24px;
+  color:#333;
+}
+
+.successful-sign-up-message{
+  color: #999;
+  font-size: 14px;
+  margin: 0 10%;
+}
+
+.hero-unit-successful-sign-up-sub{
+  color:#81a32b;
+}
+
+.successful-sign-up-confirmation{
+  padding-top:2%;
+}
+
+.successful-sign-up-confirmation-button{
+  padding:1%;
+}
+
+.why-pitch-heading {
+  box-shadow: 0 1px 0 #FCFCFB;
+  border-bottom: 1px solid #E0DBD5;
+  font-family: "ff-tisa-web-pro";
+  color: #3499C7;
+}
+
+.why-pitch-sub-headers {
+  font-weight:bold;
+  color: #3499C7;
+}
+
+.why-pitch-create-pitch-button{
+  font-size: 17px;
+  font-style: italic;
+  line-height: 32px;
+  margin: 3% auto;
+  text-align: center;
+  width: 83%;
+  color: #666666;
+  text-shadow: 1px 1px 0 #FFFFFF;
+}
+
+.introduction {width:100%;margin:0 !important;}
+.introduction .box{width: 80%;margin:0 auto;}
+.introduction .box h1{color:#3499C7;font-size:260%;text-align:justify;font-weight:normal;margin:3% auto;nowrap:nowrap;}
+.introduction .box h1 em{color:#000000;font-size:100%;font-style: normal;font-weight:normal;}
+.introduction .box p.description{text-align:left;width: 70%;font-style:italic;color:#666666;margin-left:1%;font-size:125%;line-height:150%;}
+
+.introduction .ctaBox{width:100%;background:#ffffff;padding:1% 0;}
+.introduction .ctaBox table{width:80%;margin: 0 auto;}
+.introduction .ctaBox table tr td.last{border-right:none;}
+.introduction .ctaBox table tr td{list-style:none;display:table-cell;width: 33%;text-align:center;border-right:1px dashed #cccccc; padding: 2%;}
+.introduction .ctaBox table tr td .business{background:#dfeef4;border-radius: 1em;padding:1%; margin:0 4%;box-shadow:2% 1% 8% 1% #999;}
+.introduction .ctaBox table tr td .jobseeker{background:#9dd5ed;border-radius: 1em;padding:1%; margin:0 4%;}
+.introduction .ctaBox table tr td h2{margin:0;font-size:1.5em;}
+.introduction .ctaBox table tr td.last{border-right:none;text-align:left;}
+.introduction .ctaBox table tr td.last .bubble{color:#ed145a;font-size:100%;font-style:italic;margin-bottom:0;}
+.introduction .ctaBox table tr td.last .bubble img{position:absolute;display:none;}
+.introduction .ctaBox table tr td.last .bubble em{color:#ffffff;}
+.introduction .ctaBox table tr td.last p.ctaText{margin-bottom:10%;color:#666666;font-size:125%;font-style:italic;}
+
+.introduction .shadow-image{height: 0 !important;}
+
+.desc-site h1.elevator-pitch {color:#3499C7;font-style: normal;font-weight:normal;margin-top:0px;font-size:2.5em;}
+.desc-site h1.elevator-pitch-loggedin{font-size: 1em;}
+.desc-site h2.elevator-pitch-tagline{font-style: italic;font-weight:normal;margin-top:0px;font-size:1.2em;}
+.desc-site h2.elevator-pitch-tagline-loggedin{font-size: 1.2em;}
+.desc-site h2.elevator-pitch-tagline em{color:#3499C7;}
+h2.multi{line-height: 1.2em;}
+
+.clearBoth{clear: both;}
+.desc-site .elevator-pitch-container {text-align:left;height:16em;}
+.desc-site .elevator-pitch-container .pitch-advantage{float:left;padding: 1%;background:#ffffff;border-radius:0 14px 14px 0;margin: 1.7% 0;box-shadow:2px 1px 8px 1px #999;}
+.desc-site .elevator-pitch-container .pitch-advantage p{font-style: normal;}
+.desc-site .elevator-pitch-container .pitch-advantage h3.title{font-size:20px;}
+.desc-site .elevator-pitch-container .pitch-advantage ul{margin:0; padding:0;}
+.desc-site .elevator-pitch-container .pitch-advantage ul li{list-style: none; margin:0; padding:0;font-size:14px;line-height:24px;}
+.desc-site .elevator-pitch-container .pitch-advantage ul li em{color:#3499C7;}
+
+.desc-site .elevator-pitch-container .border-shadow{float:left;width:3%;}
+
+.desc-site .elevator-pitch-container .quotes{float:left;width:44%;margin:auto 0; color: #959595;padding-left:2%;}
+.desc-site .elevator-pitch-container .quotes h2{text-align: left;font-size:20px;font-weight:normal;}
+.desc-site .elevator-pitch-container .quotes p{font-size:16px;}
+.desc-site .elevator-pitch-container .quotes p em.highlight{font-weight:bold;color:#3499C7;}
+.desc-site .elevator-pitch-container .quotes .quotes-container div{display:block;}
+
+.desc-site .elevator-pitch-container .description{float:left;margin:auto 0 0 1%;width:65%;padding:1% 2%;background: #3499C7;box-shadow:0 10px 40px 0px #999999;height:9em;text-shadow:none;color:#ffffff;border-radius:14px 0 0 14px;margin-top: 2.3em;}
+.desc-site .elevator-pitch-container .description p{line-height: 1.5em; font-size:1em;font-style:normal;text-align:justify;}
+.desc-site .elevator-pitch-container .description p a{color:#ffffff;border-bottom:2px solid #ffffff;}
+.desc-site .elevator-pitch-container .description p a:hover{text-decoration: none;}
+
+.billboard-container{text-align:center;width:100%;padding:0 0 10px 0;height: 120px;background:url('/assets/opacity-bg.png') repeat; line-height: 6px;}
+.billboard-container h2{color: #3499C7;font-style:normal;font-weight:normal;margin:0 0 10px 0px;}
+.billboard-container ul.stats {background:none;font-style:normal;width:80%;margin: 0 auto;}
+.billboard-container ul.stats li{list-style-type: none; display: inline-block;width:20%;margin:0 !important; padding:0px !important;}
+.billboard-container ul.stats li.right{background-image: url('/assets/statistics-border.png');
+ background-position: right;
+ background-repeat: no-repeat;}
+.billboard-container ul.stats li label{font-weight:normal;font-style:normal;display:block;font-size:24px;color:#555555;line-height:36px;text-shadow: inset 1px 1px #858584;}
+.billboard-container ul.stats li.share{float:left;}
+.billboard-container ul.stats li em{font-style: normal;font-size:30px;color: #a6a6a5;text-shadow: inset 1px 1px #444444x;}
+
+.pitch-actions{padding: 0px 0px 20px 0px; line-height: 6px; font-size: 12px;}
+
+.poll {text-align:center; width:80%; margin: 0 auto;padding: 10px 0; border-top:1px solid #ffffff;border-bottom:1px solid #ded8d2; }
+.poll label{font-style:italic;font-weight:normal;color: #888888;font-size:16px;margin-bottom:10px;}
+.poll ul li{display:inline-block; }
+
+.actions{clear: both;height:15em;}
+.actions h2{text-align:center;color: #999999;}
+.actions .search{width:85%;background: #3499C7; height: 5em;border-radius: 10px;margin:1em auto;}
+.actions .search .searchBox{width: 95%; height: 2em;border-radius: 10px;margin: 1em 0.5em 1em 0.5em; }
+
+.actions .filter-sort{width:85%;margin: 0 auto;}
+.actions .category{float: left;}
+.actions .category label{display: inline; margin: 0 10px;color: #888888;font-size: 1.3em;vertical-align: middle}
+.actions .category button{margin:0 0.3em !important;}
+
+.actions .filter{float: right;}
+
+.pitch-loading{height:3em;width:100%;text-align:center;}
+.pitch-loading img{margin:0 auto;display:none;}
+
+.filter{text-align:right;margin:0 0 10px 0;}
+.filter button{margin:0 0.3em !important;}
+.filter label{display: inline; margin: 0 10px;color: #888888;font-size: 1.3em;vertical-align: middle}
+
+
+.loggedin-create-pitch-callout{text-align:center;margin: 2em auto;}
+.loggedin-create-pitch-callout label{color:#888888;margin-bottom:1.5em;font-size:1.5em;}
+
+.whyPitch{font-size:16px;line-height: 20px;padding: 0 2em;}
+.whyPitch p{font-size:16px;}
+.whyPitch p em{color: #999999;}
+.whyPitch li{font-size:16px;}
+.whyPitch iframe{-moz-box-shadow: 8px 8px 8px #999999 !important;-webkit-box-shadow: 8px 8px 8px #999999 !important;box-shadow: 8px 8px 8px #999999 !important;margin: 0 20%;}
+
+
+#results .error{color:red; font-size:2em;line-height:1.5em;text-align:center;}
+#results .empty-results{color:#999999; font-size:2em;line-height:1.5em;text-align:center;}
+
+
+

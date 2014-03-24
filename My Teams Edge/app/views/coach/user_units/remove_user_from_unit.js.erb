@@ -1,0 +1,13 @@
+<% if params[:update_block] == "false" %>
+  if($("a.list-users-unitwise").length > 0){
+    updatePersonnelUnitsLeftBlock("false");
+  }
+
+  if($("a.list-users-rolewise").length > 0){
+      updatePersonnelUsersLeftBlock("false");
+  }
+<% else %>
+  $("#user_unit_<%= @user_sports_unit.id %>").remove();
+  $('#<%= @user.id %>_user_unit_info').html('<%= j render :partial => 'coach/user_units/user_unit_info', locals: { user: @user } %>');
+  $(".<%= @user.id %>_unit_popover").popover({html : true});
+<% end %>

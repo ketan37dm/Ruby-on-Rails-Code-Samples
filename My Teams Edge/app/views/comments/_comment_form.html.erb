@@ -1,0 +1,7 @@
+<% new_comment = event.comments.new %>
+
+<%= form_for(new_comment, :url => comments_path, :html => {:remote => true, :method => "post"}) do |f| -%>
+  <%= f.hidden_field(:commentable_id, :value => new_comment.commentable_id) %>
+  <%= f.hidden_field(:commentable_type, :value => new_comment.commentable_type) %>
+  <%= f.text_field(:content, :placeholder => "Add a comment", :required => "required", :style => "width: 95%") %>
+<% end -%>

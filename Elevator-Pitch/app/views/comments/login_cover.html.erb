@@ -1,0 +1,12 @@
+<div class="white-cover align-center login-callout">
+  <span>
+	<h2>Want to add a comment?</h2>
+    <%= hidden_field_tag :pitch_callback_url, remember_pitch_path %>
+    Connect with
+    <%= link_to(image_tag('facebook_login.png'), "/auth/facebook", :class => 'pitch-callback-url') %>
+    or
+    <%= link_to(image_tag('twitter_login.png'), "/auth/twitter", :class => 'pitch-callback-url') %>
+    or
+    <%= link_to("Sign In", new_user_session_path, :class => 'pitch-callback-url btn btn-primary') %>
+  </span>
+</div>

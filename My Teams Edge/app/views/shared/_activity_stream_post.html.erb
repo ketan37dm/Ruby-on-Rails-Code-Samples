@@ -1,0 +1,31 @@
+<div class="media">
+    <a href="#" class="pull-left">
+        <%= image_tag(@user.image.url(:thumb), class: "media-object") %>
+    </a>
+    <div class="media-body">
+        <h3 class="media-heading">
+            <%= @user.full_name %>
+            <i class="icon-settings pull-right"></i>
+        </h3>
+        <p>
+            <%= @user.active_name_for_organization(current_sport.id).try(:name) %>: <%= @activity_type if defined?(@activity_type) %><br>
+            <a href="#">view</a>
+        </p>
+
+        <div class="media">
+            <a href="#" class="pull-left">
+                <img src="" class="media-object">
+            </a>
+            <div class="media-body">
+                <h3 class="media-heading">Leo Spaceman</h3>
+                <p>A reply about the comment from Alvin </p>
+                <hr>
+                <form>
+                    <textarea cols="" rows="" placeholder="Add a comment"></textarea>
+                </form>
+            </div>
+        </div>
+
+    </div>
+</div>
+<hr>

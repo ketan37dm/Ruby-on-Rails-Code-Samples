@@ -1,0 +1,49 @@
+<div id="update-pinfo" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="container add-users">
+    <%= form_for(@user, url: update_personal_info_player_settings_path, method: :post,  html: {remote: true, class: "welcome personal-submit", multipart: true}) do |f| %>
+    <div class="modal-head">
+      <h2 class="form-signin-heading">
+        <a href="#welcome" class="back-link" data-toggle="modal"><i class="left-arrow-head pull-left"></i></a>
+        <%= @user.current_package_name(current_sport) %>
+      </h2>
+    </div>
+    <div class="modal-body overided personal-info">
+    <div id='personal_info_errors'>
+    </div>
+      <fieldset>
+        <legend>Personal Info</legend>
+        <div class="inner-container">     
+          <%= f.fields_for :personal_info, @personal_info do |pi| %>
+            <div class="width-auto">
+              <div class="personal-jersey">
+                <%= pi.text_field :jersey_number, placeholder: 'Jersey Number', class: 'input-large' %>
+              </div>
+              <div class="personal-height">
+                <%= pi.text_field :height, placeholder: 'Height', class: 'input-large' %>
+              </div>
+            </div>
+            <div class="width-auto">
+              <div class="personal-weight" >
+                <%= pi.text_field :weight, placeholder: 'Weight', class: 'input-large'  %>
+              </div>
+              <div class="select_wrap personal-positions">
+                <%= pi.select :positions, positions_options, {:prompt => "Please select positions"}, class: 'select_field', :multiple => true %>
+              </div>
+            </div>
+            <div class="width-auto">
+              <div class="school_year">
+                <%= pi.text_field :school_year, placeholder: 'Year in School' %>
+              </div>
+            </div>
+        <% end %>
+        </div>
+        <%= f.submit 'Save', id: 'personal-submit', class: 'btn btn-info pull-right', onclick: "ajaxSpinner('.personal-submit', '#personal-submit')" %>
+        <div class='spinner welcome-spinner' style='display:none'>
+          <%= image_tag('spinner-green.gif') %>
+        </div>
+      </fieldset>
+    </div>
+  <% end %>
+  </div> <!-- /container -->
+</div>
+

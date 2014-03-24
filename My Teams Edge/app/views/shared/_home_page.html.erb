@@ -1,0 +1,6 @@
+<div id="content" class="my-team container">
+    <%= render(partial: "shared/head_block") %>
+    <%= render(partial: "shared/left_block") %>
+    <%= render(partial: "shared/right_block") %>
+    <%= render(partial: "shared/post_update_lightbox") if current_user.account_owner_or_coach?(current_sport, current_user_sport.subvarsity_id) %>
+</div>

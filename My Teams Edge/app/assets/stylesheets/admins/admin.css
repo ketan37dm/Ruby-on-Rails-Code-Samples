@@ -1,0 +1,503 @@
+body.admin {
+    background: none repeat scroll 0 0 #3F7EB0;
+}
+
+ul.profile > li.dropdown > a img {
+    background: none repeat scroll 0 0 transparent;
+    border: medium none;
+    height: 14px;
+    margin-top: 3px;
+    padding: 0 5px;
+    width: 13px;
+}
+
+
+.form-search input {
+    background: none repeat scroll 0 0 #2C6593;
+    border-radius: 4px 4px 4px 4px;
+    border-color: transparent #4992cb #4992cb transparent; 
+}
+
+.form-search input:focus {
+    border-color: transparent #4992cb #4992cb transparent; 
+    box-shadow: none;
+}
+
+header .container {
+    border-bottom: 1px solid #4992CB;
+    height: 60px;
+}
+
+header .container.height-none{
+  height:15px !important;
+}
+
+#content {
+    background-color: transparent;
+    margin-bottom: 20px;
+}
+
+#content-top {
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+#content-top h2 {
+    color: #ffffff;
+    font-size: 36px;
+    font-family: 'Trebuchet MS';
+}
+
+#content-top p {
+    color: #ffffff;
+    font-size: 14px;
+    font-family: 'Arial';
+}
+
+#content-bottom {
+    height: 320px;
+    margin-bottom: 10px;
+    overflow: hidden;
+    position: relative;
+}
+
+#content-bottom a {
+    background: url("/assets/admin-home-btns.png") no-repeat scroll 0 0 transparent;
+    display: block;
+    height: 82px;
+    padding: 20px 0 0 20px;
+    position: absolute;
+    text-align: center;
+    width: 272px;
+    font-size: 16px;
+    font-weight: bold;
+    font-family: 'arial';
+}
+
+#content-bottom a:hover {
+    background: url("/assets/admin-home-btns-hover.png") no-repeat scroll 0 0 transparent;
+    color: #222222;
+    text-decoration: underline;
+}
+
+#content-bottom a i {
+    display: block;
+    float: left;
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
+#content-bottom a.add {
+    left: 18%;
+    top: 35%;
+}
+
+#content-bottom a.add i {
+    background: url("/assets/add.png") no-repeat scroll 0 0 transparent;
+    width: 25px;
+    height: 24px;
+}
+
+#content-bottom a.success {
+    right: 18%;
+    top: 35%;
+}
+
+#content-bottom a.success i {
+    background: url("/assets/success.png") no-repeat scroll 0 0 transparent;
+    width: 25px;
+    height: 20px;
+}
+
+#content-bottom a.quote {
+    left: 35%;
+    top: 0;
+}
+
+#content-bottom a.quote i {
+    background: url("/assets/quote.png") no-repeat scroll 0 0 transparent;
+    width: 36px;
+    height: 26px;
+}
+
+#content-bottom a.key {
+    bottom: 0;
+    left: 35%;
+}
+
+#content-bottom a.key i {
+    background: url("/assets/key.png") no-repeat scroll 0 0 transparent;
+    width: 29px;
+    height: 29px;
+}
+
+#content-bottom a span {
+    display: block;
+    float: left;
+    margin-left: 10px;
+    margin-top: 20px;
+    text-align: center;
+    width: 150px;
+}
+
+.navbar {
+    *overflow: hidden;
+    overflow: visible;
+}
+
+.navbar .container {
+    float: none;
+    margin: 0 auto;
+    max-width: 70%;
+}
+
+.navbar .nav-pills {
+    border-bottom: none;
+}
+
+.navbar .nav > li > a {
+
+    padding: 8px 10px;
+    text-transform: capitalize;
+}
+
+.navbar .nav > .active > a, .navbar .nav > .active > a:hover, .navbar .nav > .active > a:focus {
+    background-color: #2C6593;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.125) inset;
+    color: #ffffff;
+    text-decoration: none;
+    border: none;
+}
+.navbar .nav > li > a:focus, .navbar .nav > li > a.login:hover {
+    background-color: transparent;
+}
+
+.form-search input {
+    color: #a4bfd5;
+    width: 75px;
+}
+
+.form-search input:focus {
+    width: 200px;
+}
+
+form.add-account {
+    margin: 20px auto 0;
+    max-width: 300px;
+}
+
+.modal-body {
+    background: none repeat scroll 0 0 #FFFFFF;
+    min-height: 70px;
+    max-height: 450px;
+    padding: 14px;
+}
+
+form.add-account select {
+    background: none repeat scroll 0 0 #F0F0ED;
+    border-radius: 4px 4px 4px 4px;
+    box-shadow: none;
+    color: #999999;
+    font-size: 12px;
+    height: 48px;
+    margin: 10px;
+    outline: medium none;
+    padding: 14px 12px;
+    width: 250px;
+}
+
+form.add-account select option {
+    background: none repeat scroll 0 0 #FFFFFF;
+    color: #666666;
+    cursor: pointer;
+    font-family: arial;
+    font-size: 12px;
+    height: 20px;
+    padding: 8px;
+}
+
+
+form.add-account input[type="text"], 
+form.add-account input[type="password"] {
+    background: none repeat scroll 0 0 #F0F0ED;
+    border-radius: 4px 4px 4px 4px;
+    box-shadow: none;
+    color: #999999;
+    font-size: 12px;
+    height: 20px;
+    margin: 10px;
+    padding: 14px 12px;
+    width: 225px;
+}
+
+form.add-account button.btn, 
+form.add-account input.btn[type="submit"] {
+    background-color: #2C6593;
+    background-image: linear-gradient(to bottom, #2C6593, #23547C);
+    border: medium none;
+    border-radius: 6px 6px 6px 6px;
+    color: #FFFFFF;
+    font-size: 16px;
+    margin-right: 10px;
+    padding: 10px 20px;
+}
+
+
+form.add-account button.btn:hover, 
+form.add-account input.btn[type="submit"]:hover {
+    background-image: linear-gradient(to bottom, #23547C, #2C6593);
+}
+
+/* Quote of the day Page Starts
+*******************************************************************************/
+
+.quote-of-the-day-form {
+    margin-bottom: 0px ;
+}
+
+.quote-of-the-day-modal-head{
+    margin-top: 20px;
+}
+
+form.quote-of-the-day h2 {
+    padding-left: 15px;
+    text-align: left;
+}
+
+form.quote-of-the-day .modal-body h3 {
+    color: #666666;
+    font-family: arial;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 20px;
+    padding-left: 10px;
+    text-align: left;
+}
+
+form.quote-of-the-day .modal-body div {
+    background: none repeat scroll 0 0 #F0F0ED;
+    margin: 10px;
+    overflow: hidden;
+    padding: 25px 45px;
+    position: relative;
+}
+
+form.quote-of-the-day .modal-body div input {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border-color: #DEDEDE;
+    border-radius: 4px 4px 4px 4px;
+    float: left;
+    font-family: arial;
+    font-size: 14px;
+    height: 16px;
+    line-height: 15px;
+    padding: 12px 15px;
+    text-align: left;
+    width: 50%;
+}
+
+form.quote-of-the-day .modal-body div textarea {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border-color: #DEDEDE;
+    border-radius: 4px 4px 4px 4px;
+    float: left;
+    font-family: arial;
+    font-size: 14px;
+    line-height: 20px;
+    min-height: 60px;
+    padding: 12px 15px;
+    resize: none;
+    text-align: left;
+    width: 96%;
+}
+
+form.quote-of-the-day button.btn, 
+form.quote-of-the-day input.btn[type="submit"] {
+    background-color: #2C6593;
+    background-image: linear-gradient(to bottom, #2C6593, #23547C);
+    border: medium none;
+    border-radius: 6px 6px 6px 6px;
+    color: #FFFFFF;
+    display: block;
+    font-size: 16px;
+    height: 35px;
+    margin-right: 0;
+    margin-top: 5px;
+    padding: 10px 20px;
+    text-shadow: none;
+    width: 90px;
+}
+
+
+form.quote-of-the-day button.btn:hover, 
+form.quote-of-the-day input.btn[type="submit"]:hover {
+    background-image: linear-gradient(to bottom, #23547C, #2C6593);
+}
+
+form.quote-of-the-day .inner-content {
+    margin: 0;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Quote of the day Page Ends
+*******************************************************************************/
+
+/* Active Accounts Page Starts
+*******************************************************************************/
+
+#active-accounts {
+    margin-bottom: 20px;
+    margin-top: 20px;
+    overflow: hidden;
+    position: relative;
+}
+
+#active-accounts #content-left {
+    border: 1px solid #DCDCDB;
+    box-shadow: 0 0 5px rgba(50, 50, 50, 0.2);
+    margin-right: 2%;
+    text-align: center;
+    width: 32%;
+}
+
+
+#active-accounts #content-left.overided-width {
+    width: 100% !important;
+}
+
+
+
+#active-accounts #content-left .no-active-accounts{
+  color: #999999;
+  text-align: center;
+  list-style-type: none;
+}
+
+
+#active-accounts #content-left li:hover.no-active-accounts{
+  background-color:none;
+}
+
+#active-accounts #content-left .icon-search {
+    margin-top: 15px;
+    opacity: 1;
+}
+
+#active-accounts #content-right {    
+    border: 1px solid #DCDCDB;
+    box-shadow: 0 0 5px rgba(50, 50, 50, 0.2);
+    text-align: center;
+    width: 65%;
+}
+
+#active-accounts ul {
+    margin: 0 0 10px 0;
+    text-align: left;
+}
+
+#active-accounts ul li.active,
+#active-accounts ul li:hover {
+    background-color: #d8eaf9;
+}
+
+#active-accounts ul li a {
+    color: #666666;
+    display: block;
+    font-family: arial;
+    font-size: 14px;
+    height: 34px;
+    line-height: 35px;
+    margin-bottom: 1px;
+    padding-left: 10px;
+    text-decoration: none;
+}
+
+#active-accounts ul li.active a,
+#active-accounts ul li:hover a {
+    font-weight: bold;
+    text-decoration: none;
+}
+
+#active-accounts .section {
+    min-height: 330px;
+}
+
+#active-accounts select {
+    background: none repeat scroll 0 0 #F0F0ED;
+    border-radius: 4px 4px 4px 4px;
+    box-shadow: none;
+    color: #666666;
+    font-size: 14px;
+    height: 48px;
+    margin: 10px 10px 10px 0;
+    outline: medium none;
+    padding: 14px 12px;
+    width: 330px;
+}
+
+#active-accounts select option {
+    background: none repeat scroll 0 0 #FFFFFF;
+    color: #666666;
+    cursor: pointer;
+    font-family: arial;
+    font-size: 12px;
+    height: 20px;
+    padding: 8px;
+}
+
+.btn-link {
+    background: none;
+    margin-top: 10px;
+    border-color: none;
+    border-radius: 0 0 0 0;
+    color: #0088CC;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.btn-link:hover {
+    background: none;
+    text-decoration: none;
+    color: #0088CC;    
+}
+
+#active-accounts .inner-section,
+#active-accounts .inner-section-small {
+    border: 1px solid #DFDFDF;
+    border-radius: 4px 4px 4px 4px;
+    float: left;
+    margin-bottom: 10px;
+    padding: 15px;
+    width: 560px;
+}
+
+#active-accounts .inner-section-small {
+    width: 260px;
+}
+
+#active-accounts .inner-section .fieldset {
+    clear: both;
+    float: left;
+    margin-bottom: 5px;
+}
+
+#active-accounts .inner-section span,
+#active-accounts .inner-section-small span {
+    font-family: arial;
+    font-size: 14px;
+    color: #666666;
+    display: block;
+    float: left;
+}
+
+#active-accounts #content-left .modal-body {
+    background: none repeat scroll 0 0 #FFFFFF;
+    max-height: 330px;
+    min-height: 70px;
+}
+
+#active-accounts #content-right span.color-black { color: black !important}
+  
+/************************* End of active accounts css ***********/
+

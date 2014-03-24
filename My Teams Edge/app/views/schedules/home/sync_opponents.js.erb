@@ -1,0 +1,2 @@
+$('#schedule-sync-modal').modal('hide');
+$('#scedule-upcoming-oppnents div.scroll').html('<%= j(render(:partial => "schedules/home/left_upcoming_opponents", :collection => @upcoming_opponents, :as => :opponent)) %>');

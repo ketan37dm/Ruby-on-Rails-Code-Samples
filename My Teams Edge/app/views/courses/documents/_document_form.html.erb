@@ -1,0 +1,14 @@
+<% if @document.present? %>
+  <%= form_for @document, url: save_document_courses_path(:id => @course.id), class: "post-update", remote: true do |f| %>
+    <fieldset>
+      <span id="document-modal-messages"></span>
+      <div>
+        <%= f.file_field :file, class: "input-xxlarge", placeholder: "Select File" %>
+        <%= f.text_field :title, class: "input-xxlarge document-modal-input-xxlarge", placeholder: "Title" %>
+        <%= f.text_area :info, placeholder: "Add some info", class: "document-modal-textarea" %>
+        <%= f.submit "Sync", class: "btn btn-info pull-right" %>
+        <button id="cancel-add-document-trigger" class="btn-link pull-right cancel">Cancel</button>
+      </div>
+    </fieldset>
+  <% end %>
+<% end %>

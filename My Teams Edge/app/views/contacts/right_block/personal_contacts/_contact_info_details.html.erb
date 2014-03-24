@@ -1,0 +1,20 @@
+<div>
+  <h4 class="pull-left"><%= contact.name %><span>( <%= contact.relationship %> )</span></h4>
+  <div class="media academics-select pull-left">
+    <div class="media-body">
+      <span id="form-notification-<%= contact.id %>"></span>
+      <%= form_for contact, :url => contact_path(contact.id), :remote => true, :method => :put do |f| %>
+        <%= f.text_field :phone, :placeholder => "Phone", :class => "input-xlarge pull-left" %>
+        <%= f.text_field :email, :placeholder => "Email", :class => "input-xlarge pull-left" %>
+        <%= f.submit "Update", :class => "btn-large btn-success pull-right" %>
+      <% end %>
+    </div>
+    <div class="contacts-comments">
+      <div class="media-body">
+        <h5>Additional Notes</h5>
+        <%= render(:partial => 'comments/show_comments', :locals => {:event => contact}) %>
+        <div class="new-personal-contact-comment-<%= contact.id %>"></div>
+      </div>
+    </div>
+  </div>
+</div>

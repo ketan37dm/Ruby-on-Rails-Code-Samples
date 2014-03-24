@@ -1,0 +1,12 @@
+<div class="content-right span8">
+  <h2>Sub Varsity</h2>
+  <hr>
+  <%= form_tag(sub_varsity_account_path, :class =>"add-new-sport", :method => "post", :id => "sub-varsity-form") do -%>
+    <fieldset>
+      <select id="sub-varsity-selct-form" name="subvarsity_id">
+        <option value="0">Select Level of Competition</option>
+        <%= render(:partial => 'account/subvarsity_select_option', :collection => @sub_varsities) %>
+      </select>
+    </fieldset>
+  <% end %>
+</div>

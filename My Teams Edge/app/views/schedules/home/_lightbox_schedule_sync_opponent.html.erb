@@ -1,0 +1,57 @@
+<div id="schedule-sync-modal" class="modal hide fade schedule-modal" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="width: 400px;">
+  <div class="container">
+    <div class="modal-head hasSubHeading">
+      <h2><%= @new_opponent.name %></h2>
+      <span>Added successfully to the schedule, add any additional events for the opponent.</span>
+    </div>
+      <div class="modal-body">
+        <%= form_tag(sync_opponents_schedules_home_index_path(@new_opponent.id), {:class => "scheduleInput", :remote => true, :method => "post"}) do %>
+          <ul class="splitList clearfix">
+            <li class="clearfix">
+              <%= text_field_tag(:event_at, "", :class => "input-large dPicker", :placeholder => "2012/09/28 18:33", :name => "opponents[][event_at]") %>
+              <!-- <button class="mainBtn" type="button">Home | Away</button> -->
+              <%= radio_button("opponents", "location", "Home", :class => "mainBtn", :name => "opponents[][location]" ) %>
+              <span style="color: #666666;">Home</span>
+              <%= radio_button("opponent", "location", "Away", :class => "mainBtn", :name => "opponents[][location]") %>
+              <span style="color: #666666;">Away</span>
+              <!-- <input type="text" class="input-large dPicker" placeholder="2012/09/28 18:33"> -->
+            </li>
+            <li class="clearfix">
+              <%= text_field_tag(:event_at, "", :class => "input-large dPicker", :placeholder => "2012/09/28 18:33", :name => "opponents[][event_at]") %>
+              <!-- <button class="mainBtn" type="button">Home | Away</button> -->
+              <%= radio_button("opponents", "location", "Home", :class => "mainBtn", :name => "opponents[][location]" ) %>
+              <span style="color: #666666;">Home</span>
+              <%= radio_button("opponent", "location", "Away", :class => "mainBtn", :name => "opponents[][location]") %>
+              <span style="color: #666666;">Away</span>
+              <!-- <input type="text" class="input-large dPicker" placeholder="2012/09/28 18:33"> -->
+            </li>
+            <li class="clearfix">
+              <%= text_field_tag(:event_at, "", :class => "input-large dPicker", :placeholder => "2012/09/28 18:33", :name => "opponents[][event_at]") %>
+              <%= radio_button("opponents", "location", "Home", :class => "mainBtn", :name => "opponents[][location]" ) %>
+              <!-- <button class="mainBtn" type="button">Home | Away</button> -->
+              <span style="color: #666666;">Home</span>
+              <%= radio_button("opponent", "location", "Away", :class => "mainBtn", :name => "opponents[][location]") %>
+              <span style="color: #666666;">Away</span>
+              <!-- <input type="text" class="input-large dPicker" id="nice" placeholder="2012/09/28 18:33"> -->
+            </li>
+          </ul>
+          <div class="modalActions fRight clearfix">
+            <%= submit_tag("Sync", :class => "btn btn-info pull-right") %>
+            <!-- <input type="submit" class="btn btn-info pull-right modalActionBtn" value="Sync"> -->
+            <a href="#" class="cancel">Close</a>
+          </div><!--modalActions-->
+        <% end -%>
+      </div>  
+  </div> <!-- /container -->
+</div>
+
+<script type="text/javascript">
+  $(".dPicker").datetimepicker({
+      dateFormat: 'yy/mm/dd',
+      ampm: true 
+  });
+
+  $('.cancel').click(function(){
+    $('#schedule-sync-modal').modal('hide');
+  })
+</script>

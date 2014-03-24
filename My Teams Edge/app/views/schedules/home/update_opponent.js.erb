@@ -1,0 +1,6 @@
+<% if @opponent.errors.present? %>
+  $("#schedule-message-edit-opponent").html('<%= error_messages_for(@opponent) %>');
+<% else %>
+  $('#schedule-edit-modal').modal('hide');
+  $('#scedule-upcoming-oppnents a.btn-success').click();
+<% end %>

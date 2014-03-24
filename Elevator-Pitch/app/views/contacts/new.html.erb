@@ -1,0 +1,35 @@
+<% content_for :page_header do %>
+<title>Talk to us about your elevator pitch | Mind Your Pitch</title>
+  <meta name="Description" content="Tell us how can you help businesses better their business messaging or anything that can help them communicate better." />
+  <meta name="keywords" content="Pitch craft, Contact us" />
+<% end %>
+<%= form_for @contact do |f| %>
+ <div class="new-pitch-unit-contact">
+   <h3 class="contact-page-heading"> Contact Us </h3>
+   <%= f.error_messages :message => "Oops! something went wrong." %> 
+   <div class="contact-fields">
+     <ul>
+       <li>
+         <label for="contact_name">Name</label>
+           <%= f.text_field :name, :class => "contact-page-text-field" %>
+       </li>
+       <li>
+         <label for="contact_email">Email</label>
+         <%= f.email_field :email, :class => "contact-page-text-field" %>
+       </li>
+     </ul>
+   </div>
+   <div class="contact-subject">
+     <label for="contact_subject">Subject</label>
+     <%= f.text_field :subject, :class => "contact-page-text-field" %>
+   </div>
+   <div class="text-area-contact">
+     <label for="contact_message">Message</label>
+     <%= f.text_area :message, :rows => 7, :class => "contact-page-text-area" %>
+   </div>
+   <div class="contact-send-button">
+     <%= f.submit "Send", :class => "btn btn-primary create-pitch-button" %>
+   </div>
+ </div>
+<% end %>
+	

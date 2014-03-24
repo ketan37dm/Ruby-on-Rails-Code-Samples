@@ -1,0 +1,54 @@
+<% unless @course.blank? %>
+  <div id="course_messages" style="color:black">
+  </div>
+  <%= form_for @course, remote: true, class: "post-update" do |f| %>
+    <%= f.hidden_field :user_id, value: @user.id %>
+    <%= f.hidden_field :creator_id, value: current_user.id %>
+    <fieldset>
+      <div>
+        <%= f.text_field :name, placeholder: "Course Name", class: "input-xxlarge" %>
+        <%= f.text_field :start_date, class: "datepicker input-large", placeholder: "Start Date" %>
+        <%= f.text_field :end_date, class: "datepicker input-large", placeholder: "End Date" %>
+      </div>
+      <div class="week-selection">
+        <div class="week-name">                                    
+          <span class="first">M</span><span>|</span>
+          <span>T</span><span>|</span>
+          <span>W</span><span>|</span>
+          <span>Th</span><span>|</span>
+          <span class="last">F</span>
+        </div>
+        <div class="week-scale">
+          <%= check_box_tag 'course[weekdays][monday]', WEEKDAYS[:monday], @course.weekdays.include?(WEEKDAYS[:monday]) %>
+          <label for="course_weekdays_monday" class="first"></label>
+          <%= check_box_tag 'course[weekdays][tuesday]', WEEKDAYS[:tuesday], @course.weekdays.include?(WEEKDAYS[:tuesday]) %>
+          <label for="course_weekdays_tuesday"></label>
+          <%= check_box_tag 'course[weekdays][wednesday]', WEEKDAYS[:wednesday], @course.weekdays.include?(WEEKDAYS[:wednesday])  %>
+          <label for="course_weekdays_wednesday"></label>
+          <%= check_box_tag 'course[weekdays][thursday]', WEEKDAYS[:thursday], @course.weekdays.include?(WEEKDAYS[:thursday]) %>
+          <label for="course_weekdays_thursday"></label>
+          <%= check_box_tag 'course[weekdays][friday]', WEEKDAYS[:friday], @course.weekdays.include?(WEEKDAYS[:friday]) %>
+          <label for="course_weekdays_friday" class="last"></label>
+        </div>
+      </div>
+      <div>
+        <h5>( Optional )</h5>                   
+        <%= f.text_field :professor, placeholder: "Professor / Teacher", class: "input-large" %>
+        <%= f.text_field :room_number, placeholder: "Building / Room #", class: "input-large" %>
+      </div>
+      <%= f.submit "Add Course", class: "btn btn-info pull-right" %> 
+      <button id="cancel-add-course-trigger" class="btn-link pull-right cancel">Cancel</button>
+    </fieldset>
+  <% end %>
+<% end %>
+
+<script>
+  $(function(){
+    $("#course_start_date").datepicker({
+      dateFormat: 'dd/mm/yy',
+    });
+    $("#course_end_date").datepicker({
+      dateFormat: 'dd/mm/yy',
+    });
+  });
+</script>

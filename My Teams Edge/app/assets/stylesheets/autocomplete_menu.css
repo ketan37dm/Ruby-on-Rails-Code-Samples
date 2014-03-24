@@ -1,0 +1,7 @@
+.ui-autocomplete{
+  width : 530px;
+  background : #F0F0ED;
+  text-decoration : none;
+}
+
+.ui-autocomplete li a:hover { text-decoration : none; }

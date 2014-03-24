@@ -1,0 +1,18 @@
+<ul class="nav nav-pills container">
+  <li class="<%= set_active_class('home') %>"><a href="<%= default_url(current_user) %>">Home</a></li>
+  <li><a href="#">calendar</a></li>
+  <li class="<%= set_active_class('personnel') %>"><a href="javascript:void(0)">personnel</a></li>
+  <li class="<%= set_active_class('schedules') %>" ><a href="<%= schedules_root_path %>">schedule</a></li>
+  <li><a href="#">contacts</a></li>
+  <li class="dropdown last">
+  <a class="dropdown-toggle"
+    data-toggle="dropdown"
+    href="#">
+    more
+    <b class="caret"></b>
+  </a>
+  <ul class="dropdown-menu">                        
+    <li><a href="#">Recruiting</a></li>
+  </ul>
+  </li>
+</ul>

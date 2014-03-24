@@ -1,0 +1,57 @@
+<div id="content" class="my-team container">
+  <div class="head-block">
+    <h1><%= current_user.active_name_for_organization(current_sport.id, current_user_sport.subvarsity_id).try(:name) %></h1>               
+  </div>
+
+  <div id="schedule-left-block">
+    <%= render(:partial => 'schedules/home/schedule_left_block') %>
+  </div>
+
+  <div id="schedule-right-block">
+  </div>
+
+</div>
+
+
+<!-- MODAL STARTS -->
+<%= render(:partial => 'schedules/home/lightbox_schedule_add_opponent') %>
+
+<div id="schedule-sync-opponent-container"></div>
+
+<script type="text/javascript">
+  $('#post-update-trigger').click(function(){
+      $('#post-update').modal();
+  });
+  $('.cancel').click(function(){
+      $('#post-update').modal('hide');
+      $('#add-coach').modal('hide');
+      $('#add-opponent-event').modal('hide');
+  });
+  
+  $('#add-coach-trigger').click(function(){
+      $('#add-coach').modal();
+  });
+
+  $('#addOpponentEvent').click(function(){
+      $('#add-opponent-event').modal();
+  });
+
+  $(document).on("click", "#show-schedule", function(){
+    $("#schedule-left-top").fadeToggle();
+  });
+
+  $(document).on("click", ".left-opponent-link", function(){
+    
+    $("#scedule-upcoming-oppnents a.btn-success").addClass("btn-default");
+    $("#scedule-upcoming-oppnents a.btn-success").removeClass("btn-success");
+
+    $(this).removeClass("btn-default");
+    $(this).addClass("btn-success");
+  });
+
+  $(function(){
+    $("a.left-opponent-link:first").click();
+  });
+
+</script>
+

@@ -1,0 +1,13 @@
+<% if @course.present? %>
+  <div class="media">
+    <div class="media-body">
+      <h3 class="media-heading">
+        Notes / Reminders
+        <i class="icon-settings pull-right"></i>
+      </h3>      
+      <div class="contacts-comments">
+        <%= render(:partial => 'comments/show_comments', :locals => {:event => @course}) %>
+      </div>
+    </div>
+  </div>
+<% end %>

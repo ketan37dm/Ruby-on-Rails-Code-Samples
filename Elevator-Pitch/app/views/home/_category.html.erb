@@ -1,0 +1,9 @@
+<div class="category">
+  <div class="btn-group" data-toggle="buttons-radio">
+	<button type="button" class="btn-success btn" data-reset-text="All" data-loading-text="Loading..." value="">All pitches</button>
+	<% all_categories.each do |category| %>
+	  <button type="button" class="btn" data-reset-text="<%= category.title %>" data-loading-text="Loading..." value="<%= category.id %>"><%= category.title %> Pitches</button>
+	<% end %>
+	<%= hidden_field_tag :pitch_type, "" %>	
+  </div>
+</div>

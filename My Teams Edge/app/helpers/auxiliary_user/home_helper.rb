@@ -1,0 +1,2 @@
+module AuxiliaryUser::HomeHelper
+end

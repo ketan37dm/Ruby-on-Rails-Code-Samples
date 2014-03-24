@@ -1,0 +1,8 @@
+<div id='course_<%= course.id %>'>
+  <h3 class="pull-left overided"><%= course.name %></h3>
+  <span class='overided'>
+    <%= course.room_number %>
+    <%= link_to("Remove", delete_course_player_settings_path(:course_id => course.id), method: :delete, class: "btn remove", remote: true) %>
+  </div>
+<hr>
+

@@ -1,0 +1,15 @@
+<% if @new_user.errors.present? %>
+	$("#message_add_user").html('<%= error_messages_for(@new_user) %>');
+	$("#message_add_user").addClass("left-align");
+<% else %>
+	<% flash.now[:notice] = "Added Successfully" %>
+	$("#message_add_user").html('<%=j render :partial => "shared/flash_message" %> ');
+	$("#user_first_name").val("");
+	$("#user_role").val("");
+	$("#user_email").val("");
+	$(".coach-list").prev('legend').html("Active Users");
+	$(".coach-list").prepend('<%= j(render(partial: "coach/home/user_list_on_add_new_user_form")) %>');
+
+		<% @activity_type = "New user added" %>
+		$("#activitity_stream_for_<%= current_user.sanatized_organization_name%>").prepend('<%=  j(render(partial: "shared/activity_stream_post")) %>');
+<% end %>

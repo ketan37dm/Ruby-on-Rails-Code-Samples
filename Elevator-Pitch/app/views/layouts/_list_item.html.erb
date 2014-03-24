@@ -1,0 +1,17 @@
+<li>
+  <div class="btn-group signout-button-group">
+    <a class="btn dropdown-toggle signout-button" data-toggle="dropdown" href="#">
+	  <%= current_user.name %>
+	  <span class="caret signout-caret"></span>
+	</a>
+    <ul class="dropdown-menu my-dropdown-menu">
+      <!-- dropdown menu links -->
+      <li><%= link_to "My Profile", edit_user_registration_path %></li>
+      <li><%= link_to "My pitch", (current_user.pitch_created? ? edit_pitch_path : new_pitch_path) %></li>
+	  <% unless current_user.social_signin? %>
+	  	<li><%= link_to "Change Password", change_password_path %></li>
+	  <% end %>
+      <li><%= link_to "Sign Out", destroy_user_session_path, :method => :delete %></li>
+    </ul>
+  </div>
+</li>

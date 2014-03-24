@@ -1,0 +1,17 @@
+<% if @new_opponent.errors.present? %>
+	$("#message_add_opponent").html('<%= error_messages_for(@new_opponent) %>');
+<% else %>
+  <% flash.notice = "Successfully Added to your Schedule" %>
+  $("#message_add_opponent").html('<%=j render :partial => "shared/flash_message" %> ');
+	$("#opponent_name").val("");
+	$("#opponent_location").val("");
+	$("#opponent_event_type").val("");
+	$("#opponent_event_at").val("");
+  <% if current_user.opponents.count == 1 %>
+      $(".current-schedules").html("<%= j render partial: 'coach/home/welcome/opponents', locals: { :opponents => current_user.opponents } %>");
+  <% else %>
+      $(".current-schedule").prepend("<%= j render partial: "coach/home/welcome/opponent", locals: { :opponent => @new_opponent} %>");
+  <% end %>
+		<% @activity_type = "New scheduled" %>
+		$("#activitity_stream_for_<%= current_user.sanatized_organization_name%>").prepend('<%=  j(render(partial: "shared/activity_stream_post")) %>');
+<% end %>

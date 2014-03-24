@@ -1,0 +1,40 @@
+
+<h1 class="elevator-pitch">What do you do?</h1>
+<h2 class="elevator-pitch-tagline ">Be <em>Clear</em>, <em>concise</em> and <em>compelling</em>.</h2>
+
+<%= render :partial => 'pitches/getting_started'%>
+
+<h3 class="new-pitch-heading field-title">Create your pitch.
+  <em class="help help-link">Need help getting started?</em>
+</h3>
+
+<%= error_messages_for @pitch, @user, :message => "Oops! something went wrong." %>
+<div class="pitch-information-unit">
+  <div>
+    <%= f.text_area :description, :rows => 10, :cols => 80, :class => 'pitch-description',:placeholder => 'If you need help getting started, click the link above that says "Need help getting started?".' %>
+    <div class="create-my-pitch">
+    <p>
+      Finding it hard? Want us to create it?
+      <%= link_to 'Ask the expert', new_pitch_request_path, :class => 'btn btn-info' %>
+    </p>
+  </div>
+  </div>
+  <div class="word-counter align-right"></div>
+  <div class="clearfix"></div>
+
+  <%= render :partial => 'shared/category_field', :locals => {:f => f} %>
+  <h4>Tags*<br/><em>Words that describe what you do?</em></h4>
+  <%= f.text_area :tags, :rows => 2, :cols => 80, :class => 'pitch-tags',:placeholder => 'marketing, branding, advertising' %>
+  <%= hidden_field_tag :pitch_status, "" %>
+
+  <div>
+	  <h4>Youtube embed code <br/><em>This is optional. However, we strongly recommend you add it soon.</em></h4>
+    <%= f.text_area :embed_code, :rows => 20, :cols => 80, :class => "embed-code", :placeholder => '<iframe width="560" height="315" src="http://www.youtube.com/embed/i6O98o2FRHw" frameborder="0" allowfullscreen></iframe>' %>
+  </div>
+
+  <div class="create-pitch-padding">
+    <%= f.submit "Publish", :class => "create-pitch-button" %>
+    <span class="align-cancel-link"><%= link_to "Cancel", :back %></span>
+  </div>
+</div>
+

@@ -1,0 +1,23 @@
+// Place all the styles related to the courses controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#add-document-trigger{
+  padding-top: 4px;
+}
+
+.document-modal-textarea{
+  width: 269px !important;
+}
+
+.document-modal-input-xxlarge{
+  width: 273px !important;
+}
+
+.document-modal-head{
+  width: 305px
+}
+
+.document-modal-body{
+  width: 297px;
+}

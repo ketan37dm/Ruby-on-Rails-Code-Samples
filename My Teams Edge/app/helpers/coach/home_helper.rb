@@ -1,0 +1,2 @@
+module Coach::HomeHelper
+end

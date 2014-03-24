@@ -1,0 +1,39 @@
+<% if @new_event.errors.present? %>
+  $("#post_event_message").html('<%= error_messages_for(@new_event) %>');
+<% else %>
+  $("#user_event_title").val("");
+  $("#user_event_event_at").val("");
+  $("#post_event_message").html("");
+  
+  <% if @new_event.update_on.blank? %>
+    $("#user_event_custom_sports_unit_id").each(function(){
+        var sel_options = $(this);
+        for(i=0; i< sel_options.length; i++){
+            sel_options[i].selectedIndex = 0;
+            return true;
+        }
+    });
+  <% end %>
+
+  <%######    Delete the "No Upcoming Events" box.   ####%>
+  $("#no-events-present").remove();
+
+  <% if @upcoming_day == :today %>
+      $("#todays-events").html("<%= escape_javascript render partial: "shared/left_block/upcoming_events/todays_events",
+                               :locals => {:todays_events => current_user.events_due_on(Date.today, current_sport)}  %>")
+  <% end %>
+
+  <% if @upcoming_day == :tomorrow %>
+      $("#tomorrows-events").html("<%= escape_javascript render partial: "shared/left_block/upcoming_events/tomorrows_events",
+                                 :locals => {:tomorrows_events => current_user.events_due_on(Date.tomorrow, current_sport)}  %>")
+  <% end %>
+
+  <% if @upcoming_day == :overmorrow %>
+      $("#overmorrows-events").html("<%= escape_javascript render partial: "shared/left_block/upcoming_events/overmorrows_events",
+                                    :locals => {:overmorrows_events => current_user.events_due_on((Date.tomorrow + 1), current_sport)}  %>")
+  <% end %>
+  
+  <% @activity_type = "New event" %>
+  $("#activitity_stream_for_<%= current_user.sanatized_organization_name%>").prepend('<%=  j(render(partial: "shared/activity_stream_post")) %>');
+
+<% end %>

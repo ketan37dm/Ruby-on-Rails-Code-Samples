@@ -1,0 +1,15 @@
+<% if @course.present? %>
+  <div class="media">
+    <div class="media-body">
+      <h3 class="media-heading">Study Guides / Documents
+        <%= link_to add_document_courses_path(:id => @course.id), remote: true do %>
+          <i class="icon-settings pull-right"></i>
+          <i id="add-document-trigger" class="pull-right">Add Document</i>
+        <% end %>
+      </h3>                                    
+      <div id="list-documents" class="schedule-block pull-left">
+        <%= render partial: 'courses/documents/document_list', collection: @documents, as: :document %>
+      </div>
+    </div>
+  </div>
+<% end %>

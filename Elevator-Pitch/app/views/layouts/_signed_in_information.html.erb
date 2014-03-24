@@ -1,0 +1,14 @@
+<% if user_signed_in? %>
+  <% if show_statistics?%>
+    <%= render :partial => "shared/pitch/billboard" %>
+  <% end %>
+  <% if show_poll?%>
+    <%= render :partial => "shared/poll" %>
+  <% end%>
+  <% if create_pitch_callout? %>
+  <div class="loggedin-create-pitch-callout">
+	  <label>You do not have a pitch created yet.</label>
+      <%= link_to "Create your pitch now", (user_signed_in? ? edit_pitch_path : new_user_registration_path), :class => " signup-button" %>
+    </div>
+  <% end %>
+<% end %>

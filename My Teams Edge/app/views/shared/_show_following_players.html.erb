@@ -1,0 +1,23 @@
+<div class="content-block players">
+    <h2>Players</h2>
+    <hr>
+    <div class="scroll">
+        <div id="following_playes_list">
+            <% current_user.following_players(current_sport.id, current_user_sport.subvarsity_id).each do |player| %>
+                <div class="media">
+                    <a href="#" class="pull-left">
+                        <%= image_tag(player.image.url(:thumb), class: "media-object") %>
+                    </a>
+                    <div class="media-body">
+                        <h3 class="media-heading"><%= player.full_name %></h3>
+                    </div>
+                </div>        
+            <% end %>
+            <% if current_user.following_players(current_sport.id, current_user_sport.subvarsity_id).count == 0 %>
+                <%= link_to coach_personnel_index_path(:player => 1) do %>
+                    <%= button_tag "Not Following Any Player.", :class => "btn btn-default" %>
+                <% end %>
+            <% end %>
+        </div> 
+    </div>
+</div>      

@@ -1,0 +1,9 @@
+<% if event.present? %>
+  <div class="schedule-title pull-left">
+    <span class="pull-left"><%= event.title %></span>
+    <span class="pull-left">&nbsp;</span>
+  </div>
+  <div class="schedule-info pull-right">
+    <span class="pull-right"><%= event.date.strftime("%A, %b %d") %></span>
+  </div>
+<% end %>

@@ -1,0 +1,27 @@
+<%= form_tag add_user_to_unit_coach_user_units_path(:user_id => user.id), remote: true, class: 'post-update' do %>
+  <span id="add-user-unit-error">
+    <br/>
+  </span>
+  <fieldset>
+    <ul>
+      <% user_units.each do |unit| %>
+        <li id="user_unit_<%= unit.id %>">
+        <% parameters = {:unit_id => unit.id} %>
+        <% parameters.merge!(:update_block => false) if user.units(current_sport.id, @organization.id, current_user_sport.subvarsity_id).count == 1  %>
+        <%= link_to remove_user_from_unit_coach_user_units_path(parameters), :confirm => "Are you sure?", :method => :delete, :remote => true do %>
+          <i class='delete-unit pull-left'></i>
+        <% end %>
+        <%= unit.custom_sports_unit.unit_name %> (3)</li>
+      <% end %>
+      <i class='add-new-unit pull-left'></i>
+      <input type="text" name="new_unit_label" id="existing_units" vaule="Enter New Unit" class='pull-left'
+      placeholder='Enter New Unit' data-endpoint='<%= existing_units_list_coach_user_units_path(:user_id => user.id) %>'>
+      <%= hidden_field_tag :new_unit_id, params[:new_unit_id], id: "new_unit_id" %>
+      </li>
+    </ul>
+    <button id='add-to-unit-trigger' class='btn btn-info pull-right add-to-unit-btn' disabled='disabled'>Add To New Unit</button>
+    <a class='btn-link pull-right cancel overided' onclick="$('#add-to-unit').modal('hide');">Cancel</a>
+  </fieldset>
+<% end %>
+
+

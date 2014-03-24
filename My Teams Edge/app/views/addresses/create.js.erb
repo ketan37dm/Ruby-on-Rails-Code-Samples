@@ -1,0 +1,10 @@
+<% if @address.errors.full_messages.blank? %>
+  $('#more-info-errors').html("<%=j render 'shared/flash_message' %>");
+  <% if @address.category == "home" %>
+    $('#home-address').html("<%=j render partial: 'contacts/right_block/more_info/more_info_home_address', :locals => { :@home_address => @address } %>")
+  <% else %>
+    $('#school-address').html("<%=j render partial: 'contacts/right_block/more_info/more_info_school_address', :locals => { :@school_address => @address } %>")
+  <% end %>
+<% else %>
+  $('#more-info-errors').html('<%=j error_messages_for @address %>');
+<% end %>

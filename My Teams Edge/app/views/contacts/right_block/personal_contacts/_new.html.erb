@@ -1,0 +1,3 @@
+<%= form_for @contact, :url => contacts_path, :method => :post, :remote => true do |f| %>
+  <%= render :partial => 'contacts/right_block/personal_contacts/form', :locals => { :f => f } %>
+<% end %>

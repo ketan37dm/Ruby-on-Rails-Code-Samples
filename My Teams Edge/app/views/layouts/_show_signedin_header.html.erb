@@ -1,0 +1,51 @@
+<ul class="nav pull-right profile">
+    <% if current_user.account_owner_or_coach?(current_sport, current_user_sport.subvarsity_id) %>
+      <li class="dropdown">
+      <%= form_tag get_record_coach_home_index_path, :method => :get do %>
+        <input type="text" id='q' name='query' class="input-medium search-query" data-endpoint="<%= search_coach_home_index_path(:js)%>"><i class="icon-search"></i>
+        <%= hidden_field_tag :typeid, "",  :id => "q2" %>
+      <% end %>
+      </li>
+    <% end %>
+    <li class="dropdown">
+        <a data-toggle="dropdown" class="dropdown-toggle" data-target="#" href="#"><b><%= current_user_sport.sport_name.to_s + " " + current_user_sport.subvarsity_name.to_s %></b> 
+            <% sports_count = current_user.sports.count %>
+            <% if current_user.confirmed_sports_count > 1 %>
+                <b class="caret"></b>
+            <% end %>
+        </a>
+        <% if sports_count > 1 %>
+            <ul class="dropdown-menu">
+                <% current_user.user_sports.each do |user_sport| %>
+                    <% next if !user_sport.confirmed? %>
+                     <li>
+                     <a href="<%= change_sport_session_coach_home_index_path(:sport_id => user_sport.sport_id, :subvarsity_id => user_sport.subvarsity_id) %>">
+                            <% sport_name = user_sport.sport_name.to_s + " " + user_sport.subvarsity_name.to_s %>
+                            <% if current_user.has_logged_out_activity_for_sport?(user_sport.sport) %>
+                                <b>
+                                    <%= sport_name %>
+                                </b>
+                            <% else %>
+                                <%= sport_name %>
+                            <% end %>
+                        </a>
+                    </li>
+                <% end %>
+                <!--<li class="divider"></li>
+                <li><a href="#">Separated link</a></li>-->
+            </ul>
+        <% end %>
+    </li>                          
+    <li class="dropdown">
+        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+            <%= image_tag(current_user.image.url(:thumb), class: "media-object", :alt => "" ) %>
+            <b class="caret"></b>
+        </a>
+        <ul class="dropdown-menu">
+            <li><a href="#"><%= current_user.full_name.titleize %></a></li>
+            <li class="divider"></li>
+            <li><%= link_to "My Account", account_basics_path %></li>
+            <li><%= link_to "logout", destroy_user_session_path, :method => :delete %></li>
+        </ul>
+    </li>
+</ul>

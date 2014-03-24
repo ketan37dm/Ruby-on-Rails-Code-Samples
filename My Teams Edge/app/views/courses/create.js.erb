@@ -1,0 +1,6 @@
+<% if @course.errors.blank? %>
+  $('#course-select').html("<%=j render partial: 'courses/select/academics_select_option' %>");
+  $('#add-course').modal('hide');
+<% else %>
+  $('#course_messages').html("<%=j error_messages_for @course %>");
+<% end %>

@@ -1,0 +1,46 @@
+<div id="add-users" class="modal hide fade" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="container add-users scrolling">
+        <%= form_for(@new_user, url: add_new_user_coach_home_index_path, html: { remote: true, class: "welcome" }) do |f| %>
+            <div class="modal-head">
+                <h2 class="form-signin-heading">
+                    <a href="#welcome" class="back-link" data-toggle="modal"><i class="left-arrow-head pull-left"></i></a>
+                    <%= current_user.current_package_name(current_sport) %>
+                </h2>
+            </div>
+
+            <%= render(:partial => 'shared/add_user_common_hiden_fileds', :locals => {:f => f}) %>
+
+            <div id="message_add_user" class="message" ></div>
+            <div class="modal-body">
+                <fieldset>
+                    <legend>
+                        Add users to your account
+                        <span class="elite-edge-sign-up">
+                            <span class="badge badge-question pull-right tooltip" data-content=" <p>Detailed info for Auxiliary User.</p> " data-placement="left" rel="popover" data-original-title=""> ? </span>
+                        </span>
+                    </legend>
+                    <div class="inner-container">
+                        <%= f.text_field(:first_name, placeholder: "Name", class: "input-large") %> 
+                        <%= f.select(:role, User::ROLES.map { |k, v| [v.to_s.upcase.humanize.titleize, k] }[2..-1], {:prompt => "Level"}, class: "input-large") %>  
+                        <%= f.text_field(:email, placeholder: "Email", class: "input-large") %>
+                        <%= f.submit(value: "Add User", class: "btn-large btn-success pull-right add_user_button_submit", onclick: "ajaxSpinner('#new_user', '.add_user_button_submit')") %>
+                        <div class='spinner welcome-spinner shortright' style='display:none'>
+                            <%= image_tag('spinner-green.gif') %>
+                        </div> 
+                    </div>
+                </fieldset>
+            </div>
+        <% end %>
+        <form class="welcome overided course">
+            <div class="modal-body">
+                <fieldset>
+                    <legend></legend>
+                    <div class="coach-list">                  
+                    </div>
+                </fieldset>
+            </div>
+        </form>
+
+    </div> <!-- /container -->
+</div>
+<%= render(partial: "coach/home/add_opponent") %>

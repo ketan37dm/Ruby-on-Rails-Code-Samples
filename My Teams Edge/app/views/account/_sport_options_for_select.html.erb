@@ -1,0 +1,7 @@
+<% if @organization_registered_sports_ids.include?(sport_options_for_select.id) %>
+  <% add_class = true %>
+<% else %>
+  <% add_class = false %>
+<% end %>
+
+<option value="<%= sport_options_for_select.id %>" <% if add_class %> class="organization-registered-sport" <% end %> > <%= sport_options_for_select.name %> </option>

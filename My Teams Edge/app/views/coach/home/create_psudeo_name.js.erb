@@ -1,0 +1,10 @@
+<% if @new_psudeo_name.errors.present? %>
+  $("#add_psudeo_name_message").html('<%= error_messages_for @new_psudeo_name %>');
+<% else %>
+  $("#psudeo_name_txt").val("");
+  $("#add-coach").modal('hide');
+  $("#psudeo_names_list li:last").prepend('<li><a href="#" class="psudeo_name_list"><%= @new_psudeo_name.name %></a></li>');
+
+  <% @activity_type = "New organization alias added" %>
+  $("#activitity_stream_for_<%= current_user.sanatized_organization_name%>").prepend('<%=  j(render(partial: "shared/activity_stream_post")) %>');
+<% end %>

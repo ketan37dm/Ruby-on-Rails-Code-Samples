@@ -1,0 +1,7 @@
+<% if @comment.errors.full_messages.blank? %>
+  $('#comment-errors-<%= @contact.id %>').children().remove();
+  $('#comment_content_<%= @contact.id %>').val("");
+  $('.new-personal-contact-comment-<%= @contact.id %>').append('<%=j render partial: "contacts/right_block/shared/view_comment", :locals => { :comment => @comment } %>');
+<% else %>
+  $('#comment-errors-<%= @contact.id %>').html('<%=j error_messages_for @comment %>');
+<% end %>

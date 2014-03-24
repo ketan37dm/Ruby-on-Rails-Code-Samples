@@ -1,0 +1,7 @@
+<div class="button-container filter">
+  <div class="btn-group" data-toggle="buttons-radio">
+    <button type="button" class="btn-success btn" data-reset-text="Most Liked" data-loading-text="Loading..." value="<%= Pitch::SORT_TYPE_LIKE %>">Most Liked</button>
+    <button type="button" class="btn" data-reset-text="Most Recent" data-loading-text="Loading..." value="<%= Pitch::SORT_TYPE_CREATED_AT %>">Most Recent</button>
+    <%= hidden_field_tag :sort_type, "" %>
+  </div>
+</div>

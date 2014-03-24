@@ -1,0 +1,21 @@
+<div class="content-block schedule" id="schedule_<%= current_user.sanatized_organization_name %>">
+  <h2>Schedule</h2>
+  <hr>
+  <div class="scroll">
+    <% current_user.upcoming_opponents(current_sport.id, current_user_sport.subvarsity_id).each do |opponent| %>
+      <a href="<%= schedule_opponents_path(opponent.id) %>" class="btn btn-default" target="_blank">
+        <span class="pull-left align-left">
+          <% if opponent.location == "away"%>
+          @&nbsp;
+          <% end %>
+          <%= opponent.name %>
+        </span>
+      </a>
+    <% end %>
+    <% if ( current_user.upcoming_opponents(current_sport.id, current_user_sport.subvarsity_id).count == 0 ) %>
+      <%= link_to "#" do %>
+        <%= button_tag "No Schedule Present.", :class => "btn btn-default" %>
+      <% end %>
+    <% end %>
+  </div>
+</div>

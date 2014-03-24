@@ -1,0 +1,13 @@
+<div class="head-block">
+    <h1><%= @opponent.name %></h1>
+    <ul class="nav pull-right rhs-dropdown">                                         
+        <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                <i class="icon-down pull-right"></i>
+            </a>
+            <ul class="dropdown-menu">
+                <li><a href="#" class="normal-white-space"><%= @opponent.scheduled_at.strftime("%B %d, at %H:%M %p") %></a></li>
+            </ul>
+        </li>
+    </ul>  
+</div>

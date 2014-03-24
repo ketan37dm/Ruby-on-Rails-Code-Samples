@@ -1,0 +1,29 @@
+<div class="social-links-right">
+  <% sharelink_url = "http://#{SiteConfig.app_base_url}#{display_pitch_path(:identifier => pitch.identifier)}" %>
+  <ul>
+    <li>
+      <%= tweet_button( :url => pitch.bitly_url, :text => get_tweet_text(pitch.description) ) %> <%# shdnt be a space betn "tweet button" and opening bracket "(" - otherwise Error %>
+    </li>
+    <li> | </li>
+    <li>
+      <%= link_to(image_tag("fb_share.png", :class => "align-vertically-fb"), "javascript:void(0);",
+        :class => "fb-share-link",
+        :'fb-post-link' => sharelink_url,
+        :'fb-logo' => "http://#{SiteConfig.app_base_url}/assets/logo.png",
+        :'fb-description' => pitch.description
+      ) %>
+    </li>
+    <li>
+      |
+    </li>
+    <li>
+      <script type="IN/Share" data-counter="right" data-url="<%= sharelink_url %>"></script>
+    </li>
+    <li>
+      |
+    </li>
+    <li>
+    <g:plusone size="medium" href="<%= sharelink_url %>"></g:plusone>
+    </li>
+  </ul>
+</div>

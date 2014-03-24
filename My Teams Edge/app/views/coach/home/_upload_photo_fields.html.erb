@@ -1,0 +1,13 @@
+<fieldset>
+  <legend>Profile Pic</legend>
+  <div class="inner-container">
+    <%= image_tag f.object.image.url(:thumb), class:"pull-left media-object", id: "user_uplaoded_image" %> 
+    <div class="fileinputs input-x1large pull-left">
+      <%= f.file_field(:image, class: "file", placeholder: "Upload Image") %>
+      <div class="fakefile">
+        <input placeholder="Upload Image" disabled/>
+        <img src="/assets/down-arrow.png" />
+      </div>
+    </div>
+  </div>
+</fieldset>

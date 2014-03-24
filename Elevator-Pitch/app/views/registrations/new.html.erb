@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Register to build your business pitch | Mind Your Pitch</title>
+	  <meta name="Description" content="Can you tell in one minute what you do in the most compelling way to generate interest? Register today with Mind Your Pitch to build and validate your pitch." />
+	  
+    <%= csrf_meta_tags %>
+    <%= javascript_include_tag "application" %>
+    <%= render :partial => "extra_assets" %>
+    <%= stylesheet_link_tag "application", :media => "all" %>
+  </head>
+
+  <body class="body-login">
+    <div class="logo">
+            <%= link_to image_tag("/assets/logo.png"), root_path, :class => "brand mybrand" %>
+    </div>
+    <div class="container">
+      <div class="notification">
+        <%= bootstrap_flash %>
+      </div>
+
+
+      
+      <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => {:id => 'registration_form'}) do |f| %>
+        <div class="hero-unit-login-wrap">
+          <div class="hero-unit-login-up hero-unit">
+            <span> Connect with <%= link_to image_tag("facebook_login.png"), '/auth/facebook' %> or <%= link_to image_tag("twitter_login.png"), '/auth/twitter' %></span>
+          </div>
+          <div class="login-box-separator">
+            <%= image_tag("or_signup.png") %>
+          </div>
+          <%= render :partial => "registrations/form", :locals => {:f => f} %>
+          <div class="sign-up-section"><%= f.submit "Sign up", :class => "btn sign-up-button" %></div>
+        </div>
+      <% end %>
+<%#= render "devise/shared/links" %>
+    </div>
+  </body>
+</html>

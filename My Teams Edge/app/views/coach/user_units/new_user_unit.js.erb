@@ -1,0 +1,22 @@
+$('#loading').hide();
+$("#add-user-to-unit").html("<%= j render partial: 'new_user_unit', locals: { user: @user, user_units: @user_units } %>")
+
+$("#existing_units").autocomplete({
+  source: $("#existing_units").attr('data-endpoint'),
+  focus: function( event, ui ) {
+    $( "#existing_units" ).val( ui.item.label );
+    return false;
+  },
+  selectFirst: true,
+  autoFocus: true,
+  select: function( event, ui ) {
+    $( "#existing_units" ).val( ui.item.label );
+    $( "#new_unit_id" ).val( ui.item.id );
+    return false;
+  },
+  focus: function( event, ui ) { event.preventDefault(); }
+});
+
+<% if @disabled == false %>
+  $('.add-to-unit-btn').removeAttr("disabled")
+<% end %>

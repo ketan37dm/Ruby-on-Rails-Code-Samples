@@ -1,0 +1,8 @@
+<% if @notes_category.errors.present? %>
+  $('#new-category-errors').html('<%= error_messages_for(@notes_category) %>');
+<% else %>
+  $('#new-category-errors').html('');
+  $('#notes_category_name').val('');
+  $('#new-category-modal').modal('hide');
+  $('#category-left-listing').append('<%= j(render(:partial => "schedules/apps/notes/notes_category_list", :locals => {:notes_category => @notes_category})) %>');
+<% end %>

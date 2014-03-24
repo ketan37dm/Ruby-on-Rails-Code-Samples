@@ -1,0 +1,32 @@
+<script>
+  $(document).ready(function() {
+    $('#agree').attr('checked',false);
+  });
+</script>
+
+
+<div class="container">
+  <%= form_for @user, :url => user_password_path(:identifier => @user.identifier), :method => :post, :html => { :class => "form-signin" } do |f| %> 
+    <h2 class="form-signin-heading">Register your MTE Account</h2>
+    <%= f.error_messages  %> 
+    <fieldset>
+      <div>
+        <label class="input-block-level pull-left">Name</label>
+        <%= f.text_field :first_name, class: "input-large", placeholder: "First Name" %> 
+        <%= f.text_field :last_name, class: "input-large", placeholder: "Last Name" %> 
+      </div>
+      <div>
+        <label class="input-block-level pull-left">Password</label>
+        <%= f.password_field :password, class: "input-large", placeholder: "Password" %> 
+        <%= f.password_field :password_confirmation, class: "input-large", placeholder: "Confirm Password" %> 
+      </div>
+      <div class="checkbox">
+        <%= f.check_box :accepted_terms_and_conditions, :id => "agree" %> 
+        <label for="agree"></label>I have read and agree to the Terms of Service 
+      </div>
+      <%= f.submit "Sign up", class: "btn btn-large btn-primary registration-submit-button", :id => "submit-button", :onclick => "return enable_submit();" %> 
+      <%= f.hidden_field :update_on, :value => "user_registration" %> 
+    </fieldset>
+  <% end %> 
+</div> <!-- /container -->
+

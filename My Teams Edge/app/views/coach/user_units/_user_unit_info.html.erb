@@ -1,0 +1,5 @@
+<% user_unit_count = user.units_count(current_sport.id, @organization.id, current_user_sport.subvarsity_id) %>
+<span <% if !user.registered? %> title="Not yet registered"  <% end %> class="btn <% if user.accepted_terms_and_conditions? %> view-unit <% end %> <%= user.id %>_unit_popover" type="button" rel="popover" data-placement="bottom" 
+  data-content="<%= render(partial: "coach/user_units/units", locals: { :user => user, :user_unit_count => user_unit_count }) %> ">
+  <%= pluralize( user_unit_count.zero? ? "No" : user_unit_count, "Unit") %>
+</span>

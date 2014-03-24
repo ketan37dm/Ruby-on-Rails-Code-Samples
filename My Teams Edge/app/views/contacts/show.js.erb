@@ -1,0 +1,5 @@
+<% if @user.present? %>
+  $('.content-right').html('<%=j render :partial => "contacts/right_block/shared/contacts_right_block" %>');
+<% else %>
+  $('.content-right').html('<%=j render :partial => "shared/flash_message" %>');
+<% end %>

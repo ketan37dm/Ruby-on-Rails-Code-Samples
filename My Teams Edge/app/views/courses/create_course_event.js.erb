@@ -1,0 +1,7 @@
+<% if @course_event.errors.full_messages.blank? %>
+  $('#academics-messages').html("<%=j render partial: 'shared/flash_message' %>");
+  $('#list-course-events').html("<%=j render partial: 'courses/events/course_events_list', collection: @previous_events, as: :event %>");
+  $('#upcoming-event').modal('hide');
+<% else %>
+  $('#course-event-modal-messages').html("<%=j error_messages_for @course_event %>");
+<% end %>

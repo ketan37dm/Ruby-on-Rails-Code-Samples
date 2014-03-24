@@ -1,0 +1,6 @@
+<ul class="nav nav-tabs" id="loginTab">
+  <li id="events-tab" class="<%= contacts_user_details_active_tab("#", "#") %>"><%= link_to "Upcoming Events", upcoming_events_courses_path(:id => @user.id), :remote => true %></li>
+  <li id="academics-tab" class="<%= contacts_user_details_active_tab("courses", "academics") %>"><%= link_to "Academics", academics_courses_path(:id => @user.id), :remote => true %></li>
+  <li id="contacts-tab" class="<%= contacts_user_details_active_tab("contacts", "contacts_info") %>"><%= link_to "Contacts", contacts_info_contacts_path(:id => @user.id), :remote => true %></li>
+  <li id="more-info-tab" class="<%= contacts_user_details_active_tab("contacts", "more_info") %>"><%= link_to "More Info", more_info_contacts_path(:id => @user.id), :remote => true %></li>
+</ul>

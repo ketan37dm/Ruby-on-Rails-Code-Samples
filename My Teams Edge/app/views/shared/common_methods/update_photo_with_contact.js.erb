@@ -1,0 +1,25 @@
+<% if @user.errors.present? %>
+	$("#message_uplaod_photo").html('<%= error_messages_for(@user) %>');
+<% else %>
+  <% flash.notice = "Updated Successfully" %>
+  $("#message_uplaod_photo").html('<%=j render :partial => "shared/flash_message" %> ');
+	$("#user_uplaoded_image").attr("src", "<%= @user.image.url(:thumb) unless @user.image.blank? %>" )
+<% end %>
+
+<%= remotipart_response do %> 
+  if($("#aux-basic-submit").length > 0) {
+    $("#aux-basic-submit").show();
+    $("#aux-basic-submit").next().hide();
+  }
+
+  if($("#basic-submit").length > 0) {
+    $("#basic-submit").show();
+    $("#basic-submit").next().hide();
+  }
+<% end %>
+
+$(".update_photo_button_submit").next(".spinner").hide();
+$(".update_photo_button_submit").show();
+
+
+

@@ -1,0 +1,14 @@
+<% if @course.present? %>
+  <div class="media">
+    <div class="media-body">
+      <h3 class="media-heading">Upcoming Events
+        <%= link_to add_course_event_courses_path(:id => @course.id), :remote => true do %>
+          <i id="upcoming-event-trigger" class="icon-settings pull-right"></i>
+        <% end %>
+      </h3>
+      <div id="list-course-events" class="schedule-block pull-left">
+        <%= render partial: 'courses/events/course_events_list', :collection => @previous_events, :as => :event %>
+      </div>
+    </div>
+  </div>
+<% end %>

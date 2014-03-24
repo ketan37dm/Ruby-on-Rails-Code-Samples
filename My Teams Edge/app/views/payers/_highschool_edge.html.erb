@@ -1,0 +1,161 @@
+<div class="container">
+    <% path = current_admin.present? ? admins_accounts_path : payers_path %>
+    <%= form_for(@payer, :url => path, :method => :post, :html => {:class => "form-signin elite-edge-sign-up high_school_form h-sch-sign-up card_form"}) do |f| %>
+      <%= hidden_field_tag :package, @package %>
+      <%= f.hidden_field :stripe_plan_id, :value => @package %> 
+        <h2 class="form-signin-heading" style="color: #FFFFFF;">High School Edge</h2>
+
+        <%# Step 1   %>
+        <span class="step" id="step1">
+            <fieldset>
+                <legend>
+                    <span class="badge badge-info">1</span>
+                    Some Basic Information
+                </legend>
+                <% @payer.build_high_school %>
+                <span id="high_school_all_errors"></span>
+                <%= f.fields_for :high_school do |high_school_f| %>
+                    <div>
+                        <%= high_school_f.text_field :name, class: "input-xxlarge", placeholder: "High School ( St. Lucia High School )"%>                            
+                        <span id="payer_highschool_name"></span>
+                    </div>
+                    <div>
+                        <%= high_school_f.text_field :city, class: "input-xlarge", placeholder: "City"  %>
+                        <span id="payer_highschool_city" ></span>
+                        <%= high_school_f.text_field :state, class: "input-large", placeholder: "State"  %>
+                        <span id="payer_highschool_state"></span>
+                    </div>
+                <% end %>
+            </fieldset>
+            <ul>
+                <li><a href="javascript:void(0);" class="active">&nbsp;</a>
+                <li><a href="javascript:void(0);">&nbsp;</a>
+                <li><a href="javascript:void(0);">&nbsp;</a>
+            </ul>
+            <hr>
+            <fieldset>
+                <input type="button" class="btn btn-primary pull-right high_school_sign_up_button" value="Next" id="high_school_step" />
+            </fieldset>
+        </span>
+
+        <%# Step 2 %>
+        <span class="step" id="step2">
+            <fieldset>
+                <legend>
+                    <span class="badge badge-info">2</span>
+                    Select Sport & Account Manager
+                    <span class="badge badge-question pull-right tooltip" rel="popover" data-placement="right" 
+                          data-content="
+                          <p>The Account Manager will receive the confirmation email to set up their account.</p>
+                          <p>After confirmation, coaches can start adding users and content to their account within seconds.</p>
+                          <p>This could be anyone from a head coach, or director of operations that deals with a number of different areas within the program.</p>
+                          ">
+                        &#63;
+                    </span>
+                </legend>
+                <div>
+                    <span id="user_all_errors"></span>
+                    <%= select "sport", "sport_id", Sport.select("id, name").all.map{ |s| [s.name, s.id] }, {:prompt => "Select sport"}, class: "input-xxlarge", id: "sport_selected" %>
+                    <span id="payer_user_sport_id" class="payer_user_error"></span>
+                </div>
+                <div>
+                    <input type="text" class="input-xlarge" placeholder="First Name" id="user_fname_txt">
+                    <span id="payer_user_first_name" class="payer_user_error"></span>
+                    <input type="text" class="input-large" placeholder="Last Name" id="user_lname_txt">
+                    <span id="payer_user_last_name" class="payer_user_error"></span>
+                </div>
+                <div>
+                    <input type="text" class="input-xxlarge" placeholder="Email Address" id="user_email_txt">
+                    <span id="payer_user_email" class="payer_user_error"></span>
+                </div>
+            </fieldset>
+            <fieldset>
+                <input type="button" value="Add Team" class="btn btn-primary pull-right high_school_sign_up_button" id="add_team_step">
+            </fieldset>
+            <hr>
+
+            <div id="registering_users">
+                <div id="user_counter" style="display:none;">0</div>              
+            </div>
+
+            <ul>
+                <li><a href="javascript:void(0);">&nbsp;</a>
+                <li><a href="javascript:void(0);" class="active">&nbsp;</a>
+                <li><a href="javascript:void(0);">&nbsp;</a>
+            </ul>
+            <hr>
+            <fieldset>
+                <input type="button" value="Next" class="btn btn-primary pull-right high_school_sign_up_button" id="new_user_step">
+            </fieldset>
+        </span>
+
+        <%# Step 3 %>
+        <span class="step" id="step3">   
+            <fieldset>
+                <% if !admin_signed_in? %>
+                    <legend>
+                        <span class="badge badge-info">3</span>
+                        Your Payment Information
+                        <span class="badge badge-question pull-right tooltip" rel="popover" data-placement="right" 
+                              data-content="
+                              <p>This person will receive the invoice. If it is the same person as the account manager on step#2, they will simply receive both emails for their records.</p>
+                              ">
+                            &#63;
+                        </span>
+                    </legend>
+                    <div>
+                        <span id="payer_and_cc_errors"></span>
+                        <figure>
+                            <img src="/assets/amex.png" alt="" title="">
+                            <img src="/assets/paypal.png" alt="" title="">
+                            <img src="/assets/visa.png" alt="" title="">
+                            <img src="/assets/mas-card.png" alt="" title="">
+                        </figure>
+
+                    </div>
+                    <% if @payer.stripe_token %>
+                        Credit card has been accepted.
+                    <% else %>
+                        <div>
+                            <%= text_field_tag :card_number, nil, name: nil, class: "input-xlarge input-x1large required", placeholder:"Credit / Debit Card Number", maxlength: 16 %>
+                            <%= text_field_tag :card_code, nil, name: nil, class:"input-mini required", placeholder:"CVV" %>
+                        </div>
+                        <div>
+                            <label>Expiration Date</label>
+                            <%= select_month nil, {add_month_numbers_true: true}, {name: nil, id: "card_month", class: "input-xlarge required"}%>
+                            <%= select_year nil, {start_year: Date.today.year, end_year: Date.today.year+10}, {name: nil, id: "card_year", class:"input-large"}%>
+                        </div>
+                    <% end %>
+                <% end %>
+                <hr>
+                <div>
+                    <label class="">Who's paying for the account?</label>                            
+                    <div>
+                        <%= f.text_field :first_name, class: "input-xlarge required", placeholder: "First Name"  %>
+                        <%= f.text_field :last_name, class: "input-large", placeholder: "Last Name"  %>
+                    </div>
+                    <div>
+                        <%= f.text_field :email, class: "input-xxlarge required", placeholder: "Email"  %>
+                    </div>
+                    <%= f.hidden_field :created_by, :value => "admin" if current_admin.present? %>
+                </div>
+            </fieldset>
+            <hr>
+            <ul>
+                <li><a href="javascript:void(0);">&nbsp;</a>
+                <li><a href="javascript:void(0);">&nbsp;</a>
+                <li><a href="javascript:void(0);" class="active">&nbsp;</a>
+            </ul>
+            <fieldset>
+                <div class='green-spinner margin-bottom-20' style='display:none'><%= image_tag("spinner-green.gif") %></div>
+                <input type="submit" class="btn btn-success high_school_sign_up_button" value="JOIN MYTEAMSEDGE" id="submit_highschool_edge_form" />
+                    <p class="bottom">
+                        When you click on Create Account, you’ll be charged $2,495.00.<br> 
+                        You also agree to our <a class="link" href="javascript:void(0);">Terms of Service</a> and our <a class="link" href="javascript:void(0);">Privacy Policy</a>..<br> 
+                        Thanks for signing up!!
+                    </p>
+            </fieldset>
+            <%= f.hidden_field :stripe_token %>
+        </span>
+    <% end %>
+</div> <!-- /container -->

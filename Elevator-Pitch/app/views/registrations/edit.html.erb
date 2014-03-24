@@ -1,0 +1,16 @@
+<%= render :partial => "extra_assets" %>
+<% if current_user.email.blank? %>
+  <div class="notify">
+  	<h4>Important!</h4>
+    <p class="title">Add your email address to benefit most out of Mind Your Pitch.</p>
+    <p class="description">Stay assured, it is safe with us and we'll never spam you!</p>
+  </div>
+<% end %>
+<% form_id = user_signed_in? ? '' : 'registration_form' %>
+
+<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => {:method => :put, :id => form_id}) do |f| %>
+  <div class="hero-unit-login-wrap edit-profile">
+    <%= render :partial => "registrations/form", :locals => {:f => f} %>
+    <div class="sign-up-section"><%= f.submit "Update", :class => "btn sign-up-button" %></div>
+  </div>
+<% end %>

@@ -1,0 +1,28 @@
+$("#personnel-left-block").html('<%= j(render(partial: "personnel_left_units_block")) %>');
+
+<% if params[:update_block] != "false" %>
+  if($("#personnel-left-block").doesExist()){
+    var count = 0;
+    var unit = "";
+
+    $(".list-users-unitwise").each(function(){
+      if(count == 0){
+        unit = $(this).attr("unit");
+        updatePersonnelUnitsRigtBlock(unit);
+        count = 1;
+      }
+    });
+
+    <% if @units_with_user_count.blank? %>
+      $("#personnel-right-block").html("");
+    <% end %>
+
+  }
+<% else %>
+  unit = $("div.content-right.span8").attr("unit");
+  $("a.list-users-unitwise").each(function(){
+    if($(this).attr("unit") == unit){
+      $(this).click();
+    }
+  });
+<% end %>

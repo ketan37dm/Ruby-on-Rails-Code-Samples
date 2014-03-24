@@ -1,0 +1,4 @@
+$('#resend-invite').modal('hide');
+$(".content-block a.selected span").html("<%= @user_count %> Users");
+$("#role-users-<%= @user.id %>").next('hr').remove();
+$("#role-users-<%= @user.id %>").remove();

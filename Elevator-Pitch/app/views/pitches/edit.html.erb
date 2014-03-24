@@ -1,0 +1,5 @@
+<%= form_for @pitch, :url => pitch_path(:id => @pitch.identifier), :html => {:method => :put, :id => 'pitch_form'} do |f| %> 
+  <div class="new-pitch-unit">
+    <%= render :partial => "form", :locals => { :f => f }  %>
+  </div>
+<% end %> 

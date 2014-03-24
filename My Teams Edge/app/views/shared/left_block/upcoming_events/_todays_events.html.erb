@@ -1,0 +1,6 @@
+<hr>
+<span class="title">Today</span>
+<% todays_events.each do |event| %>
+  <%= render partial: 'shared/left_block/upcoming_events/event', locals: {:event => event}  %>
+<% end %>
+

@@ -1,0 +1,29 @@
+<div class="navbar-logo-myclass">
+  <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner my-navbar">
+      <div class="container nav-container">
+        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </a>
+        <%= link_to image_tag("/assets/logo.png"), root_path, :class => "brand mybrand" %>
+        <div class="nav-collapse collapse">
+          <ul class="nav nav_links_color">
+            <!--<li><%#= link_to "How It Works", how_it_works_path, :class => "#{ is_link_active("home","how_it_works")}" %></li>-->
+            <li><%= link_to "Why Pitch", why_pitch_path, :class => "#{ is_link_active("home","why_pitch")}" %></li>
+            <li><%= link_to "Blog", "/blog"  %></li>
+            <li><%= link_to "Contact Us", contact_us_path, :class => "#{ is_link_active("contacts","new")}" %></li>
+            <li class="seperator-bar">|</li>
+            <% unless user_signed_in? %>
+              <li class="login-link"><%= link_to "Login", new_user_session_path %></li>
+            </ul>
+          <% else %>
+            <%= render(:partial => "layouts/list_item") %>
+            </ul>
+          <% end %>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+  </div>
+</div>

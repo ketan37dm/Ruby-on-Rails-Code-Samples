@@ -1,0 +1,22 @@
+<h3 class="set-user-padding comments-heading">All Comments</h3>
+<% if @comments.present?  %>
+  <% @comments.each_with_index do |comment_instance, index| %>
+    <h4 class="comment-index">Comment # <em><%= index + 1 %></em></h4>
+    <div class="top-spacer comment-item">
+      <div>	
+        <span class="comment-author"><%= comment_instance.user.name %></span>
+        <br/>
+        <span class="post-timestamp"><%= comment_timestamp(comment_instance) %></span>
+      </div>
+      <div class="comment-text">
+       <%= simple_format(h(comment_instance.comment)) %>
+      </div>
+    </div>
+  <% end %>
+<% else %>
+ <div class="no-comments">
+   <p>No comments yet.</p>
+   <p class="highlight">You can be the first one to comment.</p>
+ </div>
+<% end %>
+<div class="comments-endpoint"></div>

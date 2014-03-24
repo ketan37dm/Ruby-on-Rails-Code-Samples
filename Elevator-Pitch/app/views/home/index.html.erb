@@ -1,0 +1,44 @@
+<% content_for :page_header do %>
+<title><%= params[:clicked_tag].blank? ? 'We help you build your Elevator Pitch' : "#{params[:clicked_tag]} elevator pitches"%> | Mind Your Pitch</title>
+  <meta name="Description" content="Pitching platform to collaborate towards building a perfect pitch.Only social platform that helps you create your business pitch clearly, concisely and in a compelling way." />
+  <meta name="keywords" content="Elevator pitch, Business pitch, Vision statement, Shark tank pitch, Cover letter." />
+<% end %>
+
+<div id="pitchFilters" class="actions">
+  <h2>What kind of pitches would you like to see?</h2>
+  <%= render :partial => 'home/search' %>
+  <div class="filter-sort">
+    <%= render :partial => "home/sort" %>
+    <%= render :partial => "home/category" %>
+    <%= hidden_field_tag :search_filter_url, root_path(:format => :json)  %>
+  </div>
+</div>
+
+
+<div class="pitch-loading">
+  <%= image_tag 'horizontal-loading.gif' %>
+</div>
+  
+<div class="site-content">
+  <div id="results">
+    <%= render :partial => 'pitches' %>
+  </div>
+
+  <p id="loading" class="align-loader">
+    Loading more pitches !!!
+    <%= image_tag "load1.gif" %>
+  </p>
+
+  <%= will_paginate @pitches  %>
+</div>
+
+<% @user = User.new %>
+<%= render :partial => "sessions/login_cover" %>
+
+<% unless params[:clicked_tag].blank? %>
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $.scrollTo( $('#pitchFilters').offset().top - 100 ,400);
+    });
+  </script>
+<% end %>

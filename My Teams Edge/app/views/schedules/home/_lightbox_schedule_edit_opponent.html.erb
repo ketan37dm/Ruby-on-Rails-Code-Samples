@@ -1,0 +1,40 @@
+<div id="schedule-edit-modal" class="modal hide fade schedule-modal" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="container">
+    <div class="modal-head">
+      <h2>Edit Opponent</h2>
+    </div>
+    <div class="modal-body">
+      <%= form_for(@opponent, :url => update_opponent_schedules_home_index_path(@opponent.id), :html => {:remote => true, :class => "", :method => "put"} ) do |f| -%>
+        <div id="schedule-message-edit-opponent" class="message"></div>
+
+        <div class="scheduleInput">
+          <input type="text" value="@ <%= @opponent.name %>" readonly>
+          <div class="coupleInputs clearfix">
+              <%= f.text_field(:event_at, :class => "edit-dPicker", :placeholder => "2012/09/28 18:33") %>
+          </div>
+        </div><!--scheduleInput-->
+        <div class="modalActions fRight clearfix">
+          <%= f.submit("Sync", :class => "btn btn-info pull-right modalActionBtn") %>
+          <a href="#" class="cancel">Close</a>
+        </div><!--modalActions-->
+      <% end %>
+    </div>  
+  </div> <!-- /container -->
+</div><!--#newComponentAdded-->
+
+<script type="text/javascript">
+  $(".edit-dPicker").datetimepicker({
+      dateFormat: 'yy/mm/dd',
+      ampm: true 
+  });
+
+  $('.cancel').click(function(){
+    $('#schedule-edit-modal').modal('hide');
+    return false;
+  })
+
+  $('.edit-opponent-link').click(function(){
+    $('#schedule-edit-modal').modal('show');
+    return false;
+  })
+</script>

@@ -1,0 +1,13 @@
+<div class="list-comments">
+  <a href="#" class="pull-left">
+    <% user = comment.user %>
+    <a href="#" class="pull-left">
+      <%= image_tag(user.image.url(:thumb), :class => "media-object" ) %>
+    </a>
+  </a>
+  <div class="media-body">
+    <h3 class="media-heading"><%= user.full_name %></h3>
+    <p><%= comment.content %></p>
+    <hr>
+  </div>
+</div>

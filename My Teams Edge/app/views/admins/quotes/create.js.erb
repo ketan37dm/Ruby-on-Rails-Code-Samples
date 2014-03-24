@@ -1,0 +1,5 @@
+<% if @quote.errors.full_messages.blank? %>
+	$("#new_quote_" + <%= @form_id %> + " " + "#quoteErrors").html('<%=j render :partial => "shared/flash_message" %>'); 
+<% else %>   
+	$("#new_quote_" + <%= @form_id %> + " " + "#quoteErrors").html('<%=j error_messages_for @quote %>'); 
+<% end %>

@@ -1,0 +1,6 @@
+<legend>Current schedule</legend>
+<div class="current-schedule">
+  <% if opponents.present? %>
+    <%= render partial: "coach/home/welcome/opponent", collection: opponents %>
+  <% end %>
+</div>

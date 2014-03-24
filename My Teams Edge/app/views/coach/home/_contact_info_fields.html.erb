@@ -1,0 +1,12 @@
+<fieldset>
+  <legend>Contact Info</legend>
+  <div class="inner-container">
+    <%= f.text_field(:phone, class: "input-x1large", placeholder: "Phone Number") %>
+    <%= f.text_field(:cell, class: "input-x1large", placeholder: "Cell Number") %>
+    <%= f.text_field(:email, class: "input-x1large", placeholder: "Email", disabled: "disabled") %>
+  </div>
+  <%= f.submit(class: "btn btn-info pull-right update_photo_button_submit", value: "Save", onclick: "ajaxSpinnerFile('#edit_user_#{current_user.id}', '.update_photo_button_submit')") %>
+  <div class='spinner welcome-spinner' style='display:none'>
+      <%= image_tag('spinner-green.gif') %>
+  </div>
+</fieldset>

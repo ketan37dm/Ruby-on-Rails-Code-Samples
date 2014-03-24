@@ -1,0 +1,16 @@
+<h4 class="pull-left">Home Address</h4>
+<div class="media academics-select pull-left">
+  <%= form_for @home_address, :url => address_url(@home_address, @user), :method => address_method(@home_address), :remote => true do |f| %>
+    <%= f.hidden_field :category, value: "home" %>
+    <div class="media-body">
+      <%= f.text_field :street, :placeholder => "Street Address", class: "input-xxlarge pull-left" %>
+      <%= f.text_field :appartment, :placeholder => "Appartment", class: "input-small pull-left" %>
+    </div>
+    <div class="media-body">
+      <%= f.text_field :city, :placeholder => "City", class: "input-xlarge pull-left" %>
+      <%= f.text_field :state, :placeholder => "State", class: "input-small pull-left" %>
+      <%= f.text_field :zip, :placeholder => "ZIP", class: "input-small pull-left" %>
+      <%= f.submit :class => "btn-large btn-success pull-right more-info-submit-button" %>
+    </div>
+  <% end %>
+</div>

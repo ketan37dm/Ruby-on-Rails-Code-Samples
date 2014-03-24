@@ -1,0 +1,5 @@
+<% if @user.errors.full_messages.blank? %>
+  $('#more-info-errors').html("<%=j render 'shared/flash_message' %>");
+<% else %>
+  $('#more-info-errors').html('<%=j error_messages_for @user %>');
+<% end %>

@@ -1,0 +1,55 @@
+<div id="add-opponents" class="modal hide fade" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="container add-opponents scrolling">
+        <%= form_for(@new_opponent, url: add_opponent_coach_home_index_path, html: {class: "welcome", remote: true,}) do |f| %>
+            <div class="modal-head">
+                <h2 class="form-signin-heading">
+                    <a href="#welcome" class="back-link" data-toggle="modal"><i class="left-arrow-head pull-left"></i></a>
+                    <%= current_user.current_package_name(current_sport) %>
+                </h2>
+            </div>
+            <div class="modal-body">
+                <%= f.hidden_field(:update_on, value: "add_new_opponent") %>
+                <%= f.hidden_field(:sport_id, value: current_sport.id) %>
+                <%= f.hidden_field(:user_id, value: @user.id) %>
+                <%= f.hidden_field(:organization_id, value: @user.organization.id) %>
+                <%= f.hidden_field(:subvarsity_id, value: current_user_sport.subvarsity_id) if current_subvarsity? %>
+                <div id="message_add_opponent" class="message"></div>
+                <fieldset>
+                    <legend>Add opponents / schedule to your account</legend>
+                    <div class="inner-container"> 
+                        <div>
+                            <%= f.autocomplete_field :name, get_autocomplete_path(current_user.organization), update_elements: { city: "#payer_city", state: "#payer_state" }, class: "input-large", placeholder: "Opponent / Event name" %>
+                            <%= f.select(:location, Opponent::Locations.map { |k, v| [v, k] }, {:prompt => "Location"}, class: "input-small") %>
+                            <%= f.select(:event_type, Opponent::Types.map { |k, v| [v, k] }, {:prompt => "Type"}, class: "input-small") %>                        
+                        </div>
+                        <div>              
+                            <%= f.text_field(:event_at, class: "input-large") %>
+                            <%= f.submit(value: "Add Opponent", class: "btn-large btn-success pull-right add_opponent_button_submit", onclick: "ajaxSpinner('#new_opponent', '.add_opponent_button_submit')") %> 
+                            <div class='spinner welcome-spinner shortright' style='display:none'>
+                                <%= image_tag('spinner-green.gif') %>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+        <% end %>
+        <form class="welcome overided course">
+            <div class="modal-body">
+                <fieldset class="current-schedules">
+                  <% if @opponents.present? %>
+                    <%= render partial: 'coach/home/welcome/opponents', locals: { :opponents => @opponents } %>
+                  <% end %>
+                </fieldset>
+            </div>
+        </form>
+    </div> <!-- /container -->
+</div>
+<%= render(partial: "shared/common_partials/update_photo_contact_info") %>
+<script>
+    $(function(){
+        $("#opponent_event_at").datetimepicker({
+            dateFormat: 'yy/mm/dd',
+            ampm: true     
+        });
+    });
+</script>

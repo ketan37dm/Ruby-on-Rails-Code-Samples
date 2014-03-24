@@ -1,0 +1,33 @@
+<div class="content-right span8">
+  <h2>Sub Varsity</h2>
+  <hr>
+  <div id="register-subvarsity-error">
+    <%= error_messages_for(@subvarsity_manager) %>
+  </div>
+  <%= form_for(@subvarsity_manager, :url => sub_varsity_account_path, :html => {:class => "add-new-sport", :method => "post"}) do |f| -%>
+    
+    <fieldset>
+      <h2>The <span id="sub-varsity-name"></span> Varsity Account has not been activated yet. 
+          Enter the Account Managers name and email to set up their account.
+      </h2>
+
+      <%= f.hidden_field(:update_on, value: "add_subvarsity_account_manager") %>
+      <%= f.hidden_field(:role, value: User::ROLES[:acc_owner]) %>
+      <%= hidden_field_tag("user[user_sports_attributes][][payer_id]", current_user.get_payer_for_current_sport(current_sport).id) %>
+      <%= hidden_field_tag("user[user_sports_attributes][][sport_id]", current_sport.id) %>
+      <%= hidden_field_tag("user[user_sports_attributes][][sport_name]", current_sport.name) %>
+      <%= hidden_field_tag("user[user_sports_attributes][][subvarsity_id]", params[:subvarsity_id]) %>
+      <%= hidden_field_tag("user[user_sports_attributes][][organization_id]", @organization.id) %>
+      <%= hidden_field_tag("user[user_sports_attributes][][subvarsity_name]", @subvarsity_name) %>
+      <%= f.hidden_field((current_user.organization.class.to_s.underscore + "_id").to_sym, value: current_user.organization.id) %>
+      <%= hidden_field_tag("user[user_sports_attributes][][role]", User::ROLES[:acc_owner]) %>
+      <%= hidden_field_tag("subvarsity_id", params[:subvarsity_id]) %>
+    </fieldset>
+
+    <fieldset>
+      <%= f.text_field(:first_name, :placeholder => "Name") %>
+      <%= f.text_field(:email, :placeholder => "Email") %>
+    </fieldset>
+    <%= f.submit("Add", :class => "btn-link pull-right") %>
+  <% end -%>
+</div>

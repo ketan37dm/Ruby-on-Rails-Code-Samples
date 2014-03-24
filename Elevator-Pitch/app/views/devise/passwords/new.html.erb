@@ -1,0 +1,13 @@
+<div class="hero-unit new-pitch-unit" style="background-color: transparent;">
+  <h3 class="contact-page-heading">Forgot your password?</h3>
+
+  <%= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post }) do |f| %>
+    <%= f.error_messages :message => "Oops! something went wrong." %> 
+    <div class="reset-password">
+      <div><label for="user_email">Email*</label>
+        <%= f.email_field :email, :class => "reset-password-text-field" %></div>
+
+      <div><%= f.submit "Reset Password", :class => "btn btn-primary reset-password-button" %></div>
+    </div>
+  <% end %>
+</div>

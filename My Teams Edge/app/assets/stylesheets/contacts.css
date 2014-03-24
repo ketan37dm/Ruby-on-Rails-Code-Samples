@@ -1,0 +1,527 @@
+ul.profile > li.dropdown > a img {
+    background: none repeat scroll 0 0 transparent;
+    border: medium none;
+    height: 14px;
+    margin-top: 3px;
+    padding: 0 5px;
+    width: 13px;
+}
+
+.contacts {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.contacts .content-left {
+    width: 25%;
+}
+
+.contacts .content-left .content-block a {
+    color: #666666;
+    display: block;
+    font-size: 14px;
+    height: 20px;
+    margin-bottom: 1px;
+    padding: 8px 8px 5px;
+    width: 94%;
+}
+
+.contacts .content-left .content-block a {
+    color: #666666;
+    display: block;
+    font-size: 14px;
+    height: 20px;
+    margin-bottom: 1px;
+    padding: 8px 8px 5px;
+    width: 94%;
+}
+
+.contacts .content-left .content-block a.selected,
+.contacts .content-left .content-block a:hover {
+    background: none repeat scroll 0 0 #F0F0ED;
+    color: #666666;
+}
+
+.contacts .content-left .content-block .inner-block {
+    margin-bottom: 10px;
+    overflow: hidden;
+    position: relative;
+}
+
+.contacts .content-left .content-block a.follow {
+    background-color: #F1F1F1;
+    background-image: linear-gradient(to bottom, #F1F1F1, #C4C4C4);
+    background-position: 0 0;
+    border: medium none;
+    color: #344563;
+    font-size: 14px;
+    height: 28px;
+    font-weight: normal;
+    padding: 8px 5px 0;
+    width: 30%;
+}
+
+.contacts .content-left .content-block a.follow:hover {
+    background-color: #C4C4C4;
+    background-image: linear-gradient(to bottom, #C4C4C4, #F1F1F1);
+    background-position: 0 0;
+}
+
+.contacts .content-left .content-block span {
+    color: #666666;
+}
+
+.contacts .content-left .content-block a.unfollow {
+    background-color: #7D7D7D;
+    background-image: linear-gradient(to bottom, #7D7D7D, #7D7D7D);
+    background-position: 0 0;
+    border: medium none;
+    color: #FFFFFF;
+    height: 28px;
+    padding: 8px 5px 0;
+    font-weight: normal;
+    width: 30%;
+    text-shadow: none;
+}
+
+.contacts .content-right {
+    width: 68%;
+    padding: 16px 2% 2%;
+}
+
+.contacts h3.heading {
+    color: #3F7EB0;
+    font-family: 'Trebuchet MS';
+    font-size: 24px;
+    margin-bottom: 80px;
+    margin-top: 80px;
+    text-align: center;
+}
+
+/***************************   width of <a> tag under players box  ***********************/
+
+.contacts .content-left .players-box a{
+  width: 55%;
+}
+
+/**************************************   END   ******************************************/
+
+.contacts #loginTab {
+    background: none repeat scroll 0 0 transparent;
+    padding-bottom: 0;
+}
+
+.contacts #loginTab li {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #DDDDDD;
+    margin-left: 5px;
+    text-align: center;
+    width: 152px;
+}
+
+.contacts #loginTab li.active {
+    background: none repeat scroll 0 0 #F0F0ED;
+    border-bottom: 1px solid #F0F0ED;
+
+}
+.contacts #loginTab li.active a {
+    background: none repeat scroll 0 0 #F0F0ED;    
+    border: 1px solid transparent;
+    box-shadow: none;
+    margin-top: 1px;
+}
+
+.contacts #loginTab li a {   
+    border: 1px solid transparent;
+    outline: none;
+    color: #333333;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.contacts #loginTab li a:hover {
+    border: 1px solid transparent;
+    text-decoration: none;
+}
+
+.contacts .tab-content {
+    border: 1px solid #DDDDDD;
+    background: #f0f0ed;
+    border-top: 0;
+    overflow: auto;
+    padding: 2%;
+    margin-bottom: 10px;
+    min-height: 150px;
+}
+
+.contacts .container {
+    width: 100%;
+}
+
+.contacts img.media-object {
+    background: none repeat scroll 0 0 #F0F0ED;
+    border: 1px solid #DCDCDB;
+    height: 96px;
+    margin-left: 20px;
+    margin-right: 10px;
+    width: 96px;
+}
+
+.contacts-comments img.media-object {
+    background: none repeat scroll 0 0 #F0F0ED;
+    border: 1px solid #DCDCDB;
+    height: 44px;
+    margin-left: 20px;
+    margin-right: 10px;
+    width: 44px;
+}
+
+.contacts .container {
+    margin: 25px 0;
+
+}
+
+
+.contacts .content-right a.follow {
+    background-color: #F1F1F1;
+    background-image: linear-gradient(to bottom, #F1F1F1, #C4C4C4);
+    background-position: 0 0;
+    border: medium none;
+    color: #344563;
+    font-size: 14px;
+    font-weight: normal;
+    height: 28px;
+    margin: 0 2px 0 10px;
+    padding: 8px 0 0 5px;
+    width: 20%;
+}
+
+.contacts .content-right a.follow:hover {
+    background-color: #C4C4C4;
+    background-image: linear-gradient(to bottom, #C4C4C4, #F1F1F1);
+    background-position: 0 0;
+}
+
+.contacts .content-right h3.media-heading {
+    color: #333333;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 20px;
+}
+
+.contacts .content-right .media {
+    border: medium none;
+    padding-right: 10px;
+    width: 94%;
+}
+
+
+
+.contacts .content-right .media  i.icon-settings {
+    margin-right: 10px;
+}
+
+.contacts .content-right .media .schedule-block {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #DDDDDD;
+    border-width: 1px 1px 0;
+    padding: 1.5% 2.5%;
+    width: 94.7%;
+}
+
+.contacts .content-right .media .schedule-block:last-child {
+    border-bottom: 1px solid #DDDDDD;
+}
+
+.contacts .content-right .media .schedule-block span {
+    color: #666666;
+    font-size: 14px;
+}
+
+.contacts .content-right .media .schedule-block .no-event-available {
+    color: #cccccc;
+    font-size: 14px;
+    text-align: center;
+}
+
+.contacts .content-right .media .schedule-block span.description {
+    width: 75%;
+}
+
+.contacts .content-right .media .schedule-block .schedule-title {
+    width: 70%;
+}
+
+.contacts .content-right .media .schedule-block .schedule-info  {
+    width: 25%;
+}
+
+.contacts .custom-modal .container {
+    margin-top: 0;
+    padding: 0;
+}
+
+.contacts .custom-modal .modal-head {
+    background: none repeat scroll 0 0 #3F7EB0;
+    margin: 0;
+    padding: 0 10px;
+    text-align: center;
+}
+
+.contacts .custom-modal .modal-head h2 {
+    font-family: 'Arial';
+    font-size: 14px;
+    font-weight: normal;
+    margin: 0;
+    padding: 10px 0;
+    color: white;
+}
+
+.contacts .custom-modal textarea {
+    background: none repeat scroll 0 0 #F0F0ED;
+    border: 1px solid #DDDDDD;
+    border-radius: 4px 4px 4px 4px;
+    color: #999999;
+    font-size: 12px;
+    height: 40px;
+    padding: 14px 12px;
+    resize: none;
+    width: 244px;
+}
+
+.contacts .custom-modal .btn-link {
+    color: #3F7EB0;
+    margin-top: 7px;
+    text-decoration: underline;
+}
+
+
+.contacts .custom-modal .btn-link:hover {
+    background: none repeat scroll 0 0 transparent;
+    text-decoration: none;
+}
+
+.contacts .custom-modale  button.btn, .contacts .custom-modal  input.btn[type="submit"] {
+    background-color: #2C6593;
+    background-image: linear-gradient(to bottom, #2C6593, #23547C);
+    border: medium none;
+    border-radius: 6px 6px 6px 6px;
+    color: #FFFFFF;
+    font-size: 16px;
+    margin-right: 5px;
+    padding: 8px 20px;
+}
+
+.contacts .custom-modal button.btn:hover, .contacts .custom-modal  input.btn[type="submit"]:hover {
+    background-image: linear-gradient(to bottom, #23547C, #2C6593);
+    
+}
+
+.contacts .custom-modal input[type="text"], .contacts .custom-modal input[type="password"] {
+    background: none repeat scroll 0 0 #F0F0ED;
+    border-radius: 4px 4px 4px 4px;
+    box-shadow: none;
+    color: #999999;
+    font-size: 12px;
+    height: 20px;
+    padding: 10px;
+}
+
+.contacts .custom-modal .input-large {
+    width: 100px;
+}
+
+.contacts .custom-modal .input-small {
+    width: 46px;
+}
+
+.contacts .academics-select {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #DDDDDD !important;
+    border-radius: 0 0 0 0;
+    margin-left: 2%;
+    min-height: 50px;
+    padding-left: 20px;
+    width: 91%;
+}
+
+.contacts .academics-select .btn-link {
+    color: #50accf;
+    font-weight: bold;
+    margin-top: 0;
+    text-decoration: none;
+}
+
+.contacts .academics-select .btn-link:hover {
+    text-decoration: none;
+}
+
+.contacts .content-right .media a {
+    color: #3F7EB0;
+    text-decoration: underline;
+}
+
+.contacts .content-right .media a:hover {
+    text-decoration: none;
+}
+
+.contacts .custom-modal .input-xlarge {
+    width: 175px;
+}
+
+.contacts .custom-modal .input-xxlarge {
+    width: 250px;
+    float: left;
+}
+
+.contacts h4 {
+    color: #333333;
+    font-family: 'Arial';
+    font-size: 14px;
+    margin-bottom: -10px;
+    margin-left: 12px;
+    margin-top: 28px;
+}
+
+.contacts h4 span {
+    font-weight: normal;
+    font-size: 12px;
+}
+
+.contacts .btn-success {
+    background-color: #89BC3E;
+    background-image: linear-gradient(to bottom, #89BC3E, #7BAA35);
+    border: medium none;
+    margin-right: 13px;
+}
+
+.contacts .btn-success:hover {
+    background-color: #7BAA35;
+    background-image: linear-gradient(to bottom, #7BAA35, #89BC3E);
+}
+
+.contacts .tab-content input[type="text"] {
+    *padding: 2% 2.4%;
+    width: 256px;
+}
+
+.contacts .tab-content h5 {
+    color: #333333;
+    font-size: 12px;
+    *margin-bottom: -5px;
+}
+
+.contacts .tab-content .input-xxxlarge[type="text"] {
+    width: 92%;
+}
+
+.contacts .tab-content textarea.input-xxxlarge {
+    height: 40px;
+    width: 94%;
+}
+
+#new_comment textarea{
+    height: 40px;
+    width: 95%; 
+}
+
+.contacts #add-contact select {
+    background: none repeat scroll 0 0 #F0F0ED;
+    border-radius: 4px 4px 4px 4px;
+    box-shadow: none;
+    color: #999999;
+    font-size: 12px;
+    height: 48px;
+    margin-top: 10px;
+    outline: medium none;
+    padding: 14px 12px;
+    width: 270px;
+}
+
+.contacts #add-contact select option {
+    background: none repeat scroll 0 0 #FFFFFF;
+    color: #666666;
+    cursor: pointer;
+    font-family: arial;
+    font-size: 12px;
+    height: 20px;
+    padding: 8px;
+}
+
+.contacts .tab-content #info input.input-large[type="text"] {
+    width: 26.5%;
+}
+
+.contacts .tab-content #info input.input-xlarge[type="text"] {
+    width: 48%;
+}
+
+.contacts .tab-content #info input.input-xxlarge[type="text"] {
+    width: 70%;
+}
+
+.contacts .tab-content #info input.input-small[type="text"] {
+    width: 15.8%;
+}
+
+.contacts #add-course .input-large {
+    width: 111px;
+}
+
+.contacts #add-course h5 {
+    color: #333333;
+    font-size: 12px;
+    font-weight: normal;
+}
+
+.contacts .week-selection {
+    background: none repeat scroll 0 0 #F0F0ED;
+    border: 1px solid #CCCCCC;
+    border-radius: 4px 4px 4px 4px;
+    box-shadow: none;
+    color: #999999;
+    font-size: 12px;
+    overflow: hidden;
+    padding: 10px;
+    position: relative;
+}
+
+.contacts .week-name {
+    float: left;
+    margin-bottom: 5px;
+    width: 100%;
+}
+
+.contacts .week-name span {
+    display: block;
+    float: left;
+    padding: 0 10px;
+}
+
+.contacts .week-name span.first {
+    padding-left: 15px;
+}
+
+.contacts .week-name span.last {
+    padding-right: 0;
+}
+
+.contacts .week-scale {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border-radius: 4px 4px 4px 4px;
+    float: left;
+    padding: 3% 5% 1%;
+    width: 90%;
+}
+
+.contacts input[type="checkbox"] + label {
+    margin-right: 32px;
+}
+
+.contacts input[type="checkbox"] + label.last {
+    margin-right: 0;
+}
+
+.more-info-submit-button{
+  margin-right: 24px !important;
+}

@@ -1,0 +1,23 @@
+<div class="content-right span8">
+  <h2><%= @notes_category.name %></h2>
+  <ul class="nav pull-right rhs-dropdown rhs2">                                         
+    <li class="dropdown">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+        <i class="icon-down pull-right"></i>
+      </a>
+      <ul class="dropdown-menu">
+        <li><a href="#">St. Croix University</a></li>
+        <li><a href="#">Croxy</a></li>
+        <li><a href="#">Champions</a></li>
+        <li class="divider"></li>
+        <li><a href="#" class="btn-link">Create new</a></li>
+      </ul>
+    </li>
+  </ul>  
+  <hr>
+
+  <div id="notes-category-posts">
+    <%= render(:partial => 'schedules/apps/notes/notes_right_category_posts', :collection => @notes_category_posts, :as => :post) %>
+  </div>
+
+</div>

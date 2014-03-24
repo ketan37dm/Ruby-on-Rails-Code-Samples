@@ -1,0 +1,13 @@
+<div class="site-content">
+  <div class="hero-unit hero-unit-successful-sign-up">
+    <h2>Thank you for signing up. <span class="hero-unit-successful-sign-up-sub">You’re almost there.</span></h2>
+    <div class="successful-sign-up-message">
+      Confirmation email is on its way. Click on the link in that email to verify yourself and get started.<br/>
+      Make sure to check your <u>spam</u> folder.
+    </div>
+    <div class="successful-sign-up-confirmation"><i>Did not get an email?</i></div>
+    <div class="successful-sign-up-confirmation-button">
+      <%= link_to "Resend Confirmation Email", new_confirmation_path(:user), :class => "signin-button resend-confirmation-button" %><br />
+    </div>
+  </div>
+</div>

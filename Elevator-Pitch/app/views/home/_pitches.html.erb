@@ -1,0 +1,30 @@
+<%= render :partial => "shared/social_header", :handlers => [:erb] %>
+<% if @pitches.blank? %>
+  <div class="empty-results">
+    Oops! We did not find anything based on your search criteria.<br/>Try some other criteria.
+  </div>
+<% else %>
+  <% page_number =  params[:page] || 1 %>
+  <div class="page-<%= page_number %>">
+    <% @pitches.each do |pitch| %>
+      <div class="hero-unit indivisual-pitch <%= my_pitch_class(pitch) %>">
+        <%= render :partial => "shared/pitch/main", :locals => {:pitch => pitch}, :handlers => [:erb] %>
+        <div class="social-information clearfix">
+          <%= render :partial => "shared/pitch/company", :locals => {:pitch => pitch}, :handlers => [:erb] %>
+          <%= render :partial => "shared/share_buttons", :locals => {:pitch => pitch}, :handlers => [:erb] %>
+          <div class="comments-count">
+            <ul>
+              <li>
+                <%= render :partial => "shared/pitch/edit_link", :locals => {:pitch => pitch}, :handlers => [:erb] %>
+              </li>
+              <li>
+                <%= link_to pluralize(pitch.comments_count, "comment"), display_pitch_path(:identifier => pitch.identifier)  %>
+              </li>
+              <li> | </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+<% end %>

@@ -1,0 +1,10 @@
+$("#user_<%= @user_id%>").remove();
+$("#message_add_user").html("");
+
+if($.trim($(".coach-list").html()) == ""){
+  $(".coach-list").prev('legend').html("");
+}
+
+
+<% @activity_type = "User removed" %>
+$("#activitity_stream_for_<%= current_user.sanatized_organization_name%>").prepend('<%=  j(render(partial: "shared/activity_stream_post")) %>');

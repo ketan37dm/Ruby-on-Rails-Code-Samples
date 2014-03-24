@@ -1,0 +1,23 @@
+<div id="welcome" class="modal hide fade" tabindex="-1" data-backdrop="static" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="container welcome">
+
+        <h2 class="form-signin-heading">Welcome to MyTeamsEdge!</h2>
+        <p>
+            You now can share and collaborate with important content 
+            within your program. Thanks for signing up, 
+            {stay focused, stay hungry.}
+        </p>
+        <p>
+            We've put together some steps to help get your account set up.
+        </p>
+        <hr>
+        <div class="block">
+          <a href="#upload-photo" class="btn btn-upload-photo" data-toggle="modal">Upload a photo & contact info<i class="icon-play pull-right"></i></a>
+          <a href="#add-users" class="btn btn-add-users" data-toggle="modal">Add new users<i class="icon-play pull-right"></i></a>
+          <a href="#add-opponents" class="btn btn-add-opponents" data-toggle="modal">Add opponents / schedule<i class="icon-play pull-right"></i></a>
+          <a href="javascript:void(0)" id="go-to-home" class="btn-link clearfix pull-left">Go to your home page</a>
+        </div>
+
+    </div> <!-- /container -->
+</div>
+<%= render(partial: "coach/home/add_user") %>

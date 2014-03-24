@@ -1,0 +1,10 @@
+<% if @user.errors.present? %>
+	$("#personal_info_errors").html('<%= error_messages_for(@user.personal_info) %>');
+<% else %>
+	$("#personal_info_errors").html("Updated Successfully");
+	$("#personal_info_errors").css("background-color", "#fcf8e3");
+	$("#personal_info_errors").css("color", "green");
+	$("#personal_info_errors").css("font-size", "18px");
+	$("#personal_info_errors").css("text-align", "center");
+	$("#personal_info_errors").attr("src", "<%= @user.image.url(:thumb) unless @user.image.blank? %>" )
+<% end %>

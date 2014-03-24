@@ -1,0 +1,9 @@
+$("#opponent_<%= @opponent_id%>").remove();
+$("#message_add_opponent").html("");
+
+
+if($.trim($(".current-schedule").html()) == ""){
+  $(".current-schedule").prev('legend').html("");
+}
+<% @activity_type = "Schedule removed" %>
+$("#activitity_stream_for_<%= current_user.sanatized_organization_name%>").prepend('<%=  j(render(partial: "shared/activity_stream_post")) %>');

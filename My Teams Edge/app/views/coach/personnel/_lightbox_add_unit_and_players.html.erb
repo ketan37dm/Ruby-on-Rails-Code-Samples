@@ -1,0 +1,35 @@
+
+
+
+<!-- MODAL STARTS -->
+<div id="new-unit" class="new-unit modal hide fade width-300" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="container">
+        <div class="modal-head">
+            <h2>Create another unit</h2>
+        </div>
+        <div class="modal-body">
+            <div id="create_unit_errors"></div>
+            <ul>
+                <li>Skilled positions</li>
+                <li>Academic year</li>
+            </ul>
+            <p class="info">
+                This helps organize and manage your account, 
+                making it much easier when adding content.
+            </p>
+            <%= form_for(@custome_sports_unit, url: create_sport_unit_coach_personnel_index_path, html: {class: "pos t-update", remote: true }) do |f|%>
+                <%= f.hidden_field :user_id, :value => current_user.id %> 
+                <%= f.hidden_field :sport_id, :value => current_sport.id %>
+                <%= f.hidden_field :organization_id, :value => @organization.id %>
+                <fieldset>
+                    <%= f.text_field(:unit_name, class: "input-xlarge", placeholder: "Unit Name") %>
+                    <input type="submit" value="Create Unit" class="btn btn-info pull-right" >
+                    <button class="btn-link pull-right cancel">Cancel</button>
+                </fieldset>
+            <% end %>
+        </div>  
+    </div> <!-- /container -->
+</div>
+<!-- New Unit 1 MODAL ENDS -->
+<!-- New Unit 2 MODAL STARTS -->
+<%= render(partial: "lightbox_add_players_to_unit" ) %>

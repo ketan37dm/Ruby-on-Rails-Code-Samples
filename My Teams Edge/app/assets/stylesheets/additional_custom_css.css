@@ -1,0 +1,440 @@
+
+/***************  To remove hover effect from the home page tabs when selected  *******************/
+
+.active-tab:hover{
+  background-color: #2c6593 !important;
+  box-shadow: 0 1px 2px rgba(255, 255, 255, 0.2) inset, 0 1px 0 rgba(0, 0, 0, 0.05);
+}
+
+.navbar .nav > li > a {
+  margin: 0px 3px;
+}
+
+/***********************************  Contact page send button  *************************************/
+
+.form-contact .send-button-div{ 
+  float : right; 
+  margin-right : 10px;
+}
+
+.form-contact .send-button{ 
+  padding: 7.5% 23% !important;
+}
+
+
+/***********************************  Login page email field  ***************************************/
+
+.form-signin input[type="email"] {
+  background: none repeat scroll 0 0 #F0F0ED;
+  border-radius: inherit;
+  box-shadow: none;
+  color: #999999;
+  font-size: 12px;
+  height: auto;
+  margin: 0 0 15px;
+  padding: 15px 12px;
+}
+
+.form-signin input[type=checkbox] {
+  display:none;
+}
+
+.login-box-margin{ margin: 103px auto !important; }
+
+/*******************************************  Error display on all pages  ********************************/  
+.field_with_errors{ float:left; padding-right:4px; }
+#errorExplanation{ 
+  background-color: #F0F0F0;
+  border: 2px solid green;
+  border-radius: 6px 6px 6px 6px;
+  color: #333333;
+  margin: 10px;
+}
+#errorExplanation ul { color:green; font-size:12px; margin: 0 0 10px 25px;}
+#errorExplanation ul li { width:200px;  display:block !important; }
+#errorExplanation h2{ display:none; } 
+#errorExplanation p{ 
+  background-color: green;
+  color: #FFFFFF;
+  font-size: 17px;
+  font-weight: normal;
+  margin-top: 0;
+  padding: 5px 5px 5px 13px;
+  text-align: left;
+}
+
+/***************************************************  Flash Error Display  ********************************************/
+.error-margin{ margin-bottom: 0px !important;}
+
+
+/***********************************************  Add team css  *******************************************************/
+
+.add-team-action-links-edit{
+  margin-right: 84px !important; 
+  margin-top: -43px !important; 
+  padding-bottom: 1px !important;
+}
+
+.add-team-action-links-delete{
+  margin-right: 34px !important; 
+  margin-top: -43px !important; 
+  padding-bottom: 1px !important;
+}
+
+/***************************************************  end  ************************************************************/
+
+/***************************************************  date time picker  ************************************************************/
+
+/*
+#ui-datepicker-div {background-color: #808080;}
+.ui-timepicker-div {background-color: #808080;}
+.ui-timepicker-div .ui-widget-header { margin-bottom: 8px !important;}
+.ui-timepicker-div dl { text-align: left; }
+.ui-timepicker-div dl dt { height: 25px !important; margin-bottom: -25px !important; }
+.ui-timepicker-div dl dd { margin: 0 10px 10px 65px !important; }
+.ui-timepicker-div td { font-size: 90% !important; }
+.ui-tpicker-grid-label { background: none !important; border: none  !important; margin: 0 !important; padding: 0 !important; }
+
+.ui-timepicker-rtl{ direction: rtl !important; }
+.ui-timepicker-rtl dl { text-align: right !important; }
+.ui-timepicker-rtl dl dd { margin: 0 65px 10px 10px !important; }
+.ui-state-default {color: #003E82;}
+.ui-datepicker-next {float: right; color: #003E82;}
+.ui-datepicker-prev {float: left; color: #003E82;}
+*/
+.ui-helper-hidden-accessible{display: none;}
+/***************************************************  end  ************************************************************/
+
+
+/*****************************************  Temporary css for My account pages  ***************************************/
+#form-space { color:black; }
+
+
+
+/************** home page update post lightbox ****************/
+.modal_update_post, .width-300{
+  left: 60% !important;
+  width: 300px !important;
+}
+.modal_update_post .container, .width-300 .container{
+  width: 300px !important; 
+  margin-bottom: 0px !important;
+}
+/*********************** end ************************/
+
+.registration-submit-button{ padding: 9px 4% !important; margin-right: 1% !important; }
+/***********************  Adding margin to account settings form  *******************/ 
+.account-settings-form{ margin: 50px auto !important; }
+
+.welcome-spinner{
+  clear: both;
+  display: block;
+  float: right;
+  margin-right: 22px;
+  margin-top: 25px;
+}
+
+.welcome-spinner.shortright{
+  clear: both;
+  display: block;
+  float: right;
+  margin-right: 120px;
+  margin-top: 25px;
+}
+
+.normal-white-space{
+  white-space: normal !important;
+}
+
+.weclome-success-messages {
+  background-color: #fcf8e3;
+  color: green;
+  font-size: 18px;
+  text-align: center
+
+}
+.weclome-success-messages #errorExplanation ul li {
+  width: auto;
+}
+
+#message_uplaod_photo.message.errors, #course-messages.errors {
+  width: auto;
+}
+
+#message_uplaod_photo.message.success, #course-messages.success {
+  background-color: #fcf8e3;
+  color: green;
+  font-size: 18px;
+  text-align: center
+}
+
+.overided-width{
+  width:60% !important;
+}
+
+.welcome input.input-large.overided {
+  width:196px !important;
+}
+
+.welcome .current-schedule h3.overided{
+  width: 21%;
+  float:left;
+}
+
+.welcome .current-schedule span.overided{
+  width: 73%;
+  float: right;
+}
+
+#update-pinfo .btn-group{
+  margin-left: 20px !important;
+}
+
+
+/***************************** Multiple Select Box   *********************************/
+
+.setScroll {
+    overflow-y: scroll;
+}
+.hideitem, .elmValue {
+    display: none;
+}
+.selectbox {
+    background: url("/assets/dropdown.png") no-repeat scroll 0 0 transparent;
+    float: left;
+    margin: 0 0 5px;
+    padding: 0 0 0 35px;
+}
+.selectbox ul {
+    background: url("/assets/dropdown.png") no-repeat scroll right top transparent;
+    list-style: none outside none;
+    margin: 0;
+    padding: 8px 22px 6px 0;
+    vertical-align: top;
+}
+.select_wrap {
+    border: 1px solid #FFFFFF;
+    clear: both;
+    margin: -50px 0 0 3px;
+    width: 44%;
+}
+.selectboxopen {
+    background: url("/assets/dropdownopen.png") no-repeat scroll 0 0 transparent;
+    clear: both;
+    float: left;
+    margin: 0;
+    padding: 0 0 0 35px;
+}
+.selectboxopen ul {
+    background: url("/assets/dropdownopen.png") no-repeat scroll right top transparent;
+    height: 19px;
+    list-style: none outside none;
+    margin: 0;
+    padding: 7px 22px 6px 0;
+    vertical-align: top;
+}
+.selectbox ul li, .selectboxopen ul li {
+    color: #333333;
+    cursor: pointer;
+    font-family: arial,helvetica,san-serif;
+    font-size: 12px;
+    list-style: none outside none;
+    margin: 0;
+    padding: 0;
+}
+.selectboxoptions_wrap {
+    clear: both;
+    display: none;
+    margin: 0;
+    padding: 0;
+}
+.selectboxoptions_radio, .selectboxoptions_check {
+    background: none repeat scroll 0 0 #E6E9ED;
+    clear: both;
+    list-style: none outside none;
+    margin: 0;
+    padding: 0;
+}
+.selectboxoptions_radio li, .selectboxoptions_check li {
+    color: #333333;
+    cursor: pointer;
+    font-family: arial,helvetica,san-serif;
+    font-size: 12px;
+    list-style: none outside none;
+    margin: 2px 0 0 2px;
+    padding: 3px 0 2px 20px;
+}
+.hover {
+    background-color: #E6E9ED;
+}
+
+.selectboxoptions_check{
+  width: 179px !important;
+}
+
+.selectboxfoot {
+  display:none;
+}
+.selectboxoptions_check li {
+    background: url("/assets/checkboxoff.png") no-repeat scroll 5px 6px #E6E9ED;
+}
+.selectboxoptions_radio li {
+    background: url("/assets/radiooff.png") no-repeat scroll 5px 6px #E6E9ED;
+}
+.selectboxoptions_radio li.selected {
+    background: url("/assets/selectradio.png") no-repeat scroll 5px 6px #F2F2F2;
+    display: block !important;
+}
+.selectboxoptions_radio li.selected_disable {
+    background: url("/assets/selectradio_disable.png") no-repeat scroll 5px 6px #F2F2F2;
+    display: block !important;
+}
+.selectboxoptions_check li.selected {
+    background: url("/assets/selectcheck.png") no-repeat scroll 5px 6px #F2F2F2;
+    display: block !important;
+}
+.selectboxoptions_check li.selected_disable {
+    background: url("/assets/selectcheck_disable.png") no-repeat scroll 5px 6px #F2F2F2;
+    display: block !important;
+}
+.selectboxoptions_radio li.hover, .selectboxoptions_check li.hover {
+    background-color: #F2F2F2;
+}
+.selectboxfoot {
+    background: url("/assets/selectfoot.png") no-repeat scroll 0 0 transparent;
+    float: left;
+    padding: 0 0 0 35px;
+}
+.selectboxfoot div {
+    background: url("/assets/selectfoot.png") no-repeat scroll right top transparent;
+    margin: 0;
+    padding: 7px 22px 10px 0;
+}
+
+.width-auto{
+  width:auto;
+}
+
+.personal-jersey, .personal-weight, .school_year{
+  float:left;width:49%;
+}
+
+.personal-height {
+  float:right;width:49%;
+}
+
+.select_wrap.personal-positions{
+  float:right;
+  margin: -50px 0 0 3px;
+  width: 44%;
+}
+
+.modal-body.overided.personal-info {
+  max-height: 420px !important;
+}
+
+/***************************** Multiple Select Box   *********************************/
+
+
+#password #errorExplanation, #email #errorExplanation {
+  margin: 0 0 10px;
+}
+
+.container.upload-photo .fakefile input {
+  width: 307px;
+}
+
+.container.upload-photo .inner-container.border {
+  border: 1px solid #DDDDDD !important;
+  padding: 10px 0;
+  width:98%;
+}
+
+.my-account.container fieldset {
+  padding: 0px !important;
+}
+
+.container.upload-photo .inner-container.border.upload-photo {
+  height: 104px;
+  padding: 19px 0px;
+}
+
+.btn.btn-info.pull-right.basics {
+  margin-top: 20px;
+  background-color: #2C6593;
+  background-image: linear-gradient(to bottom, #2C6593, #23547C);
+  border: medium none;
+  border-radius: 6px 6px 6px 6px;
+  color: #FFFFFF;
+  font-size: 16px;
+  margin-right: 10px;
+  padding: 10px 20px;
+}
+
+.btn.btn-info.pull-right.basics:hover {
+  background-image: linear-gradient(to bottom, #23547C, #2C6593);
+}
+
+.welcome.overided.course {
+  margin: -45px auto 0;
+  box-shadow: none;
+}
+
+
+#new_payer #errorExplanation ul {
+  width: 100%;
+}
+
+#new_payer #errorExplanation ul li{
+  width: 100%;
+}
+
+/*.btn.btn-info.pull-right.basics:hover {*/
+  /*background-color: #23547C;*/
+  /*background-image: linear-gradient(to bottom, #23547C, #2C6593);*/
+  /*transition: background-position 0.1s linear 0s;*/
+/*}*/
+
+
+.scrolling{
+  max-height: 550px;
+  overflow-y: auto;
+}
+
+.ui-autocomplete{
+  width: 25% !important;
+  list-style: none outside none;
+  position: fixed;
+}
+
+.left-align{
+  text-align: left !important;
+}
+.welcome .current-schedule h3.overided {
+  margin-right:0px;
+}
+
+.overide-max-height{
+  max-height: 412px !important;
+}
+
+.overide-right-padding{
+  padding-right: 10px !important;
+}
+
+.fl {
+  float:left !important;
+}
+
+.organization-registered-sport{
+  font-weight: bold;
+}
+
+/***********************************  Spinner in Modals  ************************************/
+.modal-spinner{
+  float:right; 
+  margin-right : 10px;
+}
+
+/*************************  High School Edge Sign-Up Button Color ***************************/
+.high_school_sign_up_button{ color : #FFFFFF !important; }

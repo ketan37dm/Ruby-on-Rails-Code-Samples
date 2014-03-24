@@ -1,0 +1,22 @@
+<!-- New Unit 2 MODAL STARTS -->
+<div id="new-unit-2" class="new-unit modal hide fade width-300" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="container">
+        <div class="modal-head">
+            <h2>Add New Users</h2>
+        </div>
+        <div class="modal-body">
+            <%= form_tag(add_users_to_sport_unit_coach_personnel_index_path, class: "post-update", remote: true) do -%>
+                <%= hidden_field_tag("unit-id", "" ) %>
+                <%= hidden_field_tag("users-for-unit", "" ) %>
+                <fieldset>
+                    <input type="text" placeholder="Add User..." class="input-xlarge" id="add-user-unit-txt">
+                    <ul class="user-list" id="user-list-selected">                        
+                    </ul>
+                    <input type="submit" value="Save" class="btn btn-info pull-right" id="add-users-submit-button" style="display:none;">
+                    <button class="btn-link pull-right cancel">Cancel</button>
+                </fieldset>
+            <% end %>
+        </div>  
+    </div> <!-- /container -->
+</div>
+<!-- New Unit 2 MODAL ENDS -->

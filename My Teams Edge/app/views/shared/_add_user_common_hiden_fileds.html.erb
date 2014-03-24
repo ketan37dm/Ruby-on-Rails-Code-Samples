@@ -1,0 +1,14 @@
+<%= f.hidden_field(:update_on, value: "add_new_user") %>
+<%= hidden_field_tag("user[user_sports_attributes][][sport_id]", current_sport.id || current_user.user_sports.first.sport_id) %>
+<%= hidden_field_tag("user[user_sports_attributes][][sport_name]", current_sport.name || current_user.user_sports.first.sport_name) %>
+<%= hidden_field_tag("user[user_sports_attributes][][payer_id]", current_user.get_payer_for_current_sport(current_sport).id) %>
+<%= hidden_field_tag("user[user_sports_attributes][][parent_id]", current_user.id) %>
+
+<% organization_id = current_user.organization.id %>
+<%= hidden_field_tag("user[user_sports_attributes][][organization_id]", organization_id) %>
+<%= f.hidden_field((current_user.organization.class.to_s.underscore + "_id").to_sym, value: organization_id) %>
+
+<% if current_subvarsity? %>
+    <%= hidden_field_tag("user[user_sports_attributes][][subvarsity_id]", current_user_sport.subvarsity_id) %>
+    <%= hidden_field_tag("user[user_sports_attributes][][subvarsity_name]", current_user_sport.subvarsity_name) %>
+<% end %>

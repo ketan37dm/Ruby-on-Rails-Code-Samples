@@ -1,0 +1,21 @@
+<div class="content-left span4">
+    <div class="content-block">
+        <h2>Notes</h2>
+        <ul class="nav pull-right rhs-dropdown rhs2">
+            <li class="dropdown">
+                <a href="#" id="createNote" class="dropdown-toggle" data-toggle="dropdown">
+                    <i class="icon-down pull-right"></i>
+                </a>
+            </li>
+        </ul>
+        <div id="createNoteOptions" class="scroll hide">
+            <hr>
+            <a href="#" id="new-category" class="btn btn-default set-heigt-30"><span class="pull-left">Create New Topic</span></a>
+            <a href="#" class="btn btn-default set-heigt-30"><span class="pull-left">Add New Topic</span></a>
+        </div>
+    </div>
+
+    <div id="category-left-listing">
+        <%= render(:partial => 'schedules/apps/notes/notes_category_list', :collection => @notes_categories, :as => :notes_category ) %>
+    </div>    
+</div>

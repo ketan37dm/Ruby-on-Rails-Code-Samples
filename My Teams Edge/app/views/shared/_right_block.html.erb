@@ -1,0 +1,19 @@
+<div class="content-right span8">
+    <h2><%= current_user.active_name_for_organization(current_sport.id).try(:name) %></h2>
+    <ul class="nav pull-right rhs-dropdown rhs2">                                         
+        <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                <i class="icon-down pull-right"></i>
+            </a>
+            <ul class="dropdown-menu">
+                <li><a href="#">View Messages</a></li>
+                <li><a href="#">View Schedule</a></li>
+                <li><a href="#">View Community</a></li>
+            </ul>
+        </li>
+    </ul>  
+    <hr>
+
+    <div id="activitity_stream_for_<%= current_user.sanatized_organization_name %>" >
+    </div>
+</div> 

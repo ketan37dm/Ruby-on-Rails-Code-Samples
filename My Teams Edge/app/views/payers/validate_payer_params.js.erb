@@ -1,0 +1,8 @@
+<%if @payer.errors.blank? %>
+	Stripe.setPublishableKey($('meta[name="stripe-key"]').attr('content'));
+    subscription.processCard();             
+<% else %>
+	$('input[type=submit]').show();
+     $('.green-spinner').hide();
+	$("#payer_and_cc_errors").html('<%= error_messages_for(@payer) %>');
+<% end %>

@@ -1,0 +1,45 @@
+<div class="content-right span8">
+  
+  <div id="right-top-section">
+    <%= render(:partial => 'schedules/home/schedule_right_top_section') %>
+  </div>
+
+  <div class="clearfix">
+    <%= link_to(schedules_apps_notes_path(:opponent => @opponent.id)) do %>
+      <button type="button" class="mainBtn">Notes</button>
+    <% end %>
+
+    <%= link_to(schedules_apps_rosters_path(:opponent => @opponent.id)) do %>
+      <button type="button" class="mainBtn">Roster</button>
+    <% end %>
+
+    <%= link_to(schedules_apps_video_scouts_path(:opponent => @opponent.id)) do %>
+      <button type="button" class="mainBtn">Video Scout</button>
+    <% end %>
+    <button type="button" class="mainBtn">Playbook</button>
+    <button type="button" class="mainBtn">Gamelog</button>
+    <button type="button" class="mainBtn">Forum</button>
+  </div>
+  <hr>
+  <span class="pull-left minorHeading">Notes/Reminders</span>
+  <div class="comments">
+    <input type="text" placeholder="Leave a comment" class="input-x2large">
+  </div>
+  <div class="media">
+    <div class="media-body">
+        <h3 class="media-heading">Ron Swanson<i class="icon-settings pull-right"></i></h3>
+        <p>Users can post some basic reminders right here</p>
+    </div>
+  </div><!--media-->
+  <hr>
+  <div class="media">
+    <div class="media-body">
+      <h3 class="media-heading">Ron Swanson<i class="icon-settings pull-right"></i></h3>
+      <p>Users can post some basic reminders right here</p>
+    </div>
+  </div><!--media-->
+</div>
+
+<div id = "edit-opponent-container">
+  <%= render(:partial => "schedules/home/lightbox_schedule_edit_opponent") %>
+</div>

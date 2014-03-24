@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= content_for?(:title) ? yield(:title) : "MindYourPitch" %></title>
+    <%= csrf_meta_tags %>
+    <%= javascript_include_tag "application" %>
+    <%= stylesheet_link_tag "application", :media => "all" %>
+  </head>
+
+  <body class="body-login">
+    <div class="container">
+      <div class="notification">
+        <%= bootstrap_flash %>
+      </div>
+      <div class="login-image"><%= link_to image_tag("logo_big_1.png"), root_path %></div>
+      <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+        <div class="hero-unit-login-wrap">
+          <div class="hero-unit-login-up hero-unit">
+            <span> Connect with <%= link_to image_tag("facebook_login.png"), '/auth/facebook' %> or <%= link_to image_tag("twitter_login.png"), '/auth/twitter' %></span>
+          </div>
+          <div class="login-box-separator">
+            <%= image_tag("or_signup.png") %>
+          </div>
+          <div class="hero-unit-login-down hero-unit">
+            <%= f.error_messages :message => "Oops! something went wrong." %>
+            <div>
+              <label for="user_name">Name*<br/> <em>Who are you going to pitch for?</em></label>
+              <%= f.text_field :name, :class => "login-text-field" %>
+            </div>
+            <div>
+              <label for="user_webaddress">Web Address</label>
+              <%= f.text_field :web_address, :class => "login-text-field" %>
+            </div>
+            <div>
+              <label for="user_email">Email*</label>
+              <%= f.email_field :email, :class => "login-text-field" %>
+            </div>
+            <div>
+              <label for="user_password">Password*</label>
+              <%= f.password_field :password, :class => "login-text-field" %>
+            </div>
+            <div>
+              <label for="user_password_confirmation">Password Confirmation*</label>
+              <%= f.password_field :password_confirmation, :class => "login-text-field" %>
+            </div>
+            <div class="sign-up-section"><%= f.submit "Sign up", :class => "btn sign-up-button" %></div>
+          </div>
+        </div>
+      <% end %>
+<%#= render "devise/shared/links" %>
+    </div>
+  </body>
+</html>

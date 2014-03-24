@@ -1,0 +1,468 @@
+.personnel .content-right {
+    margin-bottom: 20px;
+    min-height: 70px;
+}
+
+.personnel h2 {
+    font-size: 16px;
+}
+
+.personnel h2 i.icon-settings {
+    background-image: url("/assets/icon-settings.png");
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    display: block;
+    height: 16px;
+    width: 15px;
+}
+
+.personnel .content-left .content-block a {
+    color: #A8A8A8;
+    display: block;
+    font-size: 14px;
+    height: 20px;
+    padding: 8px 8px 5px;
+    width: 94%;
+}
+
+.personnel .content-left .content-block a:hover {
+    background: none repeat scroll 0 0 #f0f0ed;
+    cursor: pointer;
+}
+    
+.personnel .content-left .content-block a.selected {
+    background: none repeat scroll 0 0 #F0F0ED;
+    color: #333333;
+    font-weight: bold;
+}
+
+.personnel .content-left .content-block a i {
+    opacity: .4;
+}
+
+.personnel .content-left .content-block a.selected i {
+    opacity: 1;
+}
+
+.personnel .content-right .media {
+    padding-bottom: 0;
+    padding-right: 0;
+    padding-top: 0;
+}
+
+.personnel .content-right .media-body {
+    float: left;
+    margin-right: 1%;
+    padding: 1% 2%;
+    width: 56%;
+}
+
+.personnel .content-right .media-body:hover {
+    background-color: #f0f0ed;
+    cursor: pointer;
+}
+
+.personnel .content-right .media p {
+    margin-bottom: 0;
+}
+
+.personnel .content-right .media-body:hover a.remove {
+    visibility: visible;
+}
+
+.personnel .content-right .media a.remove {
+    visibility: hidden;
+}
+
+.personnel .content-right .media a {
+    color: #0088CC;
+}
+
+.personnel .content-right button {
+    border: medium none;
+    color: #555555;
+    padding: 5px 10px;
+    background-position: 0 0;
+    background-color: #f1f1f1;
+    *background-color: #f1f1f1;
+    background-image: -moz-linear-gradient(top, #f1f1f1, #c4c4c4);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#f1f1f1), to(#c4c4c4));
+    background-image: -webkit-linear-gradient(top, #f1f1f1, #c4c4c4);
+    background-image: -o-linear-gradient(top, #f1f1f1, #c4c4c4);
+    background-image: linear-gradient(to bottom, #f1f1f1, #c4c4c4);
+}
+
+.personnel .content-right button:hover {
+    background-position: 0 0;
+    background-color: #c4c4c4;
+    *background-color: #c4c4c4;
+    background-image: -moz-linear-gradient(top, #c4c4c4, #f1f1f1);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#c4c4c4), to(#f1f1f1));
+    background-image: -webkit-linear-gradient(top, #c4c4c4, #f1f1f1);
+    background-image: -o-linear-gradient(top, #c4c4c4, #f1f1f1);
+    background-image: linear-gradient(to bottom, #c4c4c4, #f1f1f1);
+}
+
+.personnel .content-right button.unfollow {
+    background-color: #7D7D7D;
+    background-position: 0 0;
+    border: medium none;
+    color: #FFFFFF;
+    padding: 5px 10px;
+    text-shadow: none;
+    *background-color: #7d7d7d;
+    background-image: -moz-linear-gradient(top, #7d7d7d, #7d7d7d);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#7d7d7d), to(#7d7d7d));
+    background-image: -webkit-linear-gradient(top, #7d7d7d, #7d7d7d);
+    background-image: -o-linear-gradient(top, #7d7d7d, #7d7d7d);
+    background-image: linear-gradient(to bottom, #7d7d7d, #7d7d7d);
+}
+
+.icon-status {
+    background-position: 0 6px;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    display: block;
+    height: 14px;
+    width: 8px;
+}
+
+.user-online {    
+    background-image: url("/assets/user-online.png");
+}
+
+.user-offline {    
+    background-image: url("/assets/user-offline.png");
+}
+
+.new-unit .modal-head {
+    background: none repeat scroll 0 0 #3F7EB0;
+    font-family: 'Trebuchet MS';
+    font-size: 24px;
+    font-weight: normal;
+    margin: 0;
+    padding: 0 10px;
+    text-align: center;
+}
+
+.new-unit .modal-head h2 {
+    margin-top: 0;
+}
+
+.new-unit p {
+    font-size: 12px;
+    color: #333333;
+}
+
+.new-unit input[type="text"] {
+    background: none repeat scroll 0 0 #F0F0ED;
+    width: 93%;
+}
+
+.new-unit button.btn, .new-unit input.btn[type="submit"] {
+    background-color: #2C6593;
+    background-image: linear-gradient(to bottom, #2C6593, #23547C);
+    border: medium none;
+    border-radius: 6px 6px 6px 6px;
+    color: #FFFFFF;
+    font-size: 16px;
+    margin-right: 5px;
+    padding: 10px 20px;
+}
+
+.new-unit button.btn:hover, .new-unit input.btn[type="submit"]:hover {
+    background-color: #23547C;
+    background-image: linear-gradient(to bottom, #2C6593, #23547C);
+}
+
+.new-unit .btn-link {
+    color: #0088CC;
+    margin-top: 13px;
+    text-decoration: underline;
+    padding-right:10px;
+}
+
+.new-unit .btn-link:hover {
+  background: none
+}
+
+
+.personnel .content-right button.overided {
+    background-color: transparent;
+    background-image: none;
+    background-position: 0 0;
+    border: medium none;
+    padding: 5px 10px;
+    color: #0088CC;
+    margin-top: 13px;
+    text-decoration: underline;
+
+}
+
+.new-unit .modal-body ul { 
+    margin-left: 0;
+}
+
+.new-unit .modal-body ul li { 
+    background-image: url("/assets/radio-li.png");
+    background-position: 0 5px;
+    background-repeat: no-repeat;
+    color: #666666;
+    font-size: 14px;
+    list-style: none outside none;
+    padding-left: 20px;
+}
+
+.new-unit .modal-body .user-list li {
+    background: none repeat scroll 0 0 transparent;
+    border-bottom: 1px solid #DDDDDD;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    padding-left: 0;
+}
+
+.new-unit .modal-body .user-list li span {
+    color: #344563;
+    font-weight: bold;
+    font-size: 12px;
+    padding-left: 10px;
+}
+
+.new-unit .modal-body .user-list li .icon-remove {
+    cursor: pointer;
+    margin-right: 5px;
+}
+
+.new-unit .user-list img.media-object {
+    float: left;
+    height: 22px;
+    width: 22px;
+}
+
+.add-member .modal-body legend {
+    color: #333333;
+    font-size: 12px;
+}
+
+.add-member h2 {
+    background: none repeat scroll 0 0 #3F7EB0;
+    font-family: 'arial';
+    font-size: 14px;
+    line-height: 20px;
+    margin-bottom: 0;
+    margin-top: 0;
+    padding: 15px 20px;
+}
+
+.add-member input[type="text"] {
+    background: none repeat scroll 0 0 #F0F0ED;
+    border-radius: 4px 4px 4px 4px;
+    box-shadow: none;
+    color: #999999;
+    font-size: 12px;
+    margin-top: 10px;
+    outline: medium none;
+    padding: 10px 12px;
+    width: 240px;
+}
+
+.add-member .btn {
+    background-color: #2C6593;
+    background-image: linear-gradient(to bottom, #2C6593, #23547C);
+    border: medium none;
+    border-radius: 6px 6px 6px 6px;
+    color: #FFFFFF;
+    font-size: 16px;
+    margin-right: 5px;
+    padding: 10px 20px;
+}
+
+.add-member .btn:hover {
+    background-image: none
+}
+
+.add-member .btn-link {
+    color: #3F7EB0;
+    margin-top: 7px;
+    text-decoration: underline;
+}
+
+.add-member .btn-link:hover {
+    background: none;
+    text-decoration: none;
+}
+
+.add-member .modal-body label {
+    color: #333333;
+    font-size: 12px;
+}
+
+.add-member .btn-success {
+    background-color: #80b039;
+    background-image: linear-gradient(to bottom, #80b039, #739f33);
+    border: medium none;
+    border-radius: 6px 6px 6px 6px;
+    color: #FFFFFF;
+    font-size: 16px;
+    margin-right: 5px;
+    padding: 10px 20px;
+}
+
+.add-member .btn-success:hover {
+    background-color: #739f33;
+    background-image: none;
+}
+
+.display-icon-settings{
+    height: 18px !important;
+    width: 15px !important;
+    padding: 0px !important;
+}
+
+#send-email .modal-body {
+    text-align: center;
+}
+
+#send-email p {
+    color: #666666;
+    font-size: 14px;    
+    padding: 10px;
+}
+
+
+/***************************Add user to unit****************************/
+
+.personnel .content-right .popover-content ul {
+    border-bottom: 1px solid #DDDDDD;
+    float: left;
+    list-style: none outside none;
+    margin: 10px 0;
+    padding-bottom: 10px;
+    width:100%
+}
+
+.personnel .content-right .popover-content ul li {
+    color: #344563;
+    float: left;
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.personnel .content-right .popover-content .delete-unit {
+    background-image: url("/assets/delete-unit.jpg");
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    display: inline-block;
+    height: 21px;
+    vertical-align: text-top;
+    width: 22px;
+}
+
+.add-to-unit-2 .modal-body ul {
+    float: left;
+}
+
+.add-to-unit-2 .modal-body ul li {
+    background: none;
+    background-image: none;
+    padding-left: 0;
+    margin-bottom: 10px;    
+    color: #344563;
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.add-to-unit-2 .delete-unit {
+    background-image: url("/assets/delete-unit.jpg");
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    display: inline-block;
+    height: 21px;
+    margin-right: 10px;
+    vertical-align: text-top;
+    width: 22px;
+}
+.add-to-unit-2 .add-new-unit {
+    background-image: url("/assets/add-new-unit.jpg");
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    display: inline-block;
+    height: 21px;
+    margin-right: 10px;
+    vertical-align: text-top;
+    width: 22px;
+}
+.add-to-unit-2 input[type="text"] {
+    margin-top: -4px;
+    width: 60%;
+}
+
+.personnel .content-right .popover-content .btn-info, .personnel .content-right .popover-content a.blue-button {
+    background-color: #2C6593;
+    background-image: linear-gradient(to bottom, #2C6593, #23547C);
+    border: medium none;
+    border-radius: 6px 6px 6px 6px;
+    color: #FFFFFF;
+    font-size: 14px;
+    margin: 0 35px 5px 0;
+    padding: 10px 15px;
+}
+
+.personnel .content-right .popover-content .btn-info, .personnel .content-right .popover-content a.blue-button:hover {
+    text-decoration: none !important;
+    background-image: linear-gradient(to bottom, #2C6593, #23547C);
+    background-position: 0 0px !important;
+}
+
+#add-to-unit.modal {
+    left: 60%;
+    width: 300px;
+}
+
+#add-to-unit.modal .container {
+    width: 300px;
+}
+
+.personnel .content-right .popover-content ul li.overided{
+  width:100%;
+}
+
+.personnel .content-right .popover-content .btn-link {
+    background: none repeat scroll 0 0 transparent;
+    border-color: transparent;
+    border-radius: 0 0 0 0;
+    color: #0088CC;
+    cursor: pointer;
+    margin-left: 0;
+    padding-left: 0;
+    text-decoration: underline;
+}
+
+.personnel .content-right .popover-content .btn-link.overided {
+  float: left !important;
+  font-size: 15px;
+  margin-top: 7px;
+}
+
+.new-unit button.btn, .new-unit input.btn[type="submit"]:hover {
+  background-image: linear-gradient(to bottom, #2C6593, #23547C);
+}
+
+.personnel .content-right .user-unit-information{
+    margin-right: 3px;
+}
+
+/******************************  Follow / Unfollow button  **************************/
+.unfollow-button{
+    color: white !important;
+}
+
+.follow-unfollow-button:hover{
+    text-decoration: none !important;
+}

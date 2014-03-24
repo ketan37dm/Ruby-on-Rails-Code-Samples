@@ -1,0 +1,17 @@
+<div id="content-top">
+  <h2><%= Time.now.strftime("%A %B %d, %I:%M %P") %></h2>
+  <p>
+    A simple, powerful way to connect your entire athletic program.  Collaborate effortlessly with game film,<br> 
+    scouting reports, academics, and much more, all in one single place.
+  </p>
+</div>
+<div id="content-bottom">
+  <a href="/admins/quotes" title="" class="quote"><i>&nbsp;</i><span>Quote of the Day</span></a>
+  <%= link_to add_admins_accounts_path, :class => "add" do %>
+    <i>&nbsp;</i><span>Add Account</span></a>
+  <% end %>
+  <%= link_to admins_active_accounts_path, :class => "success" do %>
+    <i>&nbsp;</i><span>Active Account</span></a>
+  <% end %>
+  <a href="/admins/home/edit_password" title="" class="key"><i>&nbsp;</i><span>Change Password</span></a>
+</div>

@@ -1,0 +1,16 @@
+<div id="content" class="my-account container">
+  <%= render partial: 'account/links' %>
+  <div class="content-right span8">
+    <h2>MyTeamsEdge Login ID</h2>
+    <hr>
+    <ul class="nav nav-tabs" id="loginTab">
+      <li class="<%= current_account_tab_content(["change_email", "update_email"]) %>"><a href="#email" data-toggle="tab" >Email / Username</a></li>
+      <li class="<%= current_account_tab_content(["update_password"]) %>"><a href="#password" data-toggle="tab" >Password</a></li>
+    </ul>
+    <div class="tab-content">
+      <%= render :partial => 'account/change_email' %>
+      <%= render :partial => 'account/change_password' %>
+    </div>
+  </div>
+</div>
+

@@ -1,0 +1,15 @@
+<div class="content-left span4">
+    <div class="content-block">
+        <h2><%= Time.now.localtime.strftime("%A, %b %d") %></h2>
+        <hr>
+        <button id="post-update-trigger" class="btn btn-success">Post Update</button>
+    </div>
+    <%=  render partial: "shared/left_block/upcoming_events/events" %>
+    <div id="show_schedule_list_div">
+        <%=  render(partial: "shared/show_schedule_list") %>
+    </div>
+    <div id="show_following_players_div">
+        <%=  render(partial: "shared/show_following_players") %>
+    </div>
+    
+</div>

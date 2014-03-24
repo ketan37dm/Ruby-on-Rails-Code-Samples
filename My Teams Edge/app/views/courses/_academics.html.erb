@@ -1,0 +1,18 @@
+<%= render partial: "courses/add_course/add_course_modal" %>
+<%= render partial: "courses/documents/document_modal" %> 
+<%= render partial: "courses/events/add_course_event_modal" %>
+<div class="tab-pane" id="academics">
+  <span id="academics-messages"></span>
+  <div id="course-select-box">
+    <%= render partial: 'courses/select/course_select_box' %>
+  </div>
+  <div id="course-events-section">
+    <%= render partial: 'courses/events/course_events' %>
+  </div>
+  <div id="course-documents-section">
+    <%= render partial: 'courses/documents/course_documents' %>
+  </div>
+  <div id="course-notes-section">
+    <%= render partial: 'courses/notes/course_notes' %>
+  </div>
+</div>

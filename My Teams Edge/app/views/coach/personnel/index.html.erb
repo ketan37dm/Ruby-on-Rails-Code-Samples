@@ -1,0 +1,26 @@
+<%# all the js for ths page is available in personnel.js file %>
+<div id="content" class="personnel container">
+  
+  <div id="personnel-head-block">
+    <%= render(partial: "personnel_head_block") %>
+  </div>
+
+  <div id="page-left-right-sections">
+    <div id="personnel-left-block">
+    </div>
+
+    <div id="personnel-right-block">
+    </div>
+  </div>
+
+  <div id="post-message-container"></div>
+
+  <%= render(partial: "lightbox_add_unit_and_players") %>
+  <%= render(partial: "lightbox_resend_invite")  %> 
+  <%= render(partial: "lightbox_add_user_to_user_group")  %> 
+  <%= render(partial: "lightbox_send_email")  %> 
+</div>
+
+<script type="text/javascript">
+  var showPlayers = '<%= @show_players %>';
+</script>

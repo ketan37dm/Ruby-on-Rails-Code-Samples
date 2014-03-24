@@ -1,0 +1,16 @@
+<% if @course.errors.present? %>
+    $("#course-messages").html('<%= error_messages_for(@course) %>');
+    $("#course-messages").addClass('errors');
+    $("#course-messages").removeClass('success');
+<% else %>
+  $("#course-messages").html("Added Successfully");
+  $("#course-messages").addClass('success');
+  $("#course-messages").removeClass('errors');
+  $(".inner-container input[type=text]").val("");
+  <% if current_user.courses.count == 1 %>
+      $(".current-courses").prepend('<%= j render partial: "player/home/welcome/courses", locals: { courses: current_user.courses }%>');
+  <% else %>
+      $(".current-course").prepend('<%= j render partial: "player/home/welcome/course", locals: { course: @course}%>');
+  <% end %>
+<% end %>
+

@@ -1,0 +1,29 @@
+<script type="text/javascript">
+</script>
+
+<div class="container">
+  <div class="content-page">
+    <h1 class="form-signin-heading">Contact</h1>
+    <%= form_for @feedback, :url => feedbacks_path, :method => :post, :html => { :class => "form-contact" } do |f| %>
+      <%= f.error_messages %> 
+      <h3>Fill out the form below, we will be in touch as soon as possible.</h3>
+      <fieldset>
+        <div>
+          <%= f.text_field :name, class: "form-contact", placeholder: "Name" %> 
+          <%= f.text_field :email, class: "input-xlarge", placeholder: "Email" %> 
+        </div>
+        <div>
+          <%= f.text_field :organization, class: "input-xlarge", placeholder: "School / Organisation (optional)" %> 
+          <%= f.select :reason, contact_reason, class: "input-xlarge" %> 
+        </div>
+        <div>
+          <%= f.text_area :message, class: "input-xxlarge", placeholder: "Message" %> 
+        </div>
+      </fieldset>
+      <div class="send-button-div">
+        <%= f.submit "Send", :class => "btn btn-primary btn-large send-button" %>
+      </div>
+    <% end %> 
+  </div>
+</div> 
+

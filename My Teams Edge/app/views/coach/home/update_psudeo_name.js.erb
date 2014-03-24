@@ -1,0 +1,8 @@
+<% if @current_psudeo_name.errors.present? || @new_psudeo_name.errors.present? %>
+  alert("Could not update at the moment. Please try later");
+<% else %>
+  $("#head-psudo-name-list").html('<%= j(render("shared/head_block_psudeo_name_list")) %>');
+
+  <% @activity_type = "Organization alias updated" %>
+  $("#activitity_stream_for_<%= current_user.sanatized_organization_name%>").prepend('<%=  j(render(partial: "shared/activity_stream_post")) %>');
+<% end %>

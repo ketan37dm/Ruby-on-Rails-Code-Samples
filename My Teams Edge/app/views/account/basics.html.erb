@@ -1,0 +1,16 @@
+<div id="content" class="my-account container">            
+  <%= render :partial => "/account/links" %> 
+  <div class="content-right span8">
+    <h2>Basics</h2>                
+    <hr>
+    <div class="container upload-photo">
+      <%= form_for(@user, url: account_update_basics_path , html: { class: "overided-width", multipart: true}) do |f| %>
+        <%= f.error_messages %>
+        <%= f.hidden_field(:update_on, value: "upload_photo_and_contact") %>
+        <%= render partial: 'account/upload_photo_fields', locals: { f: f } %>
+        <%= render partial: 'account/contact_info_fields', locals: { f: f } %>
+      <% end %>
+    </div>
+  </div>
+</div>
+

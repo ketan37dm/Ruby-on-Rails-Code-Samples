@@ -1,0 +1,22 @@
+<h2><%= @opponent.name %></h2>
+<ul class="nav pull-right rhs-dropdown rhs2">                                         
+  <li class="dropdown">
+    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+        <i class="icon-down pull-right"></i>
+    </a>
+    <ul class="dropdown-menu">
+      <li><a href="#"><%= @opponent.scheduled_at.strftime("%A, %B %d at %I %p") %></a></li>
+      <li><a href="#"><%= @opponent.location %></a></li>
+      <li><a href="#"><%= @opponent.event_type %></a></li>
+      <li class="divider"></li>
+      <li>
+        <div>
+          <a href="#" class="btn-link edit-opponent-link">Edit</a> 
+            | 
+          <%= link_to("Delete", destroy_opponent_schedules_home_index_path(@opponent.id), :method => :delete, :class => "btn-link") %>
+        </div>
+      </li>
+    </ul>
+  </li>
+</ul>  
+<hr>

@@ -1,0 +1,42 @@
+<div id="add_user_1" class="add-user-margin">
+  <div id="user_1">
+    <fieldset class="custom">
+      <div>
+        <input type="text" class="input-x2large" value="<%= @sport.name %>" >
+        <input type="text" class="input-x2large" value="<%= @user.full_name_with_email %>">
+      </div>
+    </fieldset>
+      <%= link_to("Delete", "javascript:void(0);", confirm: "Are you sure?",class: "link pull-right border-none remove_user_registration add-team-action-links-delete sport_selected_index") %>
+      <%= link_to("Edit", "javascript:void(0);", class: "link pull-right edit_user_registration add-team-action-links-edit sport_selected_index", sport_selected_index: "") %>
+    <div>
+      <%= hidden_field_tag "[users_attributes][][sport_id]", @sport.id %>
+      <%= hidden_field_tag "[users_attributes][][first_name]", @user.first_name %>
+      <%= hidden_field_tag "[users_attributes][][last_name]", @user.last_name %>
+      <%= hidden_field_tag "[users_attributes][][email]", @user.email %>
+      <%#= hidden_field_tag "[users_attributes][][role]", "acc_owner" %>
+    </div>
+  </div>
+
+
+  <div class="update" style="display:none;">
+    <span id="user_all_errors_1"></span>
+    <fieldset class="">
+      <div>
+        <%= select "sport_1", "sport_id", Sport.all.map{ |s| [s.name, s.id] }, {selected: @sport.id}, {class: "input-xxlarge", id: "sport_selected_1"}%>
+        <span id="payer_user_sport_id_1" class="payer_user_error_1"></span>
+      </div>
+      <div>
+        <input type="text" class="input-xlarge required" placeholder="First Name" id="user_fname_txt_1" value="<%= @user.first_name %>">
+        <span id="payer_user_first_name_1" class="payer_user_error_1"></span>
+        <input type="text" class="input-large required" placeholder="Last Name" id="user_lname_txt_1" value="<%= @user.last_name %>">
+        <span id="payer_user_last_name_1" class="payer_user_error_1"></span>
+      </div>
+      <div>
+        <input type="text" class="input-xxlarge required" placeholder="Email Address" id="user_email_txt_1" value="<%= @user.email %>">
+        <span id="payer_user_email_1" class="payer_user_error_1"></span>
+      </div>
+    </fieldset>
+    <a class="link pull-right border-none update_user_registration" id="update_user_registration_1" href="javascript:void(0);" count="1">Update</a>
+
+  </div>
+</div>

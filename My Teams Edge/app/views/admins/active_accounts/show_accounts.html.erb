@@ -1,0 +1,25 @@
+<h2>Active accounts</h2>
+<% @user_sports.each do |user_sport| %>
+  <% payer = user_sport.payer %>
+  <% user = user_sport.user %>
+  <% subscription = user_sport.payer.try(:subscription) %>
+  <p>
+  Account Created:
+  <%= subscription.created_at %>
+  </p>
+
+  <p>
+    Payer: <%= payer.email %>
+  </p>
+
+  <p>
+    Payer Type: Credit Card
+  </p>
+
+  <p>
+    Account Manager: <%= user.name %>
+  </p>
+
+
+<% end %>
+

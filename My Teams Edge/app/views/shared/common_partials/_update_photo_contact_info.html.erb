@@ -1,0 +1,41 @@
+<div id="upload-photo" class="modal hide fade" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="container upload-photo">
+    <%= form_for(@user, url: user_update_photo_with_contact(@user, current_sport),:method => :put, html: {remote: true, class: "welcome aux-basic", multipart: true}) do |f| %>
+      <%= f.hidden_field(:update_on, value: "upload_photo_and_contact") %>
+      <div class="modal-head">
+        <h2 class="form-signin-heading">
+          <a href="#welcome" class="back-link" data-toggle="modal"><i class="left-arrow-head pull-left"></i></a>
+          <%= @user.current_package_name(current_sport) %>
+        </h2>
+      </div>
+      <div class="modal-body">
+        <div class="message" id="message_uplaod_photo"></div> 
+        <fieldset>
+          <legend>Profile Pic</legend>
+          <div class="inner-container">
+            <%= image_tag f.object.image.url(:thumb), class:"pull-left media-object", id: "user_uplaoded_image" %> 
+            <div class="fileinputs input-x1large pull-left">
+              <%= f.file_field(:image, class: "file", placeholder: "Upload Image") %>
+              <div class="fakefile">
+                <input placeholder="Upload Image" disabled/>
+                <img src="/assets/down-arrow.png" />
+              </div>
+            </div>
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend>Contact Info</legend>
+          <div class="inner-container">
+            <%= f.text_field(:phone, class: "input-x1large", placeholder: "Phone Number") %>
+            <%= f.text_field(:cell, class: "input-x1large", placeholder: "Cell Number") %>
+            <%= f.text_field(:email, class: "input-x1large", placeholder: "Email", :disabled => true) %>
+          </div>
+          <%= f.submit 'save', class: "btn btn-info pull-right", id: 'aux-basic-submit', onclick: "ajaxSpinnerFile('.aux-basic', '#aux-basic-submit')" %>
+            <div class='spinner welcome-spinner' style='display:none'>
+                <%= image_tag('spinner-green.gif') %>
+            </div>
+        </fieldset>
+      </div>
+    <% end %>
+  </div> <!-- /container -->
+</div>

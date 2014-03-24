@@ -1,0 +1,8 @@
+<li id='user_unit_<%= unit.id %>_popover' class='overided'>
+  <% parameters = {:unit_id => unit.id} %>
+  <% parameters.merge!(:update_block => false) if user_unit_count == 1 %>
+  <a data-target='<%= remove_user_from_unit_coach_user_units_path(parameters) %>' class='delete-unit-ajax'> <i class='delete-unit pull-left'></i> </a>
+
+  <%= "#{unit.custom_sports_unit.unit_name} (#{unit.custom_sports_unit.user_sports_units.count})" %>
+</li>
+

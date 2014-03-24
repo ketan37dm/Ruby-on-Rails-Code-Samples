@@ -1,0 +1,18 @@
+<div class="content-left span4">
+    <% count = 1 %>
+    <% @roles_with_user_count.each do |role_name, users_counts| %>
+        <div class="content-block">
+          <h2><%= role_name.capitalize.pluralize %>
+            <%= link_to image_tag("icon-settings.png"), add_user_coach_personnel_index_path( :role => role_name ), class: "pull-right display-icon-settings", :remote => true %> 
+          </h2> 
+            <hr>
+            <a href="#" class="list-users-rolewise <% if count == 1 && params[:update_block] != "false" %>selected<% end %>" role="<%= role_name %>" >
+                <span class="pull-left users-count" id="personnel-coaches-count">
+                    <%= users_counts %> Users
+                </span>
+                <i class="icon-play pull-right"></i>
+            </a>
+        </div>
+        <% count = 0 %>
+    <% end %>
+</div>

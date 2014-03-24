@@ -1,0 +1,20 @@
+<% if @new_update.errors.present? %>
+  $("#post_update_message").html('<%= error_messages_for(@new_update) %>');
+<% else %>
+  $("#user_update_text").val("");
+  $("#post_update_message").html("");
+
+  <% if @new_update.update_on.blank? %>
+    $("#user_update_custom_sports_unit_id").each(function(){
+        var sel_options = $(this);
+        for(i=0; i< sel_options.length; i++){
+            sel_options[i].selectedIndex = 0;
+            return true;
+        }
+    });
+  <% end %>
+  
+  
+  <% @activity_type = "New update" %>
+  $("#activitity_stream_for_<%= current_user.sanatized_organization_name%>").prepend('<%=  j(render(partial: "shared/activity_stream_post")) %>');
+<% end %>

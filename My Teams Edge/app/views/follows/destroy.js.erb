@@ -1,0 +1,6 @@
+<% if @request_from == "contacts" %>
+  $("#follow_link_<%= @player.id%>").html('<%= follow_unfollow_contacts(@player) %>');
+<% else %>
+  $("#follow_link_<%= @player.id%>").html('<%= follow_unfollow(@player) %>');
+  $("#follow_link_<%= @player.id%>").attr('class','<%= follow_unfollow_button_class(@player) %>');
+<% end %>

@@ -1,0 +1,10 @@
+<fieldset>
+  <legend>Contact Info</legend>
+  <div class="inner-container border">
+    <%= f.text_field(:phone, class: "input-x1large", placeholder: "Phone Number") %>
+    <%= f.text_field(:cell, class: "input-x1large", placeholder: "Cell Number") %>
+    <%= f.text_field(:email, class: "input-x1large", placeholder: "Email", :disabled => true) %>
+  </div>
+  <input type="submit" value="Save" class="btn btn-info pull-right basics">
+</fieldset>
+

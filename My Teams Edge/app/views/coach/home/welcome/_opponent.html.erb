@@ -1,0 +1,6 @@
+<div id="opponent_<%= opponent.id %>">                    
+  <h3 class="pull-left overided"><%= opponent.scheduled_at.strftime("%Y-%m-%d, %H:%M") %></h3>
+  <span class="overided"><%= opponent.name %>
+  <%= link_to("Remove", remove_opponent_coach_home_index_path(opponent_id: opponent.id), class: "btn remove", remote: true) %>
+  </span>
+</div>

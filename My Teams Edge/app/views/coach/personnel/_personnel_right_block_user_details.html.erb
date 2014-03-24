@@ -1,0 +1,24 @@
+<div class="media" id="role-users-<%= user.id %>">
+  <a class="pull-left" href="#">
+    <%= image_tag(user.image.url(:thumb), class: "media-object") %>
+  </a>
+  <div class="media-body">
+    <h3 class="media-heading">
+      <i class="icon-status user-online pull-left"></i>
+      <%= user.full_name %>
+    </h3>
+
+    <%= link_to( "Edit", user_account_details_coach_personnel_index_path( :id => user.id ), class: "remove", :remote => true) if personnel_allow_edit?(user) %> 
+  </div>
+  <% if user.registered? && user.sport_confirmed?(current_sport.id, current_user_sport.subvarsity_id) %>
+    <div id="<%= user.id %>_user_unit_info" class="fl user-unit-information">
+      <%= render :partial => 'coach/user_units/user_unit_info', locals: { user: user } %>
+    </div>
+    <% if user.player?(current_sport, current_user_sport.subvarsity_id) %>
+      <span id="follow_link_<%= user.id %>" class="<%= follow_unfollow_button_class(user) %>">
+        <%= follow_unfollow(user) %>
+      </span>
+    <% end %>
+  <% end %>
+</div>
+<hr>

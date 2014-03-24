@@ -1,0 +1,7 @@
+<% if @document.errors.full_messages.blank? %>
+  $('#academics-messages').html("<%=j render partial: 'shared/flash_message' %>");
+  $('#list-documents').html("<%=j render partial: 'courses/documents/document_list', collection: @documents, as: :document %>");
+  $('#add-document').modal('hide');
+<% else %>
+  $('#document-modal-messages').html("<%=j error_messages_for @document %>");
+<% end %>

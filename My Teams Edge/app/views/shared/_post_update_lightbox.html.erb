@@ -1,0 +1,71 @@
+<!-- MODAL STARTS -->
+<div id="post-update" class="modal hide fade modal_update_post" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="container">
+        <div class="modal-head">
+            <ul class="nav nav-tabs" id="myTab">
+                <li class="active"><i class="down-tab"></i><a href="#update" data-toggle="tab">Share an Update</a></li>
+                <li><i class="down-tab"></i><a href="#event" data-toggle="tab">Post an Event</a></li>
+            </ul>
+        </div>
+        <div class="modal-body overide-max-height">
+            <div class="tab-content">
+                <div class="tab-pane active" id="update">
+                    <div id="post_update_message" class="message"></div>
+                    <%= form_for(@new_update, url: post_update_coach_home_index_path, html: {class: "post-update", remote: true}) do |f| %>
+                        <fieldset>
+                            <%= f.hidden_field(:sport_id, value: current_sport.id) %>
+                            <%= f.hidden_field(:user_id, value: current_user.id) %>
+                            <%= f.text_area(:text, placeholder: "What's going on?") %>
+                            <%= f.select(:custom_sports_unit_ids, current_user.sport_units_for(current_sport).map { |v| [v.unit_name, v.id] }, {:prompt => "Share with..."}) %>
+                            <%= f.submit(value: "Post", class: "btn btn-info pull-right new_update_form", onclick: "ajaxSpinner('#new_user_update', '.new_update_form')") %>
+                            <div class='spinner welcome-spinner pull-right' style='display:none;margin-top: 0;'>
+                                <%= image_tag('spinner-green.gif') %>
+                            </div> 
+                            <a class="btn-link pull-right cancel overide-right-padding">Cancel</a>
+                        </fieldset>
+                    <% end %>
+                </div>
+                <div class="tab-pane fade" id="event">
+                    <div id="post_event_message" class="message"></div>
+                    <%= form_for(@new_event, url: post_event_coach_home_index_path, html: {class: "post-update", remote: true}) do |f| %>
+                    <form class="post-update">
+                        <fieldset>
+                            <%= f.hidden_field(:sport_id, value: current_sport.id) %>
+                            <%= f.hidden_field(:user_id, value: current_user.id) %>
+                            <%= f.text_field(:title, placeholder: "Event title...") %>
+                            <%= f.text_field(:event_at, class: "input-large", placeholder: "Select Date") %>
+                            <%= f.select(:custom_sports_unit_ids, current_user.sport_units_for(current_sport).map { |v| [v.unit_name, v.id] }, {:prompt => "Share with..."}) %>
+                            <%= f.submit(value: "Post", class: "btn btn-info pull-right new_event_form", onclick: "ajaxSpinner('#new_user_event', '.new_event_form')") %>
+                             <div class='spinner welcome-spinner pull-right' style='display:none;margin-top: 0;'>
+                                <%= image_tag('spinner-green.gif') %>
+                            </div>
+                            <a href="#" class="btn-link pull-right cancel overide-right-padding" id="cancel_update_post">Cancel</a>
+                        </fieldset>
+                    <% end %>
+                </div>
+            </div>
+        </div>  
+    </div> <!-- /container -->
+</div>
+<!-- MODAL ENDS -->
+
+<script type="text/javascript">
+    $('#post-update-trigger').click(function(){
+            $('#post-update').modal();
+    });
+
+    $('.cancel').click(function(){
+        $("#post_update_message").html('');
+        $("#post_event_message").html('');
+        $("#add_psudeo_name_message").html('');
+        $('#post-update').modal('hide');
+        $('#add-coach').modal('hide');
+        return false;
+    });
+    
+    $(function(){
+        $("#user_event_event_at").datetimepicker({
+            dateFormat: 'yy/mm/dd'
+        });
+    });
+</script>

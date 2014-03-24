@@ -1,0 +1,11 @@
+Welcome to MyTeamsEdge!  Your MTE Account is ready, click the link below to complete your account.
+
+<br><br>
+<% token = @user.create_unique_token %>
+<%= link_to("Create Account", new_user_password_url(identifier: token)) %>
+<br>
+If the button doesn’t work, copy & paste this link into your browser:
+<br>
+<%= new_user_password_url(identifier: token) %>
+<br>
+Stay Hungry, MyTeamsEdge

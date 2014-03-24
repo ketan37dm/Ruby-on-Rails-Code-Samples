@@ -1,0 +1,16 @@
+<div id="user_login_box" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <%= form_for("user", :url => user_session_path(:format => :json), :html => {:id => "sign_in_modal"}, :remote => true, :format => :json) do |f| %>
+
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+      <h3 id="myModalLabel">Login</h3>
+    </div>
+
+    <div class="hero-unit-login-wrap">
+      <%= render :partial => "sessions/form", :locals => {:f => f} %>
+      <div class="hero-unit-forgot-password">
+        <%= f.submit "Login", :class => "btn login-button" %>
+      </div>
+    </div>
+  <% end %>
+</div>

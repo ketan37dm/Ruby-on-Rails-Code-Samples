@@ -1,0 +1,69 @@
+<div id="content" class="my-team container scheduleNotes">
+  <div id="notes-head-block">
+    <%= render(:partial => 'schedules/apps/notes/notes_head_block') %>
+  </div>
+
+  <div id="notes-left-block">
+    <%= render(:partial => 'schedules/apps/notes/notes_left_block') %>
+  </div>
+
+  <div id="notes-right-block">
+  </div>
+
+  <div id="add-category-post">
+  </div>
+
+  <div id="add-category">
+    <%= render(:partial => 'schedules/apps/notes/lightbox_add_category') %>
+  </div>
+
+  <div id="category-multiple-post">
+  </div>
+
+  <div id="add-post">
+    <%= render(:partial => 'schedules/apps/notes/lightbox_add_post') %>
+  </div>
+  
+</div>
+
+<script>
+  $('#createNote').click(function(i){
+      i.preventDefault();
+      $('#createNoteOptions').slideToggle('fast');
+  });
+
+  $('#new-category').click(function(i){
+      i.preventDefault();
+      $('#new-category-modal').modal();
+  });
+
+  $('.cancel').click(function(){
+      $('#post').modal('hide');
+      $('#new-category-modal').modal('hide');
+  });
+  
+  $('.settingsBox h2 .icon-settings').click(function(){
+      $('#post .modal-head h2').text($(this).parent().text());
+      $('#post').modal();
+  });
+
+  function updateNotesLeftCategoryBlock(){
+    $.ajax({
+      url: "/schedules/apps/notes/notes_categories",
+      dataType: "script"
+    });
+  }
+
+  $(function(){
+    if ($("div#category-left-listing div.content-block").length > 0){
+      $("div#category-left-listing div.content-block a.notes-category:first").click();
+    }
+  })
+
+  $(document).on("click", ".notes-category", function(){
+    $("div#category-left-listing div.content-block a.selected:first").removeClass("selected");
+    $(this).addClass("selected");
+    return true;
+  });
+
+</script>

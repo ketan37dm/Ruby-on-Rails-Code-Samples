@@ -1,0 +1,32 @@
+$("#personnel-left-block").html('<%= j(render(partial: "personnel_left_block")) %>');
+
+<% if params[:update_block] != "false" %>
+  if($("#personnel-left-block").doesExist()){
+    var count = 0;
+    var role = "";
+
+    <% if params[:role].blank? %>
+      $(".list-users-rolewise").each(function(){
+        if(count == 0){
+          role = $(this).attr("role");
+          updatePersonnelUsersRightBlock(role);
+          count = 1;
+        }
+      });
+    <% else %>
+      $(".list-users-rolewise").each(function(){
+        if($(this).attr("role") == '<%= params[:role] %>'){
+          $(this).click();
+        }
+      });
+    <% end %>
+
+  }
+<% else %>
+  role = $("div.content-right.span8").attr("role");
+  $("a.list-users-rolewise").each(function(){
+    if($(this).attr("role") == role){
+      $(this).click();
+    }
+  });
+<% end %>

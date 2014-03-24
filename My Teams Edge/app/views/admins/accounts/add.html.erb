@@ -1,0 +1,19 @@
+<% if params[:package].blank? %>
+  <div id="content" class="container">
+  <form class="add-account">
+    <div class="modal-head">
+      <h2 class="form-signin-heading">Create Account</h2>
+    </div>
+    <div class="modal-body">
+      <select class="input-large" onchange="location = this.options[this.selectedIndex].value;">
+        <option>Select Account</option>
+        <option value='<%= add_admins_accounts_path(:package => PLAN[:elite_edge]) %>'>Elite Edge</option>
+        <option value='<%= add_admins_accounts_path(:package => PLAN[:football_edge]) %>'>Football Edge</option>
+        <option value='<%= add_admins_accounts_path(:package => PLAN[:highschool_edge]) %>'>Highschool Edge</option>
+      </select>
+    </div>
+  </form>
+</div>
+<% else  %>
+  <%= render :partial => "payers/#{@package}" %>
+<% end %>

@@ -1,0 +1,10 @@
+<%= render :partial => "contacts/right_block/personal_contacts/add-contact" %>
+<div class="tab-pane" id="contacts"> 
+  <%= link_to "Add Contact", new_contact_path(:id => @user.id), :remote => true, :class => "btn-large btn-success pull-right" %>
+  <% unless @contacts.blank? %>
+    <% @contacts.each do |contact| %>
+      <%= render partial: "contacts/right_block/personal_contacts/contact_info_details", :locals => { :contact => contact } %>  
+    <% end %>
+  <% end %>
+  <span id="new-personal-contact"></span>
+</div>

@@ -1,0 +1,17 @@
+<% if @new_user.errors.full_messages.blank? %>
+  var selected_span_role = $(".content-block a.selected").attr("role");
+  $('#add-entity').modal('hide');
+  $(".content-block a.list-users-rolewise[role='<%= @role %>'] span").html("<%= @user_count %> Users");
+  if ( selected_span_role == "<%= @role %>" ){
+  	$("#newly-added-user").append('<%=j render :partial => "personnel_right_block_user_details", :locals => { :user => @new_user } %>'); 
+  }
+  $("#send-email-content").html('<%=j render :partial => "lightbox_send_email_user_info" %>'); 
+
+  if($("a.list-users-rolewise.selected").length > 0){
+    $("a.list-users-rolewise.selected span").html('<%= @user_count %> Users');
+  }
+  
+  $('#send-email').modal();
+<% else %> 
+  $('#errorDisplay').html('<%=j error_messages_for @new_user %>'); 
+<% end %> 

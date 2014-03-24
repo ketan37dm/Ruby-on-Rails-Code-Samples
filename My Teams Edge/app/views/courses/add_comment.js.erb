@@ -1,0 +1,7 @@
+<% if @comment.errors.full_messages.blank? %>
+  $('#errorExplanation').remove();
+  $('.previous-course-comments').append('<%=j render partial: "courses/notes/view_comment", :locals => { :comment => @comment } %>');
+  $('#comment_content').val("");
+<% else %>
+  $('#comment-errors').html('<%=j error_messages_for @comment %>');
+<% end %>

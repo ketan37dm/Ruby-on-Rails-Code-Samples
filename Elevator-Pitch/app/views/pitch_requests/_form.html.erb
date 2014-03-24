@@ -1,0 +1,22 @@
+<h1 class="elevator-pitch">Let us create your pitch.</h1>
+<h2 class="elevator-pitch-tagline ">Give us some details about what you want to say.</h2>
+
+
+<%= error_messages_for @pitch_request, @user, :message => "Oops! something went wrong." %>
+<div class="pitch-information-unit pitch-request">
+  <%= render :partial => 'shared/category_field', :locals => {:f => f} %>
+
+  <h4>URL<br/><em>Where can we find you? Please provide your website url or linkedin profile.</em></h4>
+  <%= f.text_field :url, :class => 'field', :placeholder => 'http://mindyourpitch.com' %>
+
+  <h4>Email<br/><em>Where should we send your pitch?</em></h4>
+  <%= f.text_field :email,:class => 'field',:placeholder => 'service@mindyourpitch.com' %>
+
+  <h4>What would you like to communicate?<br/><em>Tell us in detail about the nature of your work. Describe your work. Who do you serve? What is the add value that you bring to the table? </em></h4>
+  <%= f.text_area :details, :class => 'field',:rows => 5, :cols => 80 %>
+
+  <div class="create-pitch-padding">
+    <%= f.submit "Submit", :class => "create-pitch-button" %>
+  </div>
+</div>
+

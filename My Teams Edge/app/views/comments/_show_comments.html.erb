@@ -1,0 +1,10 @@
+<div class="media">
+  
+  <div id="comments-for-event-<%= event.id %>">
+    <%= render(:partial => 'comments/comments_lists', :collection => event.comments, :as => :comment ) %>
+  </div>
+  
+  <div id="comments-form-event-<%= event.id %>">
+    <%= render(:partial => 'comments/comment_form', :locals => {:event => event} ) %>
+  </div>
+</div>

@@ -1,0 +1,4 @@
+<% if @comment.errors.blank? %>
+  $('#comments-for-event-<%= @event.id %>').append('<%= j(render(:partial => "comments/comments_lists", :locals => {:comment => @comment} )) %>')
+  $('#comments-form-event-<%= @event.id %> #comment_content').val('');
+<% end %>

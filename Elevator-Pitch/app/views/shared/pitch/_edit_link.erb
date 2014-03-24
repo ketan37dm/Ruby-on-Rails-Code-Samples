@@ -1,0 +1,4 @@
+<% if signed_in? && current_user.id == pitch.user_id  %>
+  <%= link_to "<i class='icon-edit'></i> Edit".html_safe, edit_pitch_path %>
+  |
+<% end %>

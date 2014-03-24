@@ -1,0 +1,13 @@
+<% if document.present? %>
+  <div class="schedule-title pull-left">
+    <span class="pull-left"><%= document.title %></span>
+    <span class="description pull-left">&nbsp;</span>
+  </div>                                        
+  <div class="schedule-info pull-right">
+    <span class="pull-right">
+      <!--<a href="#" class="btn-link">View</a>
+      &nbsp;|&nbsp;
+      <a href="#" class="btn-link">Download</a></span>-->
+      <%= link_to "Download", download_courses_path(id: document.id), class: "btn-link" %>
+  </div>      
+<% end %>

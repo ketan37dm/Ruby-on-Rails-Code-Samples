@@ -1,0 +1,35 @@
+<%= render :partial => "shared/social_header" %>
+<div class="desc-site site-content pitch-show-page">
+   <% my_pitch = !@pitch.blank? && @pitch.my_pitch?(current_user) %>	
+   <%= render :partial => 'pitches/share_callout'%>
+  <% unless @pitch.blank? %>
+    <div class="hero-unit indivisual-pitch <%= 'my-pitch-color' if my_pitch %>">
+      <%= render :partial => "shared/pitch/main", :locals => {:pitch => @pitch} %>
+      <div class="social-information clearfix">
+        <%= render :partial => "shared/pitch/company", :locals => {:pitch => @pitch} %>
+        <div class="social-links-right">
+          <%= render :partial => "shared/pitch/edit_link", :locals => {:pitch => @pitch} %>
+          <%= render :partial => "shared/share_buttons", :locals => {:pitch => @pitch} %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="white-cover align-left">
+    <div>
+      <%= render :file => "comments/list" %>
+    </div>
+  </div>
+  
+  <% if user_signed_in? %>
+	<div class="new-comment-wrapper">
+		<%= render :file => "comments/new" %>
+	</div>
+  <%else %>
+  	<div>
+	   <%= render :file => "comments/login_cover" %>
+	</div>
+  <%end %>
+</div>
+<% @user = User.new %>
+<%= render :partial => "sessions/login_cover" %>

@@ -1,0 +1,62 @@
+<div id="content-right" class="pull-left">
+  <div class="modal-head">
+  <h2 class="form-signin-heading"><%= @active_organizations.blank? ? "Account not found" : @current_active_organization.name %></h2>
+  </div>
+  <div class="modal-body">
+    <% if @active_organizations.present? %>
+      <div class="section">
+      <% if @active_sports.count > 1 %>
+        <select class="pull-left" onchange="location = this.options[this.selectedIndex].value;">
+        <option>Select Account</option>
+        <% @active_sports.each do |active_sport|  %>
+          <option value='<%= show_account_admins_active_accounts_path(:user_sport_id => active_sport.id) %>' 
+        <%= option_selected?(active_sport.id, params[:user_sport_id]) %> ><%= active_sport.to_s %>
+        </option>
+      <% end %>
+      </select>
+    <% else %>
+        <div class="inner-section-small">
+        <div class="fieldset">
+          <span><%= @active_sports.first.to_s %></span>
+        </div>
+      </div>
+    <% end %>
+      <% if @show_details %>
+        <div>
+        <% if @active_sport.user.registered? %>
+            <%= link_to "Delete Account", remove_admins_accounts_path(:user_sport_id => @active_sport.id), :method => :delete, :confirm => "Are you sure to delete this account?", :class => "btn-link clearfix pull-right" %>
+        <% else %>
+          <span class="color-black" style="color:black"> Not registered yet. </span> 
+        <% end %>
+        <div class="inner-section">
+          <div class="fieldset">
+            <span>Account Created :</span><span><%= @package_details[:account_created] %></span>
+          </div>
+          <div class="fieldset">
+            <span>Payer :</span><span><%= @package_details[:payer] %></span>
+          </div>
+          <div class="fieldset">
+            <span>Payer Type :</span><span><%= @package_details[:payer_type] %></span>
+          </div>
+        </div>
+        <div class="inner-section">
+          <div class="fieldset">
+            <span>Account Manager :</span><span><%= @package_details[:account_owner] %></span>
+          </div>
+          <div class="fieldset">
+            <span>Coach Accounts :</span><span><%= @package_details[:coach_accounts_count] %> </span>
+          </div>
+          <div class="fieldset">
+            <span>Player Accounts :</span><span> <%= @package_details[:player_accounts_count] %> </span>
+          </div>
+          <div class="fieldset">
+            <span>Auxiliary Accounts :</span><span> <%= @package_details[:auxiliary_accounts_account] %> </span>
+          </div>
+        </div>
+      </div>
+    <% end %>
+    </div>
+  <% end %>
+  </div>
+</div>
+

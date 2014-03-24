@@ -1,0 +1,86 @@
+.body-login { 
+  background-image: url(/assets/bg2.png);
+  padding-top: 1%;
+}
+
+.body-login1 { 
+  background-image: url(/assets/bg2.png);
+  padding-top: 8%;
+}
+
+.login-image{ 
+  text-align:center;
+  margin-bottom:30px;
+}
+
+.hero-unit-login-wrap
+{
+  width:343px; 
+  margin:0px auto;
+}
+
+.hero-unit-login-up
+{
+  background-color:transparent; 
+  border-radius:10px 10px 0 0;
+  padding:25px;
+  font-size: 22px;
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+.login-box-separator
+{
+  text-align: center;
+  width: 343px;
+}
+
+.hero-unit-login-down
+{
+  background-color:transparent; 
+  border-radius:0 0 10px 10px;
+  padding:0px 42px 20px 42px;
+  margin-top: 5px;
+}
+
+.hero-unit-login-down .login-text-field
+{
+  border-radius: 6px 6px 6px 6px;
+  height: 25px;
+  width: 242px;
+  background-color:#DAD9DC;
+}
+
+.hero-unit-forgot-password
+{
+  padding-top:5px;
+}
+
+.login-button
+{
+  border-radius:9px 9px 9px 9px;
+  height:30px;
+  background-color: #F0EFED;
+  font-style: italic;
+}
+
+.hero-unit-forgot-password .forgot-password-text
+{
+  float: right;
+  font-size: 12px;
+  font-style: italic;
+  padding-top: 5px;
+}
+
+.sign-up-section
+{
+  padding-top:5px;
+  text-align:center;
+}
+
+.sign-up-button
+{
+  background-color: #F0EFED;
+  border-radius:9px 9px 9px 9px;
+  height:40px;
+}

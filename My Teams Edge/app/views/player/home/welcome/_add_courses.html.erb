@@ -1,0 +1,39 @@
+<div id="add-courses" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="container add-opponents">
+    <%= form_for(@course, url: add_course_player_settings_path, method: :post, html: { class: "welcome course-submit", remote: true}) do |f| %>
+      <div class="modal-head" >
+        <h2 class="form-signin-heading">
+          <a href="#welcome" class="back-link" data-toggle="modal"><i class="left-arrow-head pull-left"></i></a>
+          <%= @user.current_package_name(current_sport) %>
+        </h2>
+      </div>
+      <div id="course-messages" class="message" ></div>
+        <div class='modal-body'>
+          <fieldset>
+            <legend>Add course</legend>
+          <div class="inner-container">
+            <%= f.text_field :name, placeholder: 'Name', class: "input-large overided" %>
+            <%= f.text_field :room_number, placeholder: 'Bulding/Room #', class: 'input-large overided' %>
+            <div>
+              <%= f.text_field :professor, placeholder: 'Professor/Teacher #', class: 'input-large overided' %>
+              <%= f.submit 'Sync Course', id: 'course-submit', class: 'btn-large btn-success pull-right',
+                onclick: "ajaxSpinner('.course-submit', '#course-submit')" %>
+              <div class='spinner welcome-spinner shortright' style='display:none'>
+                  <%= image_tag('spinner-green.gif') %>
+                </div>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+    <% end %>
+    <form class="welcome overided course">
+      <div class="modal-body">
+        <fieldset class="current-courses">
+          <% if @courses.present? %>
+            <%= render partial: 'player/home/welcome/courses', locals: { :courses => @courses } %>
+        <% end %>
+        </fieldset>
+      </div>
+    </form>
+  </div> <!-- /container -->
+</div>

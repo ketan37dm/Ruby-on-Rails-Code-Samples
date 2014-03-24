@@ -1,0 +1,63 @@
+<%if @user.errors.blank? &&  %>
+	var val = 1;
+
+	<% if @user_counter.blank? %>
+		val = $("#user_counter").html();
+		val = parseInt(val) + 1;
+		$("#user_counter").html(val);
+
+		$("#registering_users").prepend('<%= j render(:partial => "add_user_to_highscool_edge") %>');
+		number_of_users += 1;
+	<% else %>
+		val = <%= @user_counter %>;
+		$("#add_user_" + val).html('<%= j render(:partial => "add_user_to_highscool_edge") %>');
+	<% end %>
+
+	update_ids_and_classess(val);
+
+	$("#user_all_errors").html("");
+	$("#user_fname_txt").val("");
+	$("#user_lname_txt").val("");
+	$("#user_email_txt").val("");
+	
+	$("#sport_selected").each(function(){
+	    var sel_options = $(this);
+	    for(i=0; i< sel_options.length; i++){
+	        sel_options[i].selectedIndex = 0;
+	        return true;
+	    }
+	});
+
+	
+<% else %>
+	sport_selected.splice(sport_selected_index, 1);
+	<% if @user_counter.blank? %>
+		$("#user_all_errors").html('<%= error_messages_for(@user) %>')
+	<% else %>
+		$("#user_all_errors_<%= @user_counter %>").html('<%= error_messages_for(@user) %>')
+		number_of_users -= 1;
+	<% end %>
+<% end %>
+
+
+function update_ids_and_classess(val){
+	$("#add_user_1").prop("id", "add_user_" + val);
+	$("#user_1").prop("id", "user_" + val);
+	$("#edit_remove_user_registration_1").prop("id", "edit_remove_user_registration_" + val);
+	$("#payer_user_sport_id_1").prop("id", "payer_user_sport_id_" + val);
+	$("#sport_selected_1").prop("id", "sport_selected_" + val);
+	$("#user_fname_txt_1").prop("id", "user_fname_txt_" + val);
+	$("#user_lname_txt_1").prop("id", "user_lname_txt_" + val);
+	$("#user_email_txt_1").prop("id", "user_email_txt_" + val);
+	$("#payer_user_first_name_1").prop("id", "payer_user_first_name_" + val);
+	$("#payer_user_last_name_1").prop("id", "payer_user_last_name_" + val);
+	$("#payer_user_email_1").prop("id", "payer_user_email_" + val);
+	$(".payer_user_error_1").prop("class", "payer_user_error_" + val);
+	$("#update_user_registration_1").prop("id", "update_user_registration_" + val);
+	$("#update_user_registration_" + val).attr("count", val);
+	$("#user_all_errors_1").prop("id", "user_all_errors_" + val);
+	$(".sport_selected_index").addClass("sport_selected_index_" + val);
+	$(".sport_selected_index_" + val).removeClass("sport_selected_index");
+	$(".sport_selected_index_" + val).attr("sport_selected_index", <%= @sport.id %>);
+
+}

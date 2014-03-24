@@ -1,0 +1,2 @@
+module AuxiliaryUser::SettingsHelper
+end

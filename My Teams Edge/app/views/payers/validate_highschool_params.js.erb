@@ -1,0 +1,5 @@
+<%if @high_school.errors.blank? %>
+	$("#new_payer").formwizard("show", "step2");
+<% else %>
+	$("#high_school_all_errors").html('<%= error_messages_for(@high_school) %>')
+<% end %>

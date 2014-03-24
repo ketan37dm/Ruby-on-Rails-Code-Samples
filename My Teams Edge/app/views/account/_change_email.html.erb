@@ -1,0 +1,15 @@
+<div class="tab-pane <%= current_account_tab_content(["change_email", "update_email"]) %>" id="email">
+	<%= form_for(@user, :url => account_update_email_path, html: {class:  'form-login'}) do |f| %>
+	<%= f.error_messages if @change_email.present? %>
+		<fieldset>
+			<%= f.hidden_field :update_on, :value => "update_users_email" %> 
+			<%= f.email_field :email, :disabled => true, class: 'input-xlarge pull-left' %>
+			<%= f.email_field :new_email, class: 'input-xlarge pull-left', placeholder: "New Email" %>
+			<%= f.password_field :current_password, class: 'input-xlarge pull-left', placeholder: 'Current Password' %>
+		</fieldset>
+		<div class="submit-button">
+			<button type="submit" class="btn btn-large btn-primary  pull-right">Save Changes</button>
+			<%= link_to "Cancel", account_basics_path, class: "btn-link  pull-right" %>
+		</div>
+		<% end %>
+	</div>

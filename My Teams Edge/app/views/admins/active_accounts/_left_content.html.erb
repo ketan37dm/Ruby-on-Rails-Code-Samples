@@ -1,0 +1,19 @@
+<div id="content-left" class="pull-left <%= @active_organizations.blank? ? 'overided-width' : '' %> ">
+  <div class="modal-head">
+    <h2 class="form-signin-heading">Active Accounts<i class="icon-search icon-white pull-right"></i></h2>
+  </div>
+  <div class="modal-body">                    
+    <ul>
+    <% @active_organizations.each do |organization| %>
+      <li class="<%= organization == @current_active_organization ? 'active' : '' %>">
+        <a href="<%= admins_active_accounts_path(:organization_id => organization.id) %>" title="<%= organization.name %>">
+          <%= truncate(organization.name, :size => 27) %>
+        </a>
+      </li>
+    <% end %>
+    <% if @active_organizations.blank? %>
+      <li class='no-active-accounts'>No active account</li>
+    <% end %>
+    </ul>
+  </div>
+</div>

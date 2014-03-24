@@ -1,0 +1,40 @@
+<div class="hero-unit-login-down hero-unit">
+  <%= f.error_messages :message => "Oops! something went wrong." %>
+  <div>
+    <label for="user_name">Name*<br/> <em>Who are you going to pitch for?</em></label>
+    <%= f.text_field :name, :class => "login-text-field" %>
+  </div>
+  <div>
+    <label for="user_webaddress">Web Address</label>
+    <%= f.text_field :web_address, :class => "login-text-field" %>
+  </div>
+  <% if user_signed_in? %>
+    <div>
+      <label for="user_email">Email*</label>
+      <% if current_user.email.blank? %>
+        <%= f.email_field :email, :class => "login-text-field" %>
+      <% else %>
+        <%= f.email_field :email, :class => "login-text-field", :disabled => true %>
+      <% end %>
+    </div>
+  <% end %>
+  <% if !user_signed_in? %>
+    <div>
+      <label for="user_email">Email*</label>
+      <%= f.email_field :email, :class => "login-text-field" %>
+    </div>
+    <div>
+      <label for="user_password">Password*</label>
+      <%= f.password_field :password, :class => "login-text-field" %>
+      <% if action_edit_or_update? %>
+        <i>(leave blank if you don't want to change it)</i>
+      <% end %>
+    </div>
+    <div>
+      <label for="user_password_confirmation">Password Confirmation*</label>
+      <%= f.password_field :password_confirmation, :class => "login-text-field" %>
+    </div>
+    <%= render :partial => "shared/slide_to_unlock/content" %>
+  <% end %>
+</div>
+

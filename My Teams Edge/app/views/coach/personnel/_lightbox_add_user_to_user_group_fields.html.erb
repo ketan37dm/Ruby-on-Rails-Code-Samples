@@ -1,0 +1,23 @@
+<div class="modal-head">
+  <h2><%= @entity_name %></h2> 
+</div>
+<div class="modal-body">
+  <%= form_for(@new_user, url: create_user_coach_personnel_index_path, html: { remote: true, class: "post-update", method: :post }) do |f| %>
+   
+    <%= render(:partial => 'shared/add_user_common_hiden_fileds', :locals => {:f => f}) %>
+    
+    <%= f.hidden_field(:role, :value => @role) %>
+
+    <fieldset>
+      <span id="errorDisplay"></span>
+      <legend>Add New <%= @entity_name %></legend> 
+      <div class="inner-container">
+        <%= f.text_field(:first_name, placeholder: "Name") %> 
+        <%= f.text_field(:email, placeholder: "Email") %>
+        <%= f.submit(value: "Add User", id: "add-user-to-user-group-modal-submit", class: "btn btn-info pull-right", onclick: "ajaxSpinner('.post-update', '#add-user-to-user-group-modal-submit')") %>
+        <div class="spinner modal-spinner" style="display:none;"><%= image_tag('spinner-green.gif') %></div>
+        <button class="btn-link pull-right cancel cancel-trigger">Cancel</button>
+      </div>
+    </fieldset>
+  <% end %>
+</div>

@@ -1,0 +1,25 @@
+<div class="media" id="notes-category-post-<%= post.id %>">
+  <% user = post.user %>
+  <a href="#" class="pull-left">
+    <%= image_tag(user.image.url(:thumb), :class => "media-object" ) %>
+  </a>
+  <div class="media-body">
+    <h3 class="media-heading"><%= user.full_name %>
+      <span class="timeStamp">Today, at 9:40 am</span>
+      <i class="icon-settings pull-right"></i>
+    </h3>
+    <p><%= post.description %> <br>
+      <!-- <a href="#">Reply</a> -->
+    </p>
+
+    <%= render(:partial => 'comments/show_comments', :locals => {:event => post}) %>
+  </div>
+  
+  <div class="noteActions clearfix">
+    <% if current_user.id == user.id %>
+    <%= link_to "Delete", destroy_post_schedules_apps_notes_path(:category_post => post.id), :remote => true, :method => :delete %>
+      <a href="#">Edit</a>
+    <% end %>
+  </div>
+</div>
+<hr>

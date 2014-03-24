@@ -1,0 +1,23 @@
+<div class="content-right span8" role="<%= params[:role] %>">
+  <h2><%= @role.capitalize.pluralize %></h2>
+  <ul class="nav pull-right rhs-dropdown rhs2">
+    <li class="dropdown">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+        <i class="icon-down pull-right"></i>
+      </a>
+      <ul class="dropdown-menu">
+        <li>
+          <%= link_to("Post Message", post_message_coach_personnel_index_path(unit: @role), remote: true ) %>
+        </li>
+        <li><a href="#">View Calendar</a></li>
+      </ul>
+    </li>
+  </ul>
+  <hr>
+  <% @users.each do |user| %>
+    <%= render(partial: "personnel_right_block_user_details", :locals => { :user => user } ) %> 
+  <% end %>
+  <span id="newly-added-user"></span>
+  <%= render partial: 'lightbox_add_user_to_unit' %>
+</div>
+

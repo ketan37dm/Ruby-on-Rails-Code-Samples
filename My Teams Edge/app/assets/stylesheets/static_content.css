@@ -1,0 +1,23 @@
+/******************************************  Tour page  *******************************************/
+
+.solid-underline{ border-style: solid solid none !important; }
+
+/******************************************  FAQ page  ********************************************/
+.faq-align-text{
+  margin: 20px 50px;
+  text-align: justify;
+}
+
+.faq {
+    background: #fff;
+    padding: 20px;
+    -webkit-box-shadow: 0 0 7px rgba(50, 50, 50, 0.2);
+     -moz-box-shadow: 0 0 7px rgba(50, 50, 50, 0.2);
+          box-shadow: 0 0 7px rgba(50, 50, 50, 0.2);
+    width: 910px !important;
+}
+
+.faq p {
+    margin-bottom: 20px;
+}
+

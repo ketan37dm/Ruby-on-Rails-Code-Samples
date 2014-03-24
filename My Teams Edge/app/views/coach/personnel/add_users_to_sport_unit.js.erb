@@ -1,0 +1,10 @@
+$("ul#user-list-selected li").remove();
+$("#new-unit-2").modal("hide");
+
+if(viewingUnit){
+  $("#new-unit-<%= @custom_sports_unit.id %> span").html("<%= @count %> Users");
+
+  if($("#personnel-left-block .content-block").length == 1){
+    $(".list-users-unitwise").click();
+  }
+}

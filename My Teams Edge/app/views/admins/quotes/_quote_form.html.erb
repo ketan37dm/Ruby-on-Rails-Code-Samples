@@ -1,0 +1,15 @@
+<% get_quote_by_date(Time.now + count.to_i.day) %>
+<%= form_for @quote, :url => get_quote_url(@quote,count), :remote => true, :html => { :id => "new_quote_" + "#{count}", :class => "quote-of-the-day quote-of-the-day-form" } do |f| %>
+	<div class="inner-content">
+		<span id="quoteErrors"></span>
+		<div class="modal-body">
+			<h3><%= (Time.now + count.day).strftime("%B %d,%Y") %></h3>
+			<%= hidden_field_tag ("quote[date]"), (Time.now + count.day).strftime("%B %d,%Y") %>
+			<div>
+				<%= f.text_field :author, :placeholder => "Author" %>
+				<%= f.text_area :content, :rows => 3, :placeholder => "Quote Content" %>
+				<%= f.submit "Update", :class => "btn pull-right" %>
+			</div>
+		</div>
+	</div>
+<% end %>

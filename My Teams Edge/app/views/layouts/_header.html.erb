@@ -1,0 +1,48 @@
+<header id="header">
+  <div class="navbar">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </a>
+        <a class="brand" href="<%= logo_path %>"><%= image_tag "logo.png" %></a>
+        <div class="nav-collapse collapse">
+          <ul class="nav pull-right">
+            <% unless user_signed_in? %> 
+              <li><a href="/pricing" class="btn btn-link <%= is_link_active("static_content","pricing") %>">pricing</a></li>
+              <li><a href="/tour" class="btn btn-link <%= is_link_active("static_content", "tour") %>">tour</a></li>
+              <li><a href="/contact" class="btn btn-link <%= is_link_active("contacts", "new")  or is_link_active("contacts", "create") %>">contact</a></li>
+            <% end %> 
+            <% if user_signed_in? %>
+              <%= render(partial: "layouts/show_signedin_header") %>
+            <% else %> 
+              <li>    <%= link_to "login", new_user_session_path, class: "btn login" %></li>
+            <% end %> 
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+      <% if params[:controller] == "welcome" and params[:action] == "index" %>
+        <hr class="container">
+      <article class="container">
+        <p class="heading">Organize, Manage, and Access Important Team Content</p>
+        <p class="sub-heading">A simple, powerful way to connect your entire athletic program.<wbr>  
+          Collaborate effortlessly with game film,<br> scouting reports, academics, and much more, all in one single place.</p>
+          <div class="slider">
+            <img src="/assets/slider-image.png"/>
+          </div>
+        </article>
+
+      <% end %>
+      </div>
+    </div>
+  </header>
+
+<% if user_signed_in? %>
+  <div class="nav-wrap">
+    <%= render :partial => 'layouts/navigations/coach' if current_user.account_owner_or_coach?(current_sport, current_user_sport.subvarsity_id) %>
+    <%= render :partial => 'layouts/navigations/player' if current_user.player?(current_sport, current_user_sport.subvarsity_id) %>
+    <%= render :partial => 'layouts/navigations/auxiliary_user' if current_user.auxiliary_user?(current_sport, current_user_sport.subvarsity_id)%>
+  </div>
+<% end %>

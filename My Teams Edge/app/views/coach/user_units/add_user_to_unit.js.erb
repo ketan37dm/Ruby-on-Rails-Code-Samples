@@ -1,0 +1,14 @@
+<% if @error == false %>
+  $('#add-to-unit').modal('hide');
+
+  if($("a.list-users-rolewise").length > 0){
+    updatePersonnelUsersLeftBlock("false");
+  }
+
+  if($("a.list-users-unitwise").length > 0){
+    updatePersonnelUnitsLeftBlock("false");
+  }
+
+<% else %>
+  $("#add-user-unit-error").prepend("<%= j render partial: 'shared/flash_message' %>")
+<% end %>

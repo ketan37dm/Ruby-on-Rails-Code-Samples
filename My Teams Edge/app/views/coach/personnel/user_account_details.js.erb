@@ -1,0 +1,6 @@
+<% unless @user.blank? %> 
+  $('#resend-invite').modal();
+  $("#userDetails").html('<%= j(render(partial: "lightbox_edit_user_option")) %>');
+<% else %> 
+  $("#userDetails").html('USER NOT FOUND !');
+<% end %> 

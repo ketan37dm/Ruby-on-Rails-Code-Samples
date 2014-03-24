@@ -1,0 +1,94 @@
+.content-left{border-radius:4px 4px 4px 4px;overflow:hidden;position:relative;width:28%;margin:0!important;padding:0;}
+.content-right{background-color:#FFF;border-radius:4px 4px 4px 4px;box-shadow:0 0 7px rgba(50,50,50,0.2);float:right;margin-left:2%;margin-top:5px;overflow:hidden;position:relative;width:66%;padding:2%;}
+.content-right h3.media-heading + p {margin-bottom: 0;}
+
+
+.btn-success {margin-bottom: 10px;}
+.minorHeading {font: normal 0.8571428571428571em/23px arial; color: #a8a8a8; display: block; float: none !important;}
+.mainBtn {border: none; color: #344563; text-align: center; font-size: 1em; width: 30%; line-height: 30px; border-radius: 5px; margin: 1% 1%;}
+
+/* @Group Main button Color Gradient Declaration */
+.mainBtn {border: none; background: #f1f1f1; /* Old browsers */
+/* IE9 SVG, needs conditional override of 'filter' to 'none' */
+background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2YxZjFmMSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNjNGM0YzQiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+/*background: -moz-linear-gradient(top,  #f1f1f1 0%, #c4c4c4 100%);
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f1f1f1), color-stop(100%,#c4c4c4));
+background: -webkit-linear-gradient(top,  #f1f1f1 0%,#c4c4c4 100%);
+background: -o-linear-gradient(top,  #f1f1f1 0%,#c4c4c4 100%);
+background: -ms-linear-gradient(top,  #f1f1f1 0%,#c4c4c4 100%);
+background: linear-gradient(to bottom,  #f1f1f1 0%,#c4c4c4 100%);*/
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f1f1f1', endColorstr='#c4c4c4',GradientType=0 ); /* IE6-8 */
+}
+
+/* @Group Modal Action button Color Gradient Declaration */
+.modalActionBtn {
+	border: none; color: #fff; text-align: center; font-size: 1em; height: 30px; border-radius: 5px; margin: 1% 1%;
+	padding: 0 1.642857142857143em;
+	background: #23547c; /* Old browsers */
+	/* IE9 SVG, needs conditional override of 'filter' to 'none' */
+	background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzIzNTQ3YyIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMyYzY1OTMiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+/*	background: -moz-linear-gradient(top,  #23547c 0%, #2c6593 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#23547c), color-stop(100%,#2c6593));
+	background: -webkit-linear-gradient(top,  #23547c 0%,#2c6593 100%);
+	background: -o-linear-gradient(top,  #23547c 0%,#2c6593 100%);
+	background: -ms-linear-gradient(top,  #23547c 0%,#2c6593 100%);
+	background: linear-gradient(to bottom,  #23547c 0%,#2c6593 100%);*/
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#23547c', endColorstr='#2c6593',GradientType=0 ); /* IE6-8 */
+}
+
+/* @Group Comments Section */
+.comments {clear: both; border-top: #ddd solid 1px; border-bottom: #ddd solid 1px; background-color: #f0f0ed; padding: 14px 2.64900662251656%;}
+.comments > input[type="text"], .comments > textarea {margin: 0; width: 100%; box-sizing: border-box; height: 30px; color: #a8a8a8; font-size: 0.6875em; border-radius: 0;}
+
+/* @Group Schedule input fields & select dropdowns */
+.scheduleInput {margin: 0;}
+.scheduleInput input[type=text]{background:none repeat scroll 0 0 #F0F0ED; border:1px solid #CCC;border-radius:4px 4px 4px 4px;box-shadow:none;font:normal 12px/33px arial;color:#666;height:33px;outline:medium none;width:258px;margin:0 auto 9px;}
+.scheduleInput img{position:absolute;right:20px;top:20px;}
+
+.scheduleSelect select:last-child {margin-bottom: 0;}
+
+.schedule-modal {width: 303px; border-radius: 0;}
+.schedule-modal > .container {width: 100%;}
+.schedule-modal .modal-head {height: 42px; background-color: #3f7eb0;} 
+.schedule-modal h2 {font: normal 1em/42px arial; text-indent: 22px; margin: 0;}
+.schedule-modal .modalActions {clear: both; margin-top: 15px;}
+.schedule-modal .modalActions.fRight > * {float: right; margin: 0; margin-left: 7px;}
+.schedule-modal .modalActions.fRight a {line-height: 30px; font-size: 0.8571428571428571em;}
+
+#multipleComponents {width: 400px;} /* For Multiple Componenets Modal */
+#upcomingOptions {margin-top: 10px;}
+.schedule-modal .modal-head.hasSubHeading {box-sizing: border-box; padding: 5px 10px 5px 22px; height: 55px;}
+.schedule-modal .modal-head.hasSubHeading h2 {line-height: 22px; text-indent: 0;}
+.schedule-modal .modal-head.hasSubHeading h2 + span {display: block; line-height: 15px; font-size: 0.80em;}
+.schedule-modal .modal-head > h2 {font: normal 1em/42px arial; text-indent: 22px; margin: 0;}
+.schedule-modal .modal-head > h2 * {color: #666666; font-size: 11px; line-height: 15px; text-indent: 0;}
+.schedule-modal .modal-head > h2 p:last-child {margin-bottom: 0;}
+.schedule-modal .modalActions {clear: both; margin-top: 15px;}
+.schedule-modal .modalActions.fRight > * {float: right; margin: 0; margin-left: 7px;}
+.schedule-modal .modalActions.fRight a {line-height: 30px; font-size: 0.8571428571428571em;}
+.schedule-modal .modal-head > h2 i.settings {float: right; position: relative; top: 13px; right: 13px; background: url("../../assets/images/icon-settings.png") no-repeat 0 0; cursor: pointer; height: 16px; width: 15px;}
+
+
+/* Specific to add Opponent/Event Modal */
+#add-opponent-event .mainBtn {width: 46%; margin: 18px 2.6% 0 0;}
+
+/* @Group splitList */
+.splitList {margin: 0;}
+.splitList li {margin-top: 1em;}
+.splitList li:first-child {margin-top: 0;}
+.splitList li input[type="text"] {float: left; width: 65%; box-sizing: border-box;}
+.splitList li input[type="text"] + .mainBtn {width: 28%; float: right;}
+
+/* @Group someDiv Styles */
+#someLink {position: relative;}
+.someDiv {position: absolute; right: 0; top: 8px; width: 219px; padding: 15px 15px 0 15px; border: #ddd solid 1px; background-color: #fff; color: black; box-sizing: border-box;}
+.someDiv * {display: block;}
+.someDiv span {font: normal 0.85714285714286em/1.21428571428571em arial; color: #666; margin-bottom: 17px;}
+.someDiv strong {color: #50accf; font: bold 0.85714285714286em/1.71428571428571em arial; margin-bottom: 10px;}
+.someDiv *[href] {display: inline-block; text-decoration: underline; margin-left: 5px; font: normal 0.85714285714286em/2.28571428571429em arial; color: #3f7eb0;}
+.someDiv .actionLinks {border-top: 1px solid #ddd; margin: 0 -15px; padding: 0 13px;}
+.someDiv .actionLinks a {float: right; margin-left: 15px;}
+
+.set-heigt-30 { height: 30px !important }
+
+#schedule-edit-modal .modal-head > h2 {font: normal 1em/3em arial;}

@@ -1,0 +1,5 @@
+<option value="">Select course</option>
+<% @courses.each do |course| %>
+  <option value="<%= course_path(:id => course.id, :user_id => @user.id) %>"><%= course.name %></option>
+<% end %>
+<option value="<%= new_course_path(:user_id => @user.id, :format => :js) %>"> Add New Course </option>

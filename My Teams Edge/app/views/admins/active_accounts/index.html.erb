@@ -1,0 +1,7 @@
+<div id="active-accounts" class="active-accounts container">
+    <%= render :partial => "left_content" %>
+    <% if @active_organizations.present? %>
+      <%= render :partial => "right_content" %>
+    <% end %>
+</div>
+

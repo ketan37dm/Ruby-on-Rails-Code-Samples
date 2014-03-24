@@ -1,0 +1,23 @@
+<p>
+  Hello <%= @user.name if @user.name.present? %>,
+</p>
+<p>
+  <%= @user.name.blank? ? 'Someone' : @user.name %> has made comment on your pitch.
+</p>
+<p>
+ <i>"<%= @comment.comment %>"</i>
+</p>
+<p>
+  To reply to this comment <a href='<%="http://#{SiteConfig.app_base_url}#{display_pitch_path(:identifier => @user.pitch.identifier)}"%>'>click here.</a>
+</p>
+<p>
+	Help others pitch better by making them suggestions. Goto http://mindyourpitch.com and start doing your karma.
+</p>
+<p>
+  If you have not registered yourself on http://mindyourpitch.com then please send us an email at unregister@mindyourpitch.com.
+</p>
+
+<p>
+  Happy Pitching,<br/>
+  Mind Your Pitch Team
+</p>

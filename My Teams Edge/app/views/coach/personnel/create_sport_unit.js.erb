@@ -1,0 +1,42 @@
+<% if @custom_sports_unit.errors.present? %>
+  $("#create_unit_errors").html('<%= error_messages_for(@custom_sports_unit) %>');
+<% else %>
+  $("#create_unit_errors").html('');
+  $('#new-unit').modal('hide');
+  
+  if(viewingUnit){
+    $("#personnel-left-block .content-left").append('<%= j(render(partial: "left_unit_list", locals: {units_with_user_count: @units_with_user_count, count: @count})) %>');
+  }
+
+  $("#new-unit-2").modal();
+  
+  $("#unit-id").val('<%= @custom_sports_unit.id %>');
+  var userEmails = '<%= @user_emails.join(",") %>';
+  var userImages = '<%= @user_images.join(",") %>';
+  var selectedEmails = new Array();
+
+  userEmails = userEmails.split(',');
+  userImages = userImages.split(',');
+    
+  $("#add-user-unit-txt").autocomplete({
+    source: userEmails,
+    change: function( event, ui ){
+      index = userEmails.indexOf(ui.item.value);
+      email = ui.item.value;
+      imageUrl = userImages[index];
+
+      $("ul#user-list-selected").append('<li><img class="media-object" src="' + imageUrl + '"><span class="name" email="' + email + '">' + email + '</span><i class="icon-remove pull-right user-list-li"></i></li>');
+      
+      userEmails.splice(index, 1);
+      userImages.splice(index, 1);
+
+      $("#add-user-unit-txt").val('');
+      selectedEmails.push(email);
+      $("#add-users-submit-button").show();
+    },
+    selectFirst: true,
+    autoFocus: true,
+    focus: function( event, ui ) { event.preventDefault(); }
+  });
+
+<% end %>

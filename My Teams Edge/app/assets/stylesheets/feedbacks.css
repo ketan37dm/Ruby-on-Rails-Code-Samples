@@ -1,0 +1,45 @@
+/*******************************  Contact  ******************************/
+
+.form-contact {
+}
+/*9971600677*/
+
+.form-contact input[type="text"], .form-contact input[type="password"] {
+    background: none repeat scroll 0 0 #F0F0ED;
+    border-radius: inherit;
+    box-shadow: none;
+    color: #999999;
+    font-size: 13px;
+    height: auto;
+    margin: 10px 0 10px 10px;
+    padding: 15px 12px;
+    width: 252px;
+}
+
+.form-contact select {
+    background: none repeat scroll 0 0 #F0F0ED;
+    border-radius: inherit;
+    box-shadow: none;
+    color: #999999;
+    font-size: 13px;
+    height: 48px;
+    margin: 10px;
+    outline: medium none;
+    padding: 14px 12px;
+    width: 278px;
+}
+
+.form-contact textarea {
+    background: none repeat scroll 0 0 #F0F0ED;
+    border-radius: inherit;
+    box-shadow: none;
+    color: #999999;
+    font-size: 13px;
+    height: 106px;
+    margin: 10px;
+    outline: medium none;
+    padding: 14px 12px;    
+    width: 544px;
+}
+
+

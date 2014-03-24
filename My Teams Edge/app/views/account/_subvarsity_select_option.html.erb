@@ -1,0 +1,2 @@
+<% selected = (params[:subvarsity_id].to_i == subvarsity_select_option.id ) %>
+<option value="<%= subvarsity_select_option.id %>" <% if selected %> selected <% end %> ><%= subvarsity_select_option.name %></option>

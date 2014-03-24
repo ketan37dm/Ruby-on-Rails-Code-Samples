@@ -1,0 +1,25 @@
+<div class="container">
+  <%= form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => { :class => "form-signin form-signup" }) do |f| %>
+    <h2 class="form-signin-heading">Sign in</h2>
+    <fieldset>
+      <div>
+        <label class="input-block-level">Email</label>
+        <%= f.email_field :email, class: "input-xlarge", placeholder: "Email" %>
+      </div>
+
+      <div>
+        <label class="input-block-level">Password</label>
+        <%= f.password_field :password, class: "input-xlarge", placeholder: "Password" %>
+      </div>
+
+      <% if devise_mapping.rememberable? -%>
+        <div class="checkbox">
+          <%= f.check_box :remember_me, :id => "agree", :value => "agree" %> <label for="agree"></label>Remember me
+        </div>
+      <% end -%>
+
+      <div><%= f.submit "Sign in", class: "btn btn-large btn-primary form-signin-submit-button" %></div>
+    </fieldset>
+  <% end %>
+</div>
+

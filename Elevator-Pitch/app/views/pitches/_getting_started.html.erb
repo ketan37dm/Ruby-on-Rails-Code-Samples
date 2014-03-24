@@ -1,0 +1,53 @@
+<div class="getting-started">
+  <h2>Alright. Let us help you get started.
+    <em>Answer the below and put them in order that creates the most compelling message.</em>
+  </h2>
+  <ul>
+    <li>
+      <h2>Wow*</h2>
+      <p>6 seconds to generate curiosity.</p>
+    </li>
+    <li class="middle">
+      <h2>What*</h2>
+      <p>What problem are you solving?</p>
+    </li>
+    <li>
+      <h2>How*</h2>
+      <p>How do you solve the problem?</p>
+    </li>
+  </ul>
+  <ul class="last">
+    <li>
+      <h2>Why*</h2>
+      <p>Why are you passionate this?</p>
+    </li>
+    <li class="middle">
+      <h2>Who</h2>
+      <p>Add if you are famous already.</p>
+    </li>
+    <li>
+      <h2>Call to action*</h2>
+      <p>Ask to act.</p>
+    </li>
+  </ul>
+
+  <h2 class="examples">
+    <%= link_to(image_tag('previous.png'), "javascript:void(0)", :class => 'prev') %>
+	<%= @sample_pitches.count %> Examples
+    <%= link_to(image_tag('next.png'), "javascript:void(0)", :class => 'next') %>
+  </h2>
+
+  <div class="sample-pitches">
+    <div class="sample-pitch-container">
+      <% @sample_pitches.each_with_index do |sample_pitch,index| %>
+        <div class="sample-pitch my-pitch-color">
+          <h2>
+            <%= "#{index + 1}.#{sample_pitch.name}" %>
+          </h2>
+          <%= simple_format(sample_pitch.description) %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+  <h2 class="ready">Ready to craft your pitch now?</h2>
+</div>

@@ -1,0 +1,23 @@
+<div class="content-left span4">
+  <div class="content-block">
+    <h2>My Account Options</h2>
+    <hr>
+    <%= link_to account_basics_path, class: current_account_tab(['basics', 'update_basics']) do %>
+      <span class="pull-left">Basics</span>
+    <% end %>
+    <%= link_to account_change_email_path, class: current_account_tab(['change_email', 'update_email', 'update_password']) do %>
+      <span class="pull-left">MyTeamsEdge Login ID</span>
+    <% end %>
+
+    <% if show_links_to_manager? %>
+      <%= link_to sub_varsity_account_path, class: current_account_tab(['sub_varsity']) do %>
+        <span class="pull-left">Sub Varsity</span>
+      <% end %>
+      <%= link_to new_sport_account_path, class: current_account_tab(['new_sport', 'create_sport']) do %>
+        <span class="pull-left">Add New Sport</span>
+      <% end %>
+    <% end %>
+  </div>
+</div>
+
+
